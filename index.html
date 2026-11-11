@@ -565,7 +565,7 @@ const mc=j=>j==4?'#4c9f50':fam(MODS[j][0]);
 const NAV=[['home','Inicio','','#0a8f2a'],['am','Puntualidad','Puntual, aceptable o tardanza','#f58a07'],['pf','Puntos a favor y en contra','Sumar o restar puntos al módulo','#0a8f2a'],['pc','En contra','Restar puntos al módulo','#e11d48'],['notas','Notas','Prácticas y exámenes','#7c3aed'],['crono','Cronograma','Calendario de la capacitación y mallas','#0d9488'],['hoy','Reporte diario','Resumen del día para descargar','#2563eb'],['asr','Reportes','Diario, por asesor, resumen y general','#0891b2'],['res','Resumen general','Notas finales y área','#db2777'],['gen','Reporte general','Todas las sedes · grupo actual','#1e3a8a'],['sug','Sugerencias','Quién va a Ventas y a Optimización','#f58a07'],['gr','Personal','Registro de personal y grupos','#1e3a8a']];
 const NAVV=()=>NAV.filter(x=>(x[0]!='gen'||S.master)&&x[0]!='am'&&x[0]!='pc'&&x[0]!='res'&&x[0]!='hoy'&&x[0]!='gen');
 const MODS=[['MADERAS',4,1],['FERRETERÍA',4,1],['SINTÉTICOS',4,1],['PROYECTOS / OPT.',4,1],['DOCUMENTACIÓN',3,0],['FACTURACIÓN',3,0]];
-let ERK=false;const ES=['ACTIVO','RIESGO DE BAJA','CESADO'],AR=['','VENTAS','OPTIMIZACIÓN','CARTERAS'],SEDES=['Villa el Salvador','Puente Piedra','Piura','Arequipa'],LIM=14;
+let ERK=false,SHC=true;const ES=['ACTIVO','RIESGO DE BAJA','CESADO'],AR=['','VENTAS','OPTIMIZACIÓN','CARTERAS'],SEDES=['Villa el Salvador','Puente Piedra','Piura','Arequipa'],LIM=14;
 const PF=[['Dictado de códigos',[1,.5],'Nota 20 = 1 · Nota 17 a 19 = 0,5'],['Kahoot!',[1,.5],'1er lugar = 1 · 2do = 0,5'],['Recursos lógicos',[1,.5],'1er lugar = 1 · 2do = 0,5'],['Dinámicas',[1,.5],'1er lugar = 1 · 2do = 0,5'],['Revisión de folder',[1,.5],'Separatas decoradas = 1 · Correctamente archivadas = 0,5'],['Puntualidad',[.5],'7:45 a 7:48 AM en fila de formación = 0,5'],['Carrera de patitos',[1],'Por sorteo, solo si todos sacan 17 o más'],['Decoración de folder',[1,2,3],'Hasta 3 puntos (canjeable 1 vez)'],['Mapa conceptual',[1],'Canje grupal · gana 1 fija']];
 const PC=['Tardanza','Uso de celular sin autorización','Imagen','Vestimenta','Desayuno en el aula'],SC=[0,2,4];
 const DAYS=['PRIMER DÍA','MADERAS I','MADERAS II','MADERAS III','MADERAS IV','REPASO TOTAL MADERAS','MADERAS FINAL','FACTURACIÓN I','FERRETERÍA I','FERRETERÍA II','FERRETERÍA III','FERRETERÍA IV','FERRETERÍA FINAL','DOCUMENTACIÓN II','SINTÉTICOS I','SINTÉTICOS II','SINTÉTICOS III','SINTÉTICOS IV','SINTÉTICOS FINAL','DOCUMENTACIÓN III','OPTIMIZACIÓN','PROYECTOS I','PROYECTOS II','PROYECTOS III','PROYECTOS IV','PROYECTOS FINAL','FACTURACIÓN II','FACTURACIÓN III','FACTURACIÓN IV','FACTURACIÓN V','EVALUACIÓN FINAL'];
@@ -574,6 +574,7 @@ const fam=d=>{for(const k of COL)if(d.indexOf(k[0])>=0)return k[1];return '#2563
 const modOf=d=>{const l=['MADERAS','FERRE','SINT','PROY','DOCUM','FACT'],i=l.findIndex(k=>d.indexOf(k)>=0);return d.indexOf('OPTIM')>=0?3:i<0?mi:i};
 const mk=(d,n)=>({d,n,e:'ACTIVO',ar:'',m:{}});
 const GEN='limpio-1';let S=null,tab='home',mi=0,DRV='';
+try{if(localStorage.getItem('cap_src')!==URL_SCRIPT){localStorage.removeItem('cap4');localStorage.removeItem('cap_q');localStorage.setItem('cap_src',URL_SCRIPT)}}catch(e){}
 try{S=JSON.parse(localStorage.getItem('cap4'))}catch(e){}
 if(!S)S={cur:'g1',rep:{},url:'',gen:GEN,gs:[{id:'g1',name:'Mi grupo',sede:SEDES[0],start:(d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'))(new Date()),end:'',adv:[]}]};
 S.url='';
@@ -610,7 +611,7 @@ const has=(a,k,mo)=>md(a,MODS[mi][0])[k?'y':'x'].some(e=>e.f==ymd(new Date())&&e
 /* acciones */
 const RD=el=>{const v=nv(el.value);el.classList.toggle('rd',low(v,mi))};
 function NT(i,t,j,v){const a=cg().adv[i],d=md(a,MODS[mi][0]);if(t=='p')d.p[j]=v;else d[t]=v;upd(i);save({dni:a.d,modulo:MODS[mi][0],campo:t=='p'?'PC'+(j+1):t=='t'?'Teórico':'Códigos',valor:v})}
-function upd(i){const a=cg().adv[i],M=MODS[mi],c=calc(a,mi),s=(id,v)=>{const e=document.getElementById(id+i);if(e){e.textContent=F(v);e.className='cc '+(id=='p'?'pa ':id=='f'?'fi ':'to ')+C(v,mi)}};s('p',c.pa);s('f',c.fi);s('t',c.to);if(M[2]){$('#x'+i).textContent=cm(c.ex);$('#y'+i).textContent=cm(c.co)}autoE(i)}
+function upd(i){if(!document.getElementById('p'+i))return;const a=cg().adv[i],M=MODS[mi],c=calc(a,mi),s=(id,v)=>{const e=document.getElementById(id+i);if(e){e.textContent=F(v);e.className='cc '+(id=='p'?'pa ':id=='f'?'fi ':'to ')+C(v,mi)}};s('p',c.pa);s('f',c.fi);s('t',c.to);if(M[2]){$('#x'+i).textContent=cm(c.ex);$('#y'+i).textContent=cm(c.co)}autoE(i)}
 const ebf=a=>a.e=='CESADO'?!!a.cc:!!(md(a,MODS[mi][0]).rc||md(a,MODS[mi][0]).rm);
 const ebc=a=>'b eb'+(a.e=='CESADO'?' c':'')+(ebf(a)?' on':'');
 const ebt=a=>a.e=='CESADO'?'Comentario del cesado':'Comentario del capacitador';
@@ -1004,8 +1005,9 @@ function vPT(k){const g=cg();if(!MODS[mi][2])return chips()+noP;
 function vHoy(){const dt=S.rd||nowD(),hoy=dt==nowD();
  return `<div class="rtb np"><div class="rtd"><button type="button" class="rtn" onclick="RDN(-1)" title="Día anterior" aria-label="Día anterior">‹</button><label class="rtdl"><span>Fecha del reporte</span><input type="date" value="${dt}" onchange="S.rd=this.value||null;R()"></label><button type="button" class="rtn" onclick="RDN(1)" title="Día siguiente" aria-label="Día siguiente">›</button>${hoy?'':'<button type="button" class="rth" onclick="S.rd=null;R()">Hoy</button>'}</div><div class="rta"><button class="b bg" onclick="PDFr()">Descargar PDF</button><button class="b bu" onclick="DI(this)">Descargar imagen</button><button class="b bu" onclick="cp(this)">Copiar texto</button></div><p class="rti">Puntualidad, notas y motivos se jalan solos de sus pestañas. Solo escribes el comentario final.</p></div>
  <div class="rpw"><div id="cap">${repHTML()}</div></div>`}
-const NTB=()=>`<span class="ntb"><button type="button" class="ntl" onclick="LMD()" title="Límites de nota para ${E(MODS[mi][0])}">⚙ <span>Límites</span></button><button type="button" class="ntp${ERK?' on':''}" onclick="ERT()" aria-pressed="${ERK}" title="${ERK?'Ocultar':'Mostrar'} los 3 puntitos para marcar riesgo de baja">✎ <span>${ERK?'Listo':'Editar'}</span></button></span>`;
+const NTB=()=>`<span class="ntb"><button type="button" class="ntl" onclick="SHCT()" title="Mostrar u ocultar participantes cesados">${SHC?'🙈 Ocultar cesados':'👁 Mostrar cesados'}</button><button type="button" class="ntl" onclick="LMD()" title="Límites de nota para ${E(MODS[mi][0])}">⚙ <span>Límites</span></button><button type="button" class="ntp${ERK?' on':''}" onclick="ERT()" aria-pressed="${ERK}" title="${ERK?'Ocultar':'Mostrar'} los 3 puntitos para marcar riesgo de baja">✎ <span>${ERK?'Listo':'Editar'}</span></button></span>`;
 function ERT(){ERK=!ERK;R()}
+function SHCT(){SHC=!SHC;R()}
 async function LMD(){const j=mi,n=MODS[j][0];
  const r=await pxOvl(`<h3 style="font-size:17px;margin:0 0 4px">Límites de nota · ${E(n)}</h3><p class="pxmu" style="margin:0 0 12px">Esto cambia <b>solo ${E(n)}</b>. Cada módulo (maderas, ferretería, sintéticos…) tiene sus propios límites, independientes.</p><div class="pxf" style="grid-template-columns:1fr"><label>Nota en rojo: se pinta en rojo si es menor a<input id="lmr" type="number" step="0.5" min="0" max="20" value="${limR(j)}"></label><label>Riesgo de baja automático: el promedio del módulo es menor a<input id="lmb" type="number" step="0.5" min="0" max="20" value="${limB(j)}"></label></div><p class="pxmu" style="margin:10px 0 0">A quienes ya marcaste a mano (riesgo o activo) no se les cambia el estado.</p><p style="margin:12px 0 0"><button type="button" class="pxb" id="lm0">Volver a ${LIM} y ${LIM}</button></p>`+pxActs('Guardar'),(q,f)=>{
   q('#cn').onclick=()=>f(null);q('#lm0').onclick=()=>f({r:LIM,b:LIM});
@@ -1024,7 +1026,7 @@ async function RBD(a,g,j0){
 function pxRiesgo(gid,dni){const g=S.gs.find(x=>x.id==gid),a=g&&g.adv.find(x=>String(x.d)==dni);if(!a)return;const rk=rkMods(a);return RBD(a,g,rk.length?rk[0]:mi)}
 function vNotas(){if(!MSEL_)return pickM();const g=cg(),M=MODS[mi],n=M[1];
  return chips(NTB())+ban().replace('</div>','<small class="lmc">Rojo &lt; '+cm(limR(mi))+' · Riesgo de baja &lt; '+cm(limB(mi))+'</small></div>')+'<div class="sc cp mod" style="--mc:'+mc(mi)+';--mt:'+mc(mi)+'40"><table><tr><th>Asesor<th>Estado'+Array.from({length:n},(_,j)=>`<th>PC ${j+1}`).join('')+(M[2]?'<th>A favor<th>En contra':'')+'<th>Parcial'+(M[2]?'<th>Teórico<th>Códigos<th>Finales':'')+'<th>Total del módulo</tr>'+
- g.adv.map((a,i)=>{const d=md(a,M[0]);return `<tr class="${a.e=='CESADO'?'off':''}"><td class="ta"><div class="row" style="padding:0">${who(a)}</div><td><div class="ew">${sel(ES,est(a,mi),`ST(${i},this.value)`,'s s'+ES.indexOf(est(a,mi))).replace('<select','<select id="es'+i+'"')}${ebtn(i,a)}</div>`+
+ g.adv.map((a,i)=>[a,i]).filter(x=>SHC||x[0].e!='CESADO').sort((p,q)=>(p[0].e=='CESADO')-(q[0].e=='CESADO')).map(([a,i])=>{const d=md(a,M[0]);return `<tr class="${a.e=='CESADO'?'off':''}"><td class="ta"><div class="row" style="padding:0">${who(a)}</div><td><div class="ew">${sel(ES,est(a,mi),`ST(${i},this.value)`,'s s'+ES.indexOf(est(a,mi))).replace('<select','<select id="es'+i+'"')}${ebtn(i,a)}</div>`+
  Array.from({length:n},(_,j)=>`<td>${ncell(i,'PC'+(j+1),d.p[j])}`).join('')+(M[2]?`<td class="ex" id="x${i}"><td class="co" id="y${i}">`:'')+`<td id="p${i}">`+(M[2]?`<td>${ncell(i,'Teórico',d.t)}<td>${ncell(i,'Códigos',d.c)}<td id="f${i}">`:'')+`<td id="t${i}"></tr>`}).join('')+'</table></div>'}
 function DD(i){const g=cg(),m=DT(i),c=fam(m),d=dd(g,i),dk=c=='#bfe6c0';
  $('#mb').innerHTML=`<div class="card" style="max-width:520px;margin:auto;padding:0;overflow:auto;max-height:90vh"><div style="background:${c};color:${dk?'#10201a':'#fff'};padding:14px 16px"><div style="font-size:12px;font-weight:700;opacity:.9">${NIV(i)} · ${dl(d)}</div><div style="font-size:20px;font-weight:800">Día ${i+1} · ${m}</div></div><div style="padding:14px 16px"><b style="color:var(--mu);font-size:12px">CONTENIDO DEL DÍA</b><div style="margin-top:8px">`+MD(i).map(x=>`<p style="margin:0 0 6px;padding:8px 10px;border-radius:8px;font-size:13px;background:${c}33;border-left:5px solid ${c}">${E(x)}</p>`).join('')+`</div><div class="rw" style="margin-top:12px"><button class="b bu" onclick="$('#md').style.display='none'">Cerrar</button><button class="b bg" onclick="S.rd='${ymd(d)}';$('#md').style.display='none';go('hoy')">Ver reporte del día</button></div></div></div>`;$('#md').style.display='flex'}
@@ -1471,21 +1473,31 @@ async function traerNotas(){
   if(pend.length)return;                            /* si algo no se pudo subir, no pisamos lo local */
   const j=await api({accion:'cargar',token:TK()}),T=j.tablas||{};let cambio=0;
   const sv=v=>v==null?'':String(v).trim();
+  let p2=[];try{p2=JSON.parse(localStorage.getItem('cap_q')||'[]')}catch(e){}
+  const podar=!p2.length&&!!T.ASESORES&&!!T.GRUPOS,gidsH=new Set((T.GRUPOS||[]).filter(r=>String(r['Estado del grupo']||'').toUpperCase()!='ELIMINADO').map(r=>String(r['ID Grupo']).trim()));
+  (T.GRUPOS||[]).forEach(r=>{const id=String(r['ID Grupo']).trim(),sd=String(r.Sede||'').trim();if(!id||!gidsH.has(id)||!SEDES.includes(sd)||S.gs.some(g=>String(g.id).trim()==id))return;const q=v=>{v=String(v==null?'':v).trim();return /^\d{4}-\d{2}-\d{2}/.test(v)?v.slice(0,10):''};S.gs.push({id,name:String(r['Nombre del grupo']||id),sede:sd,cap:String(r.Capacitador||''),start:q(r['Fecha de inicio'])||ymd(new Date()),end:q(r['Fecha de fin']),adv:[]});cambio++});
   S.gs.forEach(g=>{
    const gid=String(g.id).trim();
    (T.ASESORES||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(r=>{      /* personas que están en la hoja y faltan aquí */
-    if(!g.adv.some(x=>nd(x.d)==nd(r.DNI))&&!(g.del||[]).includes(nd(r.DNI))){const a=mk(String(r.DNI),String(r['Nombres y apellidos']||'').toUpperCase());a.e=r.Estado=='CESADO'?'CESADO':'ACTIVO';
+    if(String(r.Estado||'').toUpperCase()!='ELIMINADO'&&!g.adv.some(x=>nd(x.d)==nd(r.DNI))&&!(g.del||[]).includes(nd(r.DNI))){const a=mk(String(r.DNI),String(r['Nombres y apellidos']||'').toUpperCase());a.e=r.Estado=='CESADO'?'CESADO':'ACTIVO';
      const ar=sv(r['Área destino']);if(ar)a.ar=ar;const ft=sv(r['Foto (URL)']);if(/^https?:\/\//i.test(ft))a.foto=ft;a.us=String(r.DNI);{const q=v=>{v=sv(v);return /^\d{4}-\d{2}-\d{2}/.test(v)?v.slice(0,10):''},fi=q(r['Fecha de ingreso']),fc=q(r['Fecha de cese']),mc=sv(r['Motivo de cese']),ob=sv(r['Observaciones']);if(fi)a.fi=fi;if(fc)a.fc=fc;if(mc)a.mc=mc;if(ob)a.cc=ob}g.adv.push(a);cambio++}});
+   if(podar){const ids=new Set((T.ASESORES||[]).filter(r=>String(r['ID Grupo']).trim()==gid&&String(r.Estado||'').toUpperCase()!='ELIMINADO').map(r=>nd(r.DNI))),n0=g.adv.length;g.adv=g.adv.filter(a=>ids.has(nd(a.d)));if(g.adv.length!=n0)cambio++};
    (T.NOTAS||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(n=>{
     const a=g.adv.find(x=>nd(x.d)==nd(n.DNI)),M=MODS.find(m=>m[0]==n['Módulo']);if(!a||!M)return;const d=md(a,M[0]);
     for(let k=0;k<M[1];k++){const v=sv(n['PC'+(k+1)]);if(v!==''&&v!==sv(d.p[k])){d.p[k]=v;cambio++}}
     const t=sv(n['Teórico']),c=sv(n['Códigos']);
     if(t!==''&&t!==sv(d.t)){d.t=t;cambio++}
     if(c!==''&&c!==sv(d.c)){d.c=c;cambio++}})
+   ;(T.PUNTOS||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(r=>{const a=g.adv.find(x=>nd(x.d)==nd(r.DNI)),id=String(r['ID Registro']||''),M=MODS.find(m=>m[0]==r['Módulo']);if(!a||!id||!M)return;const tp=String(r.Tipo||'').trim().toUpperCase(),vig=String(r['Estado del registro']||'VIGENTE').toUpperCase()!='ANULADO',d=md(a,M[0]),ex=l=>(l||[]).some(e=>e.id==id);
+    if(!vig){[d.x,d.y,a.cj||[]].forEach(l=>{const k=l.findIndex(e=>e.id==id);if(k>=0){l.splice(k,1);cambio++}});return}
+    if(ex(d.x)||ex(d.y)||ex(a.cj))return;const n=nv(r.Puntos);if(n==null)return;const hh=sv(r.Hora),e={id,n,mo:sv(r.Motivo),f:sv(r.Fecha).slice(0,10),h:/^\d{1,2}:\d{2}/.test(hh)?hh.slice(0,5):''};
+    if(tp=='A FAVOR')d.x.push(e);else if(tp=='EN CONTRA')d.y.push(e);else if(tp=='CANJE'){e.m=M[0];(a.cj=a.cj||[]).push(e)}else return;cambio++});
+   ;(T.PUNTUALIDAD||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(r=>{const a=g.adv.find(x=>nd(x.d)==nd(r.DNI)),f=sv(r.Fecha).slice(0,10),es=sv(r.Estado);if(!a||!f||!['P','A','T','F'].includes(es))return;const k=g.id+f;S.pun=S.pun||{};S.pt=S.pt||{};S.fm=S.fm||{};const P=S.pun[k]=S.pun[k]||{};if(P[a.d]!=null)return;P[a.d]=es;const h=sv(r.Hora);if(/^\d{1,2}:\d{2}/.test(h))(S.pt[k]=S.pt[k]||{})[a.d]=h.slice(0,5);const m=sv(r.Motivo);if(m)(S.fm[k]=S.fm[k]||{})[a.d]=m;cambio++});
    ;(T.AJUSTES_NOTAS||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(r=>{const a=g.adv.find(x=>nd(x.d)==nd(r.DNI)),id=String(r['ID Registro']||'');if(!a||!id)return;a.aj=a.aj||[];const e=a.aj.find(x=>x.id==id);
     if(e){if(!e.u&&sv(r.Capacitador))e.u=sv(r.Capacitador);return}
     const f=sv(r.Fecha).slice(0,10),hh=sv(r.Hora);a.aj.push({id,m:sv(r['Módulo']),c:sv(r.Campo),f,h:hh,t:{'SUMAR':'+','RESTAR':'-'}[sv(r.Tipo)]||'=',p:sv(r.Puntos),a:sv(r['Nota anterior']),n:sv(r['Nota nueva']),mo:sv(r.Motivo),u:sv(r.Capacitador),z:Date.parse(f+'T'+(hh||'00:00'))||0});cambio++})
  });
+  if(podar){S.gs.slice().forEach(g=>{if(S.gs.length>1&&!gidsH.has(String(g.id).trim())){S.gs=S.gs.filter(x=>x!==g);cambio++}});if(!S.gs.some(g=>g.id==S.cur))S.cur=cg().id;if(AU&&AU!='MASTER')aplicaAU()}
   if(cambio){save();const ae=document.activeElement;if(!(ae&&/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)))R();stMsg('Notas de Evaluaciones actualizadas')}
  }catch(e){console.warn('Notas:',e)}
  finally{SNB=false}}
@@ -1588,6 +1600,8 @@ function opsDe(ev){const g=cg(),gid=g.id,c=ev.campo||'',o=[],a=ev.dni?g.adv.find
  else if(/^(Puntos|Canje|Deshacer|Registro de puntos)/.test(c)&&a&&ev.modulo){const d=md(a,ev.modulo),sm=l=>(l||[]).reduce((t,e)=>t+(+e.n||0),0);
   nota({'Puntos a favor':sm(d.x),'Puntos en contra':sm(d.y),'Canjes':sm((a.cj||[]).filter(e=>e.m==ev.modulo))});PP(a,ev.modulo,gid,o)}
  else if(c=='Ajuste de nota'&&a&&ev.reg){const r=ev.reg;nota({[ev.col]:ev.valor});up('AJUSTES_NOTAS',{'ID Registro':r.id,'ID Grupo':gid,DNI:String(ev.dni),Asesor:a.n,'Módulo':ev.modulo,Campo:ev.col,Fecha:r.f,Hora:r.h,Tipo:{'+':'SUMAR','-':'RESTAR'}[r.t]||'PONER NOTA',Puntos:r.p,'Nota anterior':r.a,'Nota nueva':r.n,Motivo:r.mo})}
+ else if(c=='Nuevo grupo'&&!ev.dni)up('GRUPOS',{'ID Grupo':gid,Sede:g.sede,'Nombre del grupo':g.name,'Estado del grupo':'ACTIVO','Fecha de inicio':g.start||'','Fecha de fin':g.end||'',Capacitador:g.cap||''});
+ else if(c=='Grupo eliminado'&&ev.gid)up('GRUPOS',{'ID Grupo':ev.gid,Sede:ev.sede||'','Nombre del grupo':ev.valor,'Estado del grupo':'ELIMINADO'});
  else if(c=='Clave')up('CLAVES',{Tipo:'ALUMNO',Sede:g.sede,Usuario:String(ev.usuario||ev.dni),'Contraseña':String(ev.valor||''),Activo:ev.activo||'SI'});
  else if(c=='Nuevo asesor')ase({'Nombres y apellidos':ev.valor,Estado:'ACTIVO'});
  else if(c=='Nombre')ase({'Nombres y apellidos':ev.valor});
@@ -1676,7 +1690,7 @@ function delGrupo(id){
  ['rep','pun','pt','fm'].forEach(k=>{if(S[k])Object.keys(S[k]).forEach(key=>{if(key.startsWith(id)&&/^\d{4}-\d{2}-\d{2}$/.test(key.slice(id.length)))delete S[k][key]})});
  if(S.cur==id)S.cur=S.gs.filter(x=>x.sede==g.sede).sort((a,b)=>b.start>a.start?1:-1)[0].id;
  S.rd=null;S.sa=null;
- save({campo:'Grupo eliminado',valor:g.name,grupo:g.name});R()}
+ save({campo:'Grupo eliminado',valor:g.name,grupo:g.name,gid:id,sede:g.sede});R()}
 /* fotos: pestaña "Foto de asesor" (DNI + enlace) */
 function csvRows(t){const o=[];let r=[],c='',q=false;for(let i=0;i<t.length;i++){const ch=t[i];
  if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=ch}
