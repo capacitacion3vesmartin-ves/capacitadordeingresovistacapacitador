@@ -388,7 +388,15 @@ a.pbig{text-decoration:none;box-sizing:border-box}
 .ppt3 th small{font-weight:600;opacity:.85;font-size:11px}.ppt3 th.hn{text-align:left}.ppt3 th.h1{background:#0a8f2a;border-color:#0a8f2a;color:#fff}.ppt3 th.h2{background:#e11d48;border-color:#e11d48;color:#fff}.ppt3 th.hm{background:#5b6f66;border-color:#5b6f66}
 .ppt3 .ppnn{text-align:center;color:var(--mu);font-weight:700}.ppt3 tr:nth-child(even) td:not(.on){background:#fafdfb}
 .ppt3 .ppc1,.ppt3 .ppc2{text-align:center}.ppt3 .ppc1.on{background:#e3f7e8!important}.ppt3 .ppc2.on{background:#ffe9ee!important}
-.ppac{display:flex;align-items:center;justify-content:center;gap:8px}.ppt3 .ppa{min-width:0;flex:1;max-width:none}.ppt3 .ppa small{max-width:150px}
+.ppac{display:flex;align-items:center;justify-content:center;gap:8px}
+.npc{cursor:pointer}.npc:hover{box-shadow:inset 0 0 0 2px currentColor}
+.npp{max-width:780px;margin:auto;max-height:92vh;overflow:auto}.npp .nph{display:flex;align-items:center;gap:10px;margin-bottom:10px}.npp .nph .who,.npp .nph>div:first-child{flex:1;min-width:0}
+.npp .ngr{display:grid;grid-template-columns:1fr 240px;gap:14px;align-items:start;margin-top:10px}
+.npp .nam{border:2px solid var(--c);border-radius:16px;padding:12px;text-align:center;position:sticky;top:0;background:#fff}.npp .nam .nbig{font-size:38px;font-weight:800;color:var(--c);line-height:1.1;margin:4px 0}.npp .nam .ppc{justify-content:center;margin-top:8px}
+@media(max-width:700px){.npp .ngr{grid-template-columns:1fr}.npp .nam{position:static}}
+.npp{max-width:560px}.npp .nql{max-height:46vh;overflow:auto;border:1px solid var(--bd);border-radius:12px}.nqi{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid #e7f1ea}.nqi:last-child{border:0}.nqd{flex:1;min-width:0}.nqd b{display:block;font-size:14px}.nqd small{color:var(--mu)}.nqv{font-weight:800;font-size:18px}
+.nmg{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}.nmg button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:74px;padding:8px 6px;border:2px solid #d9e6dd;background:#fff;color:#1f2d26;border-radius:14px;font-weight:700;font-size:12px;line-height:1.15;text-align:center;cursor:pointer;transition:.12s}.nmg button i{font-style:normal;line-height:0;color:var(--c)}.nmg button i svg{display:block}.nmg button.on i{color:#fff}.nmg button:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 7%,#fff)}.nmg button.on{border-color:var(--c);background:var(--c);color:#fff;box-shadow:0 3px 10px color-mix(in srgb,var(--c) 40%,transparent)}
+.ppt3 .ppa{min-width:0;flex:1;max-width:none}.ppt3 .ppa small{max-width:150px}
 .ppu{flex:none;width:42px;height:42px;border-radius:12px;border:2px solid #cfe3d5;background:#fff;color:#4f6355;display:grid;place-items:center;cursor:pointer}.ppu:hover:not(:disabled){background:#fff1d6;border-color:#f58a07;color:#b45309}.ppu:disabled{opacity:.35;cursor:not-allowed}
 .ppt3 .ppmo{text-align:center;white-space:nowrap}
 
@@ -554,9 +562,15 @@ a.pbig{text-decoration:none;box-sizing:border-box}
 .asl.pen0{background:#fff;border:2px dashed #cbd5e1;color:#94a3b8}
 .asd .gc{display:flex;flex-direction:column;gap:2px;margin-top:2px;font-size:10px;font-weight:800;align-items:center}
 .asd .gc span{display:flex;align-items:center;gap:4px}.asd .gc i{width:8px;height:8px;border-radius:50%}
-</style><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script></head><body>
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><style>
+#mb .npp{max-width:760px;position:relative}.npp .nph{padding-right:44px}
+.npx{position:absolute;top:10px;right:10px;width:34px;height:34px;border:0;border-radius:9px;background:#e11d48;color:#fff;font-size:18px;font-weight:800;line-height:1;cursor:pointer;z-index:3}.npx:hover{background:#be123c}
+.ppc2b{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--mu);font-weight:600}
+.ppall{background:var(--c);color:#fff;border:0;border-radius:12px;padding:9px 16px;font-weight:800;font-size:14px;cursor:pointer}.ppall.dis{opacity:.5}
+</style>
+</head><body>
 <div id="app"><aside id="sb"></aside><div id="mn"><div class="top"><span id="tl"></span><button class="back" id="sbt" onclick="TS()" title="Esconder o mostrar el menú">‹</button><button class="back" id="bk" onclick="go('home')">‹ Inicio</button><div style="display:none"><h2 id="pt"></h2><small id="ps"></small></div><div class="tbn"><b>Capacitación de ingreso</b><span class="tbs" id="tbs">Plataforma para capacitador</span></div><span id="bt">Vista de Capacitador</span><select id="ss" onchange="SS(this.value)" title="Sede"></select><select id="gs" onchange="S.cur=this.value;S.rd=null;S.sa=null;irHoy();save();R()"></select><button type="button" class="tba" id="tba" onclick="ACT()">Actualizar</button></div><main id="v"></main></div></div>
-<div id="blq"></div><div id="lgn"></div><div id="md" onclick="if(event.target==this&&!this.querySelector('input:not([type=hidden]):not([readonly]),textarea,select'))MCL()"><div id="mb"></div></div>
+<div id="blq"></div><div id="lgn"></div><div id="md"><div id="mb"></div></div>
 <script>
 /* ===== ENLACE DE GOOGLE APPS SCRIPT (el que termina en /exec). Cámbialo solo aquí, entre las comillas ===== */
 const URL_SCRIPT='https://script.google.com/macros/s/AKfycbyoSgU7Eghe2E9mk-86ONnAEeQGPUktuahiGT4gzX10sxAF_KUturH-c0GTR2IhMck/exec';
@@ -720,32 +734,33 @@ function vMallaEd(){const m=MCUR();if(!m){MB=null;return ''}const g=cg(),pool=['
   h+=`<div class="mcell" ondragover="event.preventDefault();this.classList.add('ov')" ondragleave="this.classList.remove('ov')" ondrop="MDROP(event,${i})"><em>${d.getDate()}/${d.getMonth()+1}</em><u>Día ${i+1}</u><div class="mslots">${a.map((t,k)=>chipM(t,i,k)).join('')}${a.length<2?`<select class="madd" onchange="MADD(${i},this.value)"><option value="">+ Agregar tema</option>${pool.map(x=>`<option>${E(x)}</option>`).join('')}<option value="__otro__">✎ Otro título…</option></select>`:''}</div></div>`});
  return `<div class="card mbar"><div class="mbh"><div><small>EDITANDO MALLA</small><div class="mbt">${E(m.name)}</div></div><div class="mba"><button class="b bu" onclick="MRESET()">↺ Restablecer a la base</button><button class="b bg" onclick="MEND()">✓ Guardar y volver</button></div></div><div class="rw" style="margin-top:12px"><label>Nombre<input value="${E(m.name)}" oninput="MN(this.value)"></label><label>Sede<select onchange="MSD(this.value)">${SEDES.filter(x=>AU=='MASTER'||x==AU).map(x=>`<option ${x==m.sede?'selected':''}>${E(x)}</option>`).join('')}</select></label></div><small class="mbn2">Arrastra un tema a otro día (máximo 2 por día). Si el día ya tiene 2, suéltalo sobre uno de ellos para intercambiarlos. También puedes soltar un tema en los días vacíos antes del inicio: ese día pasará a ser el primer día de capacitación. Esta es una copia: la malla base no se modifica.</small></div><div class="cr mcr">${h}</div>`}
 const MRE=()=>{$('#v').innerHTML=vMallaEd()};
-function MN(v){const m=MCUR();if(m){m.name=v;save()}}
-function MSD(v){const m=MCUR();if(m){m.sede=v;save()}}
+let MNT=null;const mSoon=m=>{clearTimeout(MNT);MNT=setTimeout(()=>save({campo:'Malla editada',mid:m.id}),800)};
+function MN(v){const m=MCUR();if(m){m.name=v;save();mSoon(m)}}
+function MSD(v){const m=MCUR();if(m){m.sede=v;save();mSoon(m)}}
 function MDRAG(e,i,k){e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',i+'|'+k)}
 const MP=e=>(e.dataTransfer.getData('text/plain')||'').split('|').map(Number);
 function MDROP(e,to){e.preventDefault();document.querySelectorAll('.mcell.ov').forEach(x=>x.classList.remove('ov'));const[fi,fk]=MP(e),m=MCUR();if(!m||isNaN(fi)||isNaN(fk)||fi==to)return;const A=mTit(m,fi).slice(),B=mTit(m,to).slice();if(!A[fk])return;
  if(B.length>=2){mAlert('Día completo','Ese día ya tiene 2 temas. Suelta el tema sobre uno de ellos para intercambiarlos.');return}
- B.push(A.splice(fk,1)[0]);m.t[fi]=A;m.t[to]=B;save();MRE()}
-function MSWAP(e,ti,tk){e.preventDefault();e.stopPropagation();document.querySelectorAll('.mcell.ov').forEach(x=>x.classList.remove('ov'));const[fi,fk]=MP(e),m=MCUR();if(!m||isNaN(fi)||isNaN(fk))return;const A=mTit(m,fi).slice(),B=fi==ti?A:mTit(m,ti).slice();if(!A[fk]||!B[tk]||(fi==ti&&fk==tk))return;const x=A[fk];A[fk]=B[tk];B[tk]=x;m.t[fi]=A;m.t[ti]=B;save();MRE()}
-async function MADD(i,v){const m=MCUR();if(!m||!v)return;if(v=='__otro__'){v=await mPrompt('Otro tema','Título del tema para el día '+(i+1),'','Agregar');if(!v){MRE();return}v=v.toUpperCase();}const a=mTit(m,i).slice();if(a.length>=2)return;a.push(v);m.t[i]=a;save();MRE()}
+ B.push(A.splice(fk,1)[0]);m.t[fi]=A;m.t[to]=B;save({campo:'Malla editada',mid:m.id});MRE()}
+function MSWAP(e,ti,tk){e.preventDefault();e.stopPropagation();document.querySelectorAll('.mcell.ov').forEach(x=>x.classList.remove('ov'));const[fi,fk]=MP(e),m=MCUR();if(!m||isNaN(fi)||isNaN(fk))return;const A=mTit(m,fi).slice(),B=fi==ti?A:mTit(m,ti).slice();if(!A[fk]||!B[tk]||(fi==ti&&fk==tk))return;const x=A[fk];A[fk]=B[tk];B[tk]=x;m.t[fi]=A;m.t[ti]=B;save({campo:'Malla editada',mid:m.id});MRE()}
+async function MADD(i,v){const m=MCUR();if(!m||!v)return;if(v=='__otro__'){v=await mPrompt('Otro tema','Título del tema para el día '+(i+1),'','Agregar');if(!v){MRE();return}v=v.toUpperCase();}const a=mTit(m,i).slice();if(a.length>=2)return;a.push(v);m.t[i]=a;save({campo:'Malla editada',mid:m.id});MRE()}
 function MLEAD(e,s){e.preventDefault();document.querySelectorAll('.mcell.ov').forEach(x=>x.classList.remove('ov'));const[fi,fk]=MP(e),m=MCUR(),g=cg();if(!m||isNaN(fi)||isNaN(fk)||!(s>0))return;if(!mTit(m,fi)[fk])return;
  const nd=DNg(g),t={};for(let i=0;i<nd;i++)t[i+s]=mTit(m,i).slice();for(let i=0;i<s;i++)t[i]=[];
  const tile=t[fi+s].splice(fk,1)[0];t[0]=[tile];m.t=t;m.n=nd+s;
- const ns=new Date(dd(g,0));ns.setDate(ns.getDate()-s);g.start=ymd(ns);g.end=ymd(dd(g,m.n-1));save({campo:'Datos del grupo'});MRE();PPT('El primer día de capacitación ahora es el '+dl(dd(g,0)))}
-function MX(i,k){const m=MCUR();if(!m)return;const a=mTit(m,i).slice();a.splice(k,1);m.t[i]=a;save();MRE()}
-async function MRESET(){const m=MCUR();if(!m||!await pxConf('<h3 style="font-size:17px;margin:0 0 8px">¿Restablecer a la malla base?</h3><p>Esta malla volverá al orden original y se perderán tus cambios.</p>'))return;m.t=baseT();delete m.n;save();MRE()}
+ const ns=new Date(dd(g,0));ns.setDate(ns.getDate()-s);g.start=ymd(ns);g.end=ymd(dd(g,m.n-1));save({campo:'Malla editada',mid:m.id});save({campo:'Datos del grupo'});MRE();PPT('El primer día de capacitación ahora es el '+dl(dd(g,0)))}
+function MX(i,k){const m=MCUR();if(!m)return;const a=mTit(m,i).slice();a.splice(k,1);m.t[i]=a;save({campo:'Malla editada',mid:m.id});MRE()}
+async function MRESET(){const m=MCUR();if(!m||!await pxConf('<h3 style="font-size:17px;margin:0 0 8px">¿Restablecer a la malla base?</h3><p>Esta malla volverá al orden original y se perderán tus cambios.</p>'))return;m.t=baseT();delete m.n;save({campo:'Malla editada',mid:m.id});MRE()}
 async function MDUP(){const g=cg(),src=cMalla(g),n=await mPrompt('Duplicar y modificar nueva malla','Nombre de la nueva malla','Malla '+g.sede+' '+ymd(new Date()).slice(0,7),'Crear y editar','Se copiará de: <b>'+E(src?src.name:'Malla base')+'</b>. La original no cambia.');if(!n)return;const nn=DNg(g),t={};for(let i=0;i<nn;i++)t[i]=(src?mTit(src,i):(DAYS[i]?[DAYS[i]]:[])).slice();
- const m={id:'m'+Date.now(),name:n,sede:g.sede,t,n:nn};(S.mallas=S.mallas||[]).push(m);g.malla=m.id;MB=m.id;save({campo:'Malla nueva',valor:n});R()}
+ const m={id:'m'+Date.now(),name:n,sede:g.sede,t,n:nn};(S.mallas=S.mallas||[]).push(m);g.malla=m.id;MB=m.id;save({campo:'Malla nueva',valor:n,mid:m.id});R()}
 function MEND(){MB=null;R()}
 function MEDIT(id){MB=id;R()}
 function MSEL(v){const g=cg();g.malla=v;save({campo:'Malla del grupo',valor:v?((S.mallas||[]).find(m=>m.id==v)||{}).name:'Base'});R()}
-async function MDEL(id){const m=(S.mallas||[]).find(x=>x.id==id);if(!m||!await pxConf('<h3 style="font-size:17px;margin:0 0 8px">¿Eliminar esta malla?</h3><p><b>'+E(m.name)+'</b> se borrará. Los grupos que la usan volverán a la malla base.</p>'))return;S.mallas=S.mallas.filter(x=>x.id!=id);S.gs.forEach(g=>{if(g.malla==id)g.malla=''});save({campo:'Malla eliminada',valor:m.name});R()}
+async function MDEL(id){const m=(S.mallas||[]).find(x=>x.id==id);if(!m||!await pxConf('<h3 style="font-size:17px;margin:0 0 8px">¿Eliminar esta malla?</h3><p><b>'+E(m.name)+'</b> se borrará. Los grupos que la usan volverán a la malla base.</p>'))return;const gids=S.gs.filter(g=>g.malla==id).map(g=>g.id);S.mallas=S.mallas.filter(x=>x.id!=id);S.gs.forEach(g=>{if(g.malla==id)g.malla=''});save({campo:'Malla eliminada',valor:m.name,mid:id,sede:m.sede,gids});R()}
 function SM(sd){const l=S.gs.filter(g=>g.sede==sd).sort((a,b)=>b.start>a.start?1:-1);if(!l.length){alert('La sede '+sd+' todavía no tiene grupos. Crea el primero en la pestaña Personal.');return}SG2(l[0].id)}
 function OTM(i,k){$('#mb').innerHTML=`<div class="card" style="max-width:420px;margin:auto"><b style="font-size:16px">Otros · motivo</b><div class="rw" style="margin:12px 0;flex-direction:column;align-items:stretch"><label>Escribe el motivo<input id="otm" value="${E(OT[i]||'')}" placeholder="Ej. Ayudó a ordenar el aula"></label></div><div class="rw"><button class="b bg" onclick="OTG(${i})">Guardar</button><button class="b bu" onclick="OTC(${i})">Cancelar</button></div></div>`;$('#md').style.display='flex';setTimeout(()=>{const x=$('#otm');if(x)x.focus()},50)}
 function OTG(i){const m=$('#otm').value.trim();if(!m){$('#otm').style.borderColor='var(--r)';return}OT[i]=m;$('#ot'+i).textContent='Otros: '+m;$('#md').style.display='none'}
 function OTC(i){if(!OT[i])$('#mo'+i).selectedIndex=0;$('#md').style.display='none'}
-function PEC(hi){if(hi==-9)$('#md').style.display='none';else HIST(hi)}
+function PEC(hi){if(hi==-7){NPH=1;NPR();return}if(hi==-9)$('#md').style.display='none';else HIST(hi)}
 function PE(ai,mj,ty,k,hi){const a=cg().adv[ai],M=MODS[mj],e=md(a,M[0])[ty?'x':'y'][k];if(!e)return;const L=ty?PF.map(p=>p[0]):PC,std=L.includes(e.mo);
  $('#mb').innerHTML=`<div class="card" style="max-width:460px;margin:auto"><b style="font-size:16px">Editar · ${E(a.n)}</b><p style="margin:2px 0 8px"><small>${M[0]} · ${ty?'Punto a favor':'Punto en contra'}</small></p><div class="rw" style="flex-direction:column;align-items:stretch;margin:8px 0"><label>Puntos<input id="pen" inputmode="decimal" value="${E(String(e.n).replace('.',','))}"></label><label>Motivo<select id="pem" onchange="$('#pet').style.display=this.value=='Otros'?'':'none'">${L.concat('Otros').map(x=>`<option ${x==(std?e.mo:'Otros')?'selected':''}>${E(x)}</option>`).join('')}</select></label><label id="pet" style="${std?'display:none':''}">Motivo (otros)<input id="peo" value="${E(std?'':e.mo)}"></label><label>Fecha<input id="pef" type="date" value="${E(e.f||'')}"></label></div><div class="rw"><button class="b bg" onclick="PEG(${ai},${mj},${ty},${k},${hi})">Guardar</button><button class="b bu" onclick="PEC(${hi})">Cancelar</button><button class="b br" onclick="PED(${ai},${mj},${ty},${k},${hi})">Eliminar</button></div></div>`;$('#md').style.display='flex'}
 function PEG(ai,mj,ty,k,hi){const a=cg().adv[ai],M=MODS[mj],e=md(a,M[0])[ty?'x':'y'][k],v=nv($('#pen').value);if(!e||v==null){$('#pen').style.borderColor='var(--r)';return}
@@ -825,12 +840,13 @@ const nowD=()=>ymd(new Date()),nowH=()=>{const d=new Date();return String(d.getH
 function TS(){S.sbc=!S.sbc;save();$('#app').classList.toggle('sbc',!!S.sbc);$('#sbt').textContent=S.sbc?'›':'‹'}
 function PD(v){pd=v||null;R()}
 function PH(v){ph=v||null}
-function PU(i,v){const g=cg(),a=g.adv[i],dt=pd||nowD(),hr=ph||nowH(),key=g.id+dt;S.pun=S.pun||{};S.pt=S.pt||{};S.fm=S.fm||{};const st=S.pun[key]=S.pun[key]||{},tm=S.pt[key]=S.pt[key]||{},fm=S.fm[key]=S.fm[key]||{},prev=st[a.d];
+const puMod=dt=>{const i=tIdx(dt);if(i>=0){const j=modOf(DT(i));if(MODS[j]&&MODS[j][2])return j}return MODS[mi][2]?mi:0};
+function PU(i,v){const g=cg(),a=g.adv[i],dt=pd||nowD(),pj=puMod(pd||nowD()),hr=ph||nowH(),key=g.id+dt;S.pun=S.pun||{};S.pt=S.pt||{};S.fm=S.fm||{};const st=S.pun[key]=S.pun[key]||{},tm=S.pt[key]=S.pt[key]||{},fm=S.fm[key]=S.fm[key]||{},prev=st[a.d];
  if(v=='F'&&prev=='F'){FM(i);return}
  MODS.forEach(M=>{const d=a.m[M[0]];if(d){d.x=d.x.filter(e=>{const r=e.f==dt&&e.mo=='Puntualidad';if(r)anu(a,e,M[0],0);return !r});d.y=d.y.filter(e=>{const r=e.f==dt&&e.mo==PC[0];if(r)anu(a,e,M[0],1);return !r})}});
  delete fm[a.d];
- if(prev==v){delete st[a.d];delete tm[a.d]}else{st[a.d]=v;tm[a.d]=hr;if(v!='F'&&MODS[mi][2]){const d=md(a,MODS[mi][0]);if(v=='P')d.x.push({n:.5,mo:'Puntualidad',f:dt,h:hr});if(v=='T')d.y.push({n:pen(a,PC[0]),mo:PC[0],f:dt,h:hr})}}
- save({dni:a.d,modulo:MODS[mi][0],campo:'Puntualidad',valor:st[a.d]||'sin marcar',fecha:dt,hora:hr});R();if(v=='F'&&st[a.d]=='F')FM(i)}
+ if(prev==v){delete st[a.d];delete tm[a.d]}else{st[a.d]=v;tm[a.d]=hr;if(v!='F'){const d=md(a,MODS[pj][0]);if(v=='P')d.x.push({n:.5,mo:'Puntualidad',f:dt,h:hr});if(v=='T')d.y.push({n:pen(a,PC[0]),mo:PC[0],f:dt,h:hr})}}
+ save({dni:a.d,modulo:MODS[pj][0],campo:'Puntualidad',valor:st[a.d]||'sin marcar',fecha:dt,hora:hr});R();if(v=='F'&&st[a.d]=='F')FM(i)}
 function FM(i){const g=cg(),a=g.adv[i],dt=pd||nowD(),key=g.id+dt,m=((S.fm||{})[key]||{})[a.d]||'';
  $('#mb').innerHTML=`<div class="card" style="max-width:460px;margin:auto"><b style="font-size:16px">Falta · ${E(a.n)}</b><p style="margin:4px 0 10px"><small>${dt} · No resta puntaje, solo queda registrada.</small></p><label style="font-weight:700;color:var(--mu);font-size:12px">Motivo de la falta<textarea id="fmt" placeholder="Escribe el motivo">${E(m)}</textarea></label><div class="rw" style="margin-top:12px"><button class="b bg" onclick="FG(${i},'${dt}')">Guardar</button><button class="b bu" onclick="if(PMO)PMR();else $('#md').style.display='none'">Cancelar</button><button class="b br" onclick="UF(${i},'${dt}')">Quitar falta</button></div></div>`;$('#md').style.display='flex'}
 function FG(i,dt){const g=cg(),a=g.adv[i],key=g.id+dt,v=$('#fmt').value;S.fm=S.fm||{};(S.fm[key]=S.fm[key]||{})[a.d]=v;save({dni:a.d,campo:'Motivo de falta',valor:v,fecha:dt});$('#md').style.display='none';R()}
@@ -843,10 +859,37 @@ function vAm(){const g=cg(),dt=pd||nowD(),key=g.id+dt,st=(S.pun||{})[key]||{},tm
  n=k=>act.filter(x=>st[x[0].d]==k).length,sm=act.length-['P','A','T','F'].reduce((q,k)=>q+n(k),0),
  cs=(l,v,c)=>`<div class="k" style="--c:${c};padding:8px 10px"><small>${l}</small><b style="font-size:22px">${v}</b></div>`,
  CL={P:'#0a8f2a',A:'#4f6355',T:'#e11d48',F:'#374151'};
- return `<div class="card"><div class="rw"><label>Fecha<input type="date" value="${dt}" onchange="PD(this.value)"></label><label>Hora<input type="time" value="${ph||nowH()}" onchange="PH(this.value)"></label><button class="b bu" onclick="pd=null;ph=null;R()">Ahora</button><button class="b bu" onclick="HIST(-1)">Historial</button></div><details style="margin-top:8px"><summary>¿Cómo funciona?</summary><p>Si no cambias la hora, se registra la del momento en que marcas. Puntual +0,5 · Aceptable no cambia nada · Tardanza a formación resta según la vez (0, −2, −4) · Falta no resta puntaje, solo queda registrada con su motivo.</p></details></div>
+ return `<div class="card"><div class="rw"><label>Fecha<input type="date" value="${dt}" onchange="PD(this.value)"></label><label>Hora<input type="time" value="${ph||nowH()}" onchange="PH(this.value)"></label><button class="b bu" onclick="pd=null;ph=null;R()">Ahora</button><button class="b bu" onclick="HIST(-1)">Historial</button><button class="b bg" onclick="PBA()">Marcar a todos…</button></div><details style="margin-top:8px"><summary>¿Cómo funciona?</summary><p>Si no cambias la hora, se registra la del momento en que marcas. Puntual +0,5 · Aceptable no cambia nada · Tardanza a formación resta según la vez (0, −2, −4) · Falta no resta puntaje, solo queda registrada con su motivo. «Marcar a todos…» abre la lista con todos marcados para que quites a quien no corresponda.</p></details></div>
+ <div class="asqb np"><input id="psq" type="search" autocomplete="off" placeholder="Buscar asesor por nombre o DNI" value="${E(PSQ)}" oninput="PSf(this.value)"><small id="psqn" class="asqn">${PSQ.trim()?(act.filter(x=>psqOk(x[0])).length||'Sin coincidencias'):''}</small></div>
  <div class="pu">`+act.map(([a,i])=>{const s=st[a.d],te=Object.values(a.m).map(d=>d.y.find(e=>e.f==dt&&e.mo==PC[0])).find(e=>e),
  bt=(v,l)=>`<button class="${s==v?'on':''}" style="--c:${CL[v]}" onclick="PU(${i},'${v}')">${l}</button>`;
- return `<div class="pc2" style="--st:${s?CL[s]:'#d6e6da'}"><div class="hd2">${who(a)}<span class="hr">${E(tm[a.d]||'')}</span></div><div class="pb">${bt('P','Puntual')}${bt('A','Aceptable')}${bt('T','Tardanza'+(s=='T'&&te?' −'+cm(te.n):''))}${bt('F','Falta'+(s=='F'&&fm[a.d]?' ✓':''))}</div></div>`}).join('')+'</div>'}
+ return `<div class="pc2" data-n="${E(asqN(a.n+' '+a.d))}" style="--st:${s?CL[s]:'#d6e6da'}${psqOk(a)?'':';display:none'}"><div class="hd2">${pxAv(a.n,phOf(a),44)}<div class="nm"><b>${E(a.n)}</b><small>${E(a.d)}</small></div><span class="hr">${E(tm[a.d]||'')}</span></div><div class="pb">${bt('P','Puntual')}${bt('A','Aceptable')}${bt('T','Tardanza'+(s=='T'&&te?' −'+cm(te.n):''))}${bt('F','Falta'+(s=='F'&&fm[a.d]?' ✓':''))}</div></div>`}).join('')+'</div>'}
+/* ===== Marcar puntualidad a varios a la vez: lista con todos marcados, se tacha a quien no corresponde ===== */
+let PBS=null;
+const PBN={P:'Puntual',A:'Aceptable',T:'Tardanza'},PBC={P:'#0a8f2a',A:'#4f6355',T:'#e11d48',F:'#374151'};
+function PBA(){const g=cg(),dt=pd||nowD(),st=(S.pun||{})[g.id+dt]||{};PBS={v:'P',sel:{}};g.adv.forEach(a=>{if(a.e!='CESADO'&&!st[a.d])PBS.sel[a.d]=1});PBR()}
+function PBcnt(){const g=cg(),n=g.adv.filter(a=>a.e!='CESADO'&&PBS.sel[a.d]).length,t=$('#pbn'),b=$('#pbok');if(t)t.textContent=n+' seleccionado'+(n==1?'':'s');if(b){b.disabled=!n;b.style.opacity=n?1:.5}}
+function PBR(){const g=cg(),dt=pd||nowD(),hr=ph||nowH(),st=(S.pun||{})[g.id+dt]||{},act=g.adv.map((a,i)=>[a,i]).filter(x=>x[0].e!='CESADO'),v=PBS.v,
+ bt=k=>`<button type="button" class="b ${v==k?'bg':'bu'}" style="${v==k?'':'color:'+PBC[k]+';border-color:'+PBC[k]}" onclick="PBS.v='${k}';PBR()">${PBN[k]}</button>`;
+ const sc=(($('#mb .pbl')||{}).scrollTop)||0;
+ $('#mb').innerHTML=`<div class="card" style="max-width:560px;margin:auto"><b style="font-size:17px">Marcar puntualidad a varios</b><p style="margin:4px 0 10px"><small>${E(dt)} · hora ${E(hr)} · ${E(MODS[puMod(dt)][0])}</small></p>
+ <div class="rw" style="gap:6px;margin-bottom:8px">${bt('P')}${bt('A')}${bt('T')}</div>
+ <div class="rw" style="gap:6px;margin-bottom:6px;align-items:center"><button type="button" class="b bu" onclick="PBall(1)">Marcar todos</button><button type="button" class="b bu" onclick="PBall(0)">Quitar todos</button><small id="pbn" style="margin-left:auto;font-weight:800"></small></div>
+ <div class="pbl" style="max-height:52vh;overflow:auto;border:1px solid var(--bd);border-radius:12px">${act.map(([a,i])=>{const s=st[a.d];return `<label style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-bottom:1px solid var(--bd);cursor:pointer"><input type="checkbox" ${PBS.sel[a.d]?'checked':''} onchange="PBT(${i},this.checked)" style="width:20px;height:20px;flex:none">${pxAv(a.n,phOf(a),44)}<span style="flex:1;min-width:0"><b>${E(a.n)}</b><small style="display:block;color:var(--mu)">${E(a.d)}</small></span>${s?`<span style="font-size:11px;font-weight:800;color:#fff;background:${PBC[s]};border-radius:99px;padding:2px 8px">${PBN[s]||'Falta'} · ya marcado</span>`:''}</label>`}).join('')}</div>
+ <p style="margin:8px 0 0"><small>Los ya marcados salen sin seleccionar; si los seleccionas, se cambia su marca. ${v=='P'?'Puntual suma +0,5.':v=='T'?'Tardanza resta según la vez (0, −2, −4).':'Aceptable no cambia puntos.'}</small></p>
+ <div class="rw" style="margin-top:12px"><button type="button" class="b bg" id="pbok" onclick="PBG()">Aplicar ${PBN[v]}</button><button type="button" class="b bu" onclick="PBX()">Cancelar</button></div></div>`;
+ $('#md').style.display='flex';const l=$('#mb .pbl');if(l)l.scrollTop=sc;PBcnt()}
+function PBT(i,c){const a=cg().adv[i];if(!a)return;if(c)PBS.sel[a.d]=1;else delete PBS.sel[a.d];PBcnt()}
+function PBall(c){PBS.sel={};if(c)cg().adv.forEach(a=>{if(a.e!='CESADO')PBS.sel[a.d]=1});PBR()}
+function PBX(){PBS=null;if(PMO)PMR();else $('#md').style.display='none'}
+function PBG(){if(!PBS)return;const g=cg(),dt=pd||nowD(),pj=puMod(dt),hr=ph||nowH(),key=g.id+dt,v=PBS.v;S.pun=S.pun||{};S.pt=S.pt||{};S.fm=S.fm||{};
+ const st=S.pun[key]=S.pun[key]||{},tm=S.pt[key]=S.pt[key]||{},fm=S.fm[key]=S.fm[key]||{};let n=0;
+ g.adv.forEach(a=>{if(a.e=='CESADO'||!PBS.sel[a.d])return;
+  MODS.forEach(M=>{const d=a.m[M[0]];if(d){d.x=d.x.filter(e=>{const r=e.f==dt&&e.mo=='Puntualidad';if(r)anu(a,e,M[0],0);return !r});d.y=d.y.filter(e=>{const r=e.f==dt&&e.mo==PC[0];if(r)anu(a,e,M[0],1);return !r})}});
+  delete fm[a.d];st[a.d]=v;tm[a.d]=hr;
+  const d=md(a,MODS[pj][0]);if(v=='P')d.x.push({n:.5,mo:'Puntualidad',f:dt,h:hr});if(v=='T')d.y.push({n:pen(a,PC[0]),mo:PC[0],f:dt,h:hr});
+  save({dni:a.d,modulo:MODS[pj][0],campo:'Puntualidad',valor:v,fecha:dt,hora:hr});n++});
+ PBS=null;if(PMO)PMR();else $('#md').style.display='none';R();PPT(n?(PBN[v]+' · '+n+' asesor'+(n==1?'':'es')):'No seleccionaste a nadie')}
 function HIST(i){PMO=false;const g=cg(),r=[];g.adv.forEach((a,j)=>{if(i>=0&&j!=i)return;MODS.forEach((M,mj)=>{const d=a.m[M[0]];if(!d)return;d.x.forEach((e,k)=>r.push([e.f||'',a.n,M[0],1,e,j,k,mj]));d.y.forEach((e,k)=>r.push([e.f||'',a.n,M[0],0,e,j,k,mj]))});(a.cj||[]).forEach((e,k)=>r.push([e.f||'',a.n,e.m||'–',2,e,j,k,-1]))});
  r.sort((p,q)=>{const u=p[0]+(p[4].h||''),v=q[0]+(q[4].h||'');return v>u?1:v<u?-1:0});
  $('#mb').innerHTML=`<div class="card"><div class="rw" style="margin-bottom:10px"><b style="flex:1;font-size:16px">Historial de puntos${i>=0?' · '+E(g.adv[i].n):''}</b><button class="b bu" onclick="$('#md').style.display='none'">Cerrar</button></div><div class="sc" style="max-height:60vh;margin:0"><table style="min-width:560px"><tr><th>Fecha<th>Asesor<th>Módulo<th>Tipo<th>Motivo<th>Puntos<th></tr>`+(r.map(x=>{const n=x[4].n,sg=x[3]==2?-1:(x[3]?1:-1)*(n>=0?1:-1);return `<tr><td>${x[0]||'-'}${x[4].h?' '+x[4].h:''}<td class="ta">${E(x[1])}<td>${x[2]}<td>${tpill(x[3])}<td>${E(x[4].mo)}<td class="cc ${x[3]==1?'ex':'co'}">${sg>0?'+':'−'}${cm(Math.abs(n))}<td>${x[3]==2?'':`<button class="pen" title="Editar" onclick="PE(${x[5]},${x[7]},${x[3]},${x[6]},${i})">✎</button>`}</tr>`}).join('')||'<tr><td colspan="7">Sin registros todavía</td></tr>')+'</table></div></div>';$('#md').style.display='flex'}
@@ -986,6 +1029,27 @@ function PPMs(m){PPM=m;PPX='';if(!PPK){const p=PF.find(x=>x[0]==m);PPV=p?p[1][0]
 function PPVs(v){PPV=v;PPX='';R()}
 function PPT(m){let t=document.getElementById('ppt');if(!t){t=document.createElement('div');t.id='ppt';document.body.appendChild(t)}
  t.innerHTML='<span>'+E(m)+'</span>';t.style.display='flex';clearTimeout(PPTM);PPTM=setTimeout(()=>{t.style.display='none'},2600)}
+function PPRow(i){try{const a=cg().adv[i],k=PPK,r=document.querySelector('#v tr[data-ai="'+i+'"]'),c=calc(a,mi),ls=md(a,MODS[mi][0])[k?'y':'x'],lu=ls[ls.length-1];
+ r.querySelector('.ppc1 b').textContent='+'+cm(c.ex);r.querySelector('.ppc2 b').textContent='−'+cm(c.co);
+ const u=r.querySelector('.ppu');if(u){u.disabled=!lu;u.title=lu?'Deshacer el último: '+(k?'−':'+')+cm(Math.abs(lu.n))+' por '+lu.mo:'No hay nada que deshacer'}}catch(e){R()}}
+function PPALL(){const g=cg(),k=PPK,L=g.adv.filter(a=>a.e!='CESADO');
+ if(!PPM)return PPT('Primero elige un motivo');
+ let mo=PPM;if(mo=='Otros'){mo=PPO.trim();if(!mo){PPT('Escribe el motivo en «Otros»');const x=$('#ppo');if(x)x.focus();return}}
+ if(!L.length)return PPT('No hay participantes activos');
+ const vs=L.map(PPAmt);if(vs.some(v=>v==null))return PPT('Escribe cuántos puntos');
+ const col=k?'#e11d48':'#0a8f2a',same=vs.every(v=>v==vs[0]),q=same?'<b style="color:'+col+';font-size:20px">'+(k?'−':'+')+cm(Math.abs(vs[0]))+'</b> punto(s)':'<b style="color:'+col+'">puntos '+(k?'en contra':'a favor')+'</b> (el descuento depende de la vez de cada alumno)';
+ $('#mb').innerHTML='<div class="card npp" style="max-width:520px"><button type="button" class="npx" title="Cerrar" aria-label="Cerrar" onclick="NPC()">✕</button><div style="font-size:18px;font-weight:800;color:#b45309;padding-right:44px">⚠ Advertencia</div><p style="margin:10px 0 6px;font-size:15px">Vas a otorgar '+q+' por <b>'+E(mo)+'</b> a <b>los '+L.length+' participantes</b> de «'+E(g.name)+'» en el módulo '+E(MODS[mi][0])+'.</p><p style="margin:0 0 14px;color:var(--mu);font-size:13px">Se registrará en el historial de cada uno. Para corregirlo tendrás que deshacerlo alumno por alumno (↶) o desde el historial.</p><div class="rw"><button type="button" class="b bg" style="background:'+col+';flex:1;font-size:15px;padding:12px" onclick="PPALLG()">Sí, otorgar a todos</button><button type="button" class="b bu" onclick="NPC()">Cancelar</button></div></div>';$('#md').style.display='flex'}
+function PPALLG(){const g=cg(),k=PPK;let mo=PPM=='Otros'?PPO.trim():PPM;if(!mo)return;let n=0;
+ g.adv.forEach(a=>{if(a.e=='CESADO')return;const v=PPAmt(a);if(v==null)return;md(a,MODS[mi][0])[k?'y':'x'].push({n:v,mo,f:ymd(new Date())});save({dni:a.d,modulo:MODS[mi][0],campo:k?'Puntos en contra':'Puntos extra',valor:v,motivo:mo});n++});
+ $('#md').style.display='none';R();PPT((k?'−':'+')+' '+n+' participantes · '+mo)}
+document.addEventListener('keydown',e=>{if(e.key!=='Escape'||e.defaultPrevented)return;
+ const bq=document.getElementById('blq');if(bq&&getComputedStyle(bq).display!='none')return;
+ const px=[...document.querySelectorAll('.pxo')].pop();
+ if(px){const c=px.querySelector('#cn');if(c){e.preventDefault();c.click()}return}
+ const md=document.getElementById('md');if(!md||getComputedStyle(md).display=='none')return;
+ e.preventDefault();let b=md.querySelector('.npx');
+ if(!b)for(const t of ['cerrar','cancelar','volver']){b=[...md.querySelectorAll('button')].find(x=>x.textContent.trim().toLowerCase()==t);if(b)break}
+ if(b)b.click();else MCL()});
 function PPU(i,k){if(!cg().adv[i])return;UN(i,k)}
 function PPA(i){const a=cg().adv[i],k=PPK;if(!a||a.e=='CESADO')return;
  if(!PPM)return PPT('Primero elige un motivo');
@@ -993,7 +1057,7 @@ function PPA(i){const a=cg().adv[i],k=PPK;if(!a||a.e=='CESADO')return;
  const v=PPAmt(a);if(v==null)return PPT('Escribe cuántos puntos');
  md(a,MODS[mi][0])[k?'y':'x'].push({n:v,mo,f:ymd(new Date())});
  save({dni:a.d,modulo:MODS[mi][0],campo:k?'Puntos en contra':'Puntos extra',valor:v,motivo:mo});
- R();PPT((k?'−':'+')+cm(Math.abs(v))+' · '+a.n+' · '+mo)}
+ PPRow(i);PPL();PPT((k?'−':'+')+cm(Math.abs(v))+' · '+a.n+' · '+mo)}
 /* ===== Barra para buscar asesor (Notas, Puntos a favor/en contra y Reporte por asesor) ===== */
 let ASQ='';
 const asqN=t=>String(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -1007,12 +1071,57 @@ function ASQf(v){ASQ=v;
   const sl=$('#asl');if(sl&&cur)sl.innerHTML=asOpts(g,cur);
   const m=$('#asqn');if(m)m.textContent=ASQ.trim()?(L.length?L.length+' de '+g.adv.length:'Sin coincidencias'):''}
  else ASQa()}
+/* ===== Notas: ventana emergente para dar puntos a favor / en contra al tocar el casillero del alumno ===== */
+const NPSV=d=>'<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+d+'</svg>',
+NPIC={'Dictado de códigos':NPSV('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>'),
+'Kahoot!':NPSV('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>'),
+'Recursos lógicos':NPSV('<path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.7.6 1 1.3 1 2.3h6c0-1 .3-1.7 1-2.3A7 7 0 0 0 12 2Z"/>'),
+'Dinámicas':NPSV('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/>'),
+'Revisión de folder':NPSV('<path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9l-.8-1.2A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/><path d="m9 13 2 2 4-4"/>'),
+'Puntualidad':NPSV('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>'),
+'Carrera de patitos':NPSV('<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1.2 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1.2 1.2 1 .6 1.8 2 1.8 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>'),
+'Decoración de folder':NPSV('<path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.7-.7 1.7-1.7 0-.4-.2-.8-.5-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.7 1.7-1.7H16c3 0 5.5-2.5 5.5-5.5C21.5 6 17.5 2 12 2Z"/><circle cx="7.5" cy="11" r="1" fill="currentColor"/><circle cx="10" cy="7" r="1" fill="currentColor"/><circle cx="15" cy="7" r="1" fill="currentColor"/>'),
+'Mapa conceptual':NPSV('<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.6 16.9M12 11.5l5.4 5.4"/>'),
+'Tardanza':NPSV('<path d="M5 22h14M5 2h14"/><path d="M17 22v-4.2a2 2 0 0 0-.6-1.4L12 12l-4.4 4.4a2 2 0 0 0-.6 1.4V22"/><path d="M7 2v4.2a2 2 0 0 0 .6 1.4L12 12l4.4-4.4A2 2 0 0 0 17 6.2V2"/>'),
+'Uso de celular sin autorización':NPSV('<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/><path d="M3 3l18 18"/>'),
+'Imagen':NPSV('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'),
+'Vestimenta':NPSV('<path d="M20.4 5.4 16 3a4 4 0 0 1-8 0L3.6 5.4a1 1 0 0 0-.5 1.2l1.3 3.6a1 1 0 0 0 1 .7H7V21h10V10.9h1.6a1 1 0 0 0 1-.7l1.3-3.6a1 1 0 0 0-.5-1.2Z"/>'),
+'Desayuno en el aula':NPSV('<path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v3M10 2v3M14 2v3"/>'),
+'Otros':NPSV('<circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/>')};
+let NPI=-1,NPK=0,NPM='',NPV=null,NPX='',NPT='',NPH=0;
+const npAmt=a=>{const c=nv(NPX);if(c!=null)return c;if(!NPM||NPM=='Otros')return null;return NPK?pen(a,NPM):NPV};
+function NPC(){NPI=-1;$('#md').style.display='none'}
+function NPP(i,k){const a=cg().adv[i];if(!a)return;if(a.e=='CESADO')return PPT('Participante cesado: no se le pueden dar puntos');NPI=i;NPK=k;NPM='';NPV=null;NPX='';NPT='';NPH=0;NPR();$('#md').style.display='flex'}
+function NPKs(k){NPH=0;NPK=k;NPM='';NPV=null;NPX='';NPT='';NPR()}
+function NPMs(m){NPM=m;NPX='';if(!NPK){const p=PF.find(x=>x[0]==m);NPV=p?p[1][0]:null}NPR();if(m=='Otros')setTimeout(()=>{const x=$('#npo');if(x)x.focus()},30)}
+function NPVs(v){NPV=v;NPX='';NPR()}
+function NPL(){const a=cg().adv[NPI];if(!a)return;const v=npAmt(a),mo=NPM=='Otros'?(NPT.trim()||'Otros'):NPM,b=$('#npg');if(!b)return;const ok=NPM&&v!=null;b.textContent=!NPM?'Elige un motivo':v==null?'Escribe los puntos':'Otorgar '+(NPK?'−':'+')+cm(Math.abs(v))+' · '+mo;b.style.opacity=ok?1:.55}
+function NPHs(){NPH=1;NPR()}
+function npHist(a){const d=md(a,MODS[mi][0]),r=[];d.x.forEach((e,k)=>r.push({ty:1,k,e}));d.y.forEach((e,k)=>r.push({ty:0,k,e}));r.sort((p,q)=>{const A=(p.e.f||'')+(p.e.h||''),B=(q.e.f||'')+(q.e.h||'');return A<B?1:A>B?-1:q.k-p.k});return r}
+function NPR(){const a=cg().adv[NPI];if(!a)return;const k=NPK,col=k?'#e11d48':'#0a8f2a',c=calc(a,mi),H=npHist(a).filter(x=>x.ty==(k?0:1)),L=(k?PC:PF.map(p=>p[0])).concat(['Otros']),pf=PF.find(x=>x[0]==NPM),vals=!k&&pf?pf[1]:[];
+ const head=`<button type="button" class="npx" title="Cerrar" aria-label="Cerrar" onclick="NPC()">✕</button><div class="nph"><div style="padding:0">${who(a)}</div><span class="ex" title="A favor en este módulo" style="padding:4px 10px;border-radius:10px">+${cm(c.ex)}</span><span class="co" title="En contra en este módulo" style="padding:4px 10px;border-radius:10px">−${cm(c.co)}</span></div>
+ <div class="ppk" style="margin-bottom:12px"><button type="button" class="${!NPH?'on':''}" style="--c:${col}" onclick="NPH=0;NPR()">${k?'− Puntos en contra':'＋ Puntos a favor'}</button><button type="button" class="${NPH?'on':''}" style="--c:#475569;margin-left:auto" onclick="NPHs()">Historial · ${H.length}</button></div>`;
+ if(NPH){const rows=H.map(x=>{const e=x.e,n=+e.n||0,sg=(x.ty?1:-1)*(n>=0?1:-1),f=(e.f||'').length>=10?e.f.slice(8,10)+'/'+e.f.slice(5,7):'';return `<div class="nqi"><div class="nqd"><b>${E(e.mo||'Sin motivo')}</b><small>${f}${e.h?' · '+E(e.h):''}</small></div><span class="nqv" style="color:${sg>0?'#0a8f2a':'#e11d48'}">${sg>0?'+':'−'}${cm(Math.abs(n))}</span><button type="button" class="pen" title="Editar o eliminar" onclick="PE(${NPI},${mi},${x.ty},${x.k},-7)">✎</button></div>`}).join('');
+  $('#mb').innerHTML=`<div class="card npp">${head}<small style="display:block;color:var(--mu);font-weight:700;margin-bottom:6px">${E(MODS[mi][0])}</small><div class="nql">${rows||'<p style="margin:14px;color:var(--mu)">Aún no tiene puntos en este módulo</p>'}</div><div class="rw" style="margin-top:12px"><button type="button" class="b bu" onclick="HIST(${NPI})">Todos los módulos</button><button type="button" class="b bu" onclick="NPC()">Cerrar</button></div></div>`;return}
+ const kd=e=>"onkeydown=\"if(event.key=='Enter')NPG()\"";
+ const mot=`<div class="ppl2" style="margin:0"><small>Motivo</small><div class="nmg" style="--c:${col}">${L.map(m=>`<button type="button" class="${NPM==m?'on':''}" data-m="${E(m)}" onclick="NPMs(this.dataset.m)"><i>${NPIC[m]||NPSV('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/>')}</i><span>${E(m)}</span></button>`).join('')}</div>${pf&&NPM!='Otros'?`<div class="pph">${E(pf[2])}</div>`:''}${NPM=='Otros'?`<input id="npo" placeholder="Escribe el motivo" value="${E(NPT)}" oninput="NPT=this.value;NPL()" ${kd()} style="width:100%;margin-top:8px">`:''}</div>`;
+ const can=NPM?`<div class="ppl2" style="margin:14px 0 0"><small>Cantidad</small><div class="ppc" style="--c:${col}">${vals.map(n=>`<button type="button" class="${NPX===''&&NPV==n?'on':''}" onclick="NPVs(${n})">+${cm(n)}</button>`).join('')}<input id="npx" inputmode="decimal" placeholder="Otro valor" value="${E(NPX)}" oninput="NPX=this.value;NPL()" ${kd()} style="width:110px"></div>${k&&NPM!='Otros'?'<div class="pph">Se resta solo según la vez del alumno</div>':''}</div>`:'';
+ $('#mb').innerHTML=`<div class="card npp">${head}${mot}${can}<div class="rw" style="margin-top:16px"><button type="button" id="npg" class="b bg" style="background:${col};flex:1;font-size:16px;padding:13px 16px" onclick="NPG()"></button><button type="button" class="b bu" onclick="NPC()">Cancelar</button></div></div>`;NPL()}
+function NPG(){const a=cg().adv[NPI],k=NPK;if(!a)return;if(!NPM)return PPT('Primero elige un motivo');let mo=NPM;if(mo=='Otros'){mo=NPT.trim();if(!mo){PPT('Escribe el motivo en «Otros»');const x=$('#npo');if(x)x.focus();return}}
+ const v=npAmt(a);if(v==null)return PPT('Escribe cuántos puntos');
+ md(a,MODS[mi][0])[k?'y':'x'].push({n:v,mo,f:ymd(new Date())});save({dni:a.d,modulo:MODS[mi][0],campo:k?'Puntos en contra':'Puntos extra',valor:v,motivo:mo});
+ NPC();R();PPT((k?'−':'+')+cm(Math.abs(v))+' · '+a.n+' · '+mo)}
+/* ===== Puntualidad: barra para buscar asesor ===== */
+let PSQ='';
+const psqOk=a=>{const q=asqN(PSQ).trim();if(!q)return true;const h=asqN(a.n+' '+a.d);return q.split(/\s+/).every(w=>h.includes(w))};
+function PSf(v){PSQ=v;const q=asqN(v).trim().split(/\s+/).filter(Boolean);let n=0,t=0;document.querySelectorAll('.pu .pc2').forEach(c=>{const ok=q.every(w=>(c.dataset.n||'').includes(w));c.style.display=ok?'':'none';t++;if(ok)n++});const m=$('#psqn');if(m)m.textContent=v.trim()?(n?n+' de '+t:'Sin coincidencias'):''}
 function vPP(){if(!MSEL_)return pickM();const g=cg(),k=PPK,M=MODS[mi];if(!M[2])return chips()+noP;
  const col=k?'#e11d48':'#0a8f2a',L=(k?PC:PF.map(p=>p[0])).concat(['Otros']),vals=ppVals(),pf=PF.find(x=>x[0]==PPM);
  const rl=k?'<p><b>1ra vez:</b> 0 · <b>2da vez:</b> −2 · <b>3ra a más:</b> −4 · <b>Desayuno en el aula:</b> −5</p><p><b>Tardanza:</b> mañana pasadas las 7:50 AM; tarde, pasando refrigerio</p><p><b>Imagen:</b> damas sin maquillaje, malla ni moña; varones cabello corto y sin joyería</p><p><b>Vestimenta:</b> fotocheck visible, botas lustradas, polo negro, jean azul o negro, chaleco cerrado</p>':PF.map(p=>`<p><b>${p[0]}:</b> ${p[2]}</p>`).join('');
  const tb=`<div class="card ppb"><div class="ppk"><button type="button" class="${k?'':'on'}" style="--c:#0a8f2a" onclick="PPKs(0)">＋ A favor</button><button type="button" class="${k?'on':''}" style="--c:#e11d48" onclick="PPKs(1)">− En contra</button><span style="flex:1"></span><button type="button" class="b bu" onclick="HIST(-1)">Historial del grupo</button></div>
- <div class="ppl2"><small>1 · Elige el motivo</small><div class="ppc" style="--c:${col}">${L.map(m=>`<button type="button" class="${PPM==m?'on':''}" data-m="${E(m)}" onclick="PPMs(this.dataset.m)">${E(m)}</button>`).join('')}</div>${pf&&PPM!='Otros'?`<div class="pph">${E(pf[2])}</div>`:''}${PPM=='Otros'?`<input id="ppo" placeholder="Escribe el motivo" value="${E(PPO)}" oninput="PPO=this.value" style="width:100%;max-width:420px;margin-top:8px">`:''}</div>
- <div class="ppl2"><small>2 · Puntos</small><div class="ppc" style="--c:${col}">${!k&&vals.length?vals.map(n=>`<button type="button" class="${PPX===''&&PPV==n?'on':''}" onclick="PPVs(${n})">+${cm(n)}</button>`).join(''):''}<input id="ppx" inputmode="decimal" placeholder="${k?'Otro valor':'Otro valor'}" value="${E(PPX)}" oninput="PPX=this.value;PPL()" style="width:110px">${k&&PPM&&PPM!='Otros'?'<span class="pph" style="align-self:center">Se resta solo según la vez de cada alumno</span>':''}</div></div></div>`;
+ <div class="ppl2"><small>1 · Motivo</small><div class="nmg" style="--c:${col}">${L.map(m=>`<button type="button" class="${PPM==m?'on':''}" data-m="${E(m)}" onclick="PPMs(this.dataset.m)"><i>${NPIC[m]||NPSV('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/>')}</i><span>${E(m)}</span></button>`).join('')}</div>${pf&&PPM!='Otros'?`<div class="pph">${E(pf[2])}</div>`:''}${PPM=='Otros'?`<input id="ppo" placeholder="Escribe el motivo" value="${E(PPO)}" oninput="PPO=this.value" style="width:100%;max-width:420px;margin-top:8px">`:''}</div>
+ ${PPM?`<div class="ppl2"><small>2 · Cantidad</small><div class="ppc" style="--c:${col}">${!k&&vals.length?vals.map(n=>`<button type="button" class="${PPX===''&&PPV==n?'on':''}" onclick="PPVs(${n})">+${cm(n)}</button>`).join(''):''}<input id="ppx" inputmode="decimal" placeholder="${k?'Otro valor':'Otro valor'}" value="${E(PPX)}" oninput="PPX=this.value;PPL()" style="width:110px">${k&&PPM&&PPM!='Otros'?'<span class="pph" style="align-self:center">Se resta solo según la vez de cada alumno</span>':''}</div></div>`:''}
+ <div class="ppl2" style="margin-bottom:0"><small>3 · Aplicar</small><div class="ppc2b">Toca el botón de cada alumno, o <button type="button" class="b ppall${PPM?'':' dis'}" style="--c:${col}" onclick="PPALL()">★ Otorgar a todos</button></div></div></div>`;
  const IU='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 010 11H11"/></svg>';
  const rows=g.adv.map((a,i)=>{const c=calc(a,mi),off=a.e=='CESADO',ls=md(a,M[0])[k?'y':'x'],lu=ls[ls.length-1],tu=lu?'Deshacer el último: '+(k?'−':'+')+cm(Math.abs(lu.n))+' por '+lu.mo:'No hay nada que deshacer';return `<tr class="${off?'off':''}" data-ai="${i}"><td class="ppnn">${i+1}</td><td class="ta"><div class="ppwho">${who(a)}</div></td><td class="ppc1${k?'':' on'}"><b>+${cm(c.ex)}</b></td><td class="ppc2${k?' on':''}"><b>−${cm(c.co)}</b></td><td>${off?'<small>Cesado</small>':`<div class="ppac"><button type="button" class="ppa${PPM?'':' dis'}" data-i="${i}" style="--c:${col}" onclick="PPA(${i})">${PPLbl(a)}</button><button type="button" class="ppu" title="${E(tu)}" ${lu?'':'disabled'} onclick="PPU(${i},${k})">${IU}</button></div>`}</td><td class="ppmo"><button type="button" class="b bu" onclick="HIST(${i})">Historial</button>${k?'':` <button type="button" class="b bo" onclick="CJ(${i})">Canje</button>`}</td></tr>`}).join('');
  return chips()+tb+asqBar()+`<div class="sc"><table class="ppt3"><colgroup><col style="width:44px"><col><col style="width:130px"><col style="width:130px"><col style="width:270px"><col style="width:${k?120:200}px"></colgroup><tr><th>#<th class="hn">Alumno<th class="h1">Puntos a favor<br><small>total del módulo</small><th class="h2">Puntos en contra<br><small>total del módulo</small><th class="h${k?2:1}">${k?'Descontar puntos':'Dar puntos'}<br><small>aplicar · deshacer</small><th class="hm">Más<br><small>${k?'detalle':'detalle y canje'}</small></th></tr>${rows||'<tr><td colspan="6">Aún no hay alumnos en este grupo.</td></tr>'}</table></div><div class="card"><details><summary>${k?'¿Cómo se restan los puntos?':'¿Cómo se ganan los puntos?'}</summary>${rl}<p>Si te equivocas, toca el ícono ↶ junto al botón para deshacer el último registro de ese alumno, o corrige en el historial. También puedes escribir un valor negativo en «Otro valor».</p></details></div>`}
@@ -1044,7 +1153,7 @@ function pxRiesgo(gid,dni){const g=S.gs.find(x=>x.id==gid),a=g&&g.adv.find(x=>St
 function vNotas(){if(!MSEL_)return pickM();const g=cg(),M=MODS[mi],n=M[1];
  return chips(NTB())+ban().replace('</div>','<small class="lmc">Rojo &lt; '+cm(limR(mi))+' · Riesgo de baja &lt; '+cm(limB(mi))+'</small></div>')+asqBar()+'<div class="sc cp mod" style="--mc:'+mc(mi)+';--mt:'+mc(mi)+'40"><table><tr><th>Asesor<th>Estado'+Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<th>PC ${j+1}`).join('')+(M[2]?'<th>A favor<th>En contra':'')+'<th>Parcial'+(M[2]?(hcol(M[0],'Teórico')?'':'<th>Teórico')+(hcol(M[0],'Códigos')?'':'<th>Códigos')+'<th>Finales':'')+'<th>Total del módulo</tr>'+
  g.adv.map((a,i)=>[a,i]).filter(x=>SHC||x[0].e!='CESADO').sort((p,q)=>(p[0].e=='CESADO')-(q[0].e=='CESADO')).map(([a,i])=>{const d=md(a,M[0]);return `<tr class="${a.e=='CESADO'?'off':''}" data-ai="${i}"><td class="ta"><div class="row" style="padding:0">${who(a)}</div><td><div class="ew">${sel(ES,est(a,mi),`ST(${i},this.value)`,'s s'+ES.indexOf(est(a,mi))).replace('<select','<select id="es'+i+'"')}${ebtn(i,a)}</div>`+
- Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<td>${ncell(i,'PC'+(j+1),d.p[j])}`).join('')+(M[2]?`<td class="ex" id="x${i}"><td class="co" id="y${i}">`:'')+`<td id="p${i}">`+(M[2]?`${hcol(M[0],'Teórico')?'':`<td>${ncell(i,'Teórico',d.t)}`}${hcol(M[0],'Códigos')?'':`<td>${ncell(i,'Códigos',d.c)}`}<td id="f${i}">`:'')+`<td id="t${i}"></tr>`}).join('')+'</table></div>'+`<div class="card np"><b>Cómo usar esta tabla</b><p style="margin:6px 0 0;color:var(--mu)"><b>Ver una evaluación:</b> toca la nota del alumno. Se abre su ventana con la nota más reciente, el historial y, si la rindió en Evaluaciones, el botón «Ver examen».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Bloquear una evaluación a un alumno:</b> toca el casillero y pulsa «${LKI} Bloquear casillero». Ese casillero no entra en su promedio (útil si no rinde esa evaluación). Para volver a activarlo, toca el casillero con el candado (${LKI}) y pulsa «${ULI} Desbloquear casillero».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Ocultar columnas o cesados:</b> usa «⚙ Límites y columnas», arriba a la derecha.</p></div>`}
+ Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<td>${ncell(i,'PC'+(j+1),d.p[j])}`).join('')+(M[2]?`<td class="ex npc" id="x${i}" title="Toca para dar puntos a favor" onclick="NPP(${i},0)"><td class="co npc" id="y${i}" title="Toca para dar puntos en contra" onclick="NPP(${i},1)">`:'')+`<td id="p${i}">`+(M[2]?`${hcol(M[0],'Teórico')?'':`<td>${ncell(i,'Teórico',d.t)}`}${hcol(M[0],'Códigos')?'':`<td>${ncell(i,'Códigos',d.c)}`}<td id="f${i}">`:'')+`<td id="t${i}"></tr>`}).join('')+'</table></div>'+`<div class="card np"><b>Cómo usar esta tabla</b><p style="margin:6px 0 0;color:var(--mu)"><b>Ver una evaluación:</b> toca la nota del alumno. Se abre su ventana con la nota más reciente, el historial y, si la rindió en Evaluaciones, el botón «Ver examen».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Bloquear una evaluación a un alumno:</b> toca el casillero y pulsa «${LKI} Bloquear casillero». Ese casillero no entra en su promedio (útil si no rinde esa evaluación). Para volver a activarlo, toca el casillero con el candado (${LKI}) y pulsa «${ULI} Desbloquear casillero».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Dar puntos a favor o en contra:</b> toca el casillero de «A favor» o «En contra» del alumno. Se abre una ventana: eliges el motivo, a un costado ves la cantidad y pulsas «Otorgar».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Ocultar columnas o cesados:</b> usa «⚙ Límites y columnas», arriba a la derecha.</p></div>`}
 function DD(i){const g=cg(),m=DT(i),c=fam(m),d=dd(g,i),dk=c=='#bfe6c0';
  $('#mb').innerHTML=`<div class="card" style="max-width:520px;margin:auto;padding:0;overflow:auto;max-height:90vh"><div style="background:${c};color:${dk?'#10201a':'#fff'};padding:14px 16px"><div style="font-size:12px;font-weight:700;opacity:.9">${NIV(i)} · ${dl(d)}</div><div style="font-size:20px;font-weight:800">Día ${i+1} · ${m}</div></div><div style="padding:14px 16px"><b style="color:var(--mu);font-size:12px">CONTENIDO DEL DÍA</b><div style="margin-top:8px">`+MD(i).map(x=>`<p style="margin:0 0 6px;padding:8px 10px;border-radius:8px;font-size:13px;background:${c}33;border-left:5px solid ${c}">${E(x)}</p>`).join('')+`</div><div class="rw" style="margin-top:12px"><button class="b bu" onclick="$('#md').style.display='none'">Cerrar</button><button class="b bg" onclick="S.rd='${ymd(d)}';$('#md').style.display='none';go('hoy')">Ver reporte del día</button></div></div></div>`;$('#md').style.display='flex'}
 function CRI(b){const g=cg();DI(b,'crx',('cronograma-'+g.sede+'-'+g.name).replace(/[^\w-]+/g,'_'))}
@@ -1521,6 +1630,20 @@ async function traerNotas(){
     if(e){if(!e.u&&sv(r.Capacitador))e.u=sv(r.Capacitador);return}
     const f=sv(r.Fecha).slice(0,10),hh=sv(r.Hora);a.aj.push({id,m:sv(r['Módulo']),c:sv(r.Campo),f,h:hh,t:{'SUMAR':'+','RESTAR':'-'}[sv(r.Tipo)]||'=',p:sv(r.Puntos),a:sv(r['Nota anterior']),n:sv(r['Nota nueva']),mo:sv(r.Motivo),u:sv(r.Capacitador),z:Date.parse(f+'T'+(hh||'00:00'))||0});cambio++})
  });
+  if(T.MALLAS){S.mallas=S.mallas||[];const asg={},vistos=new Set(),hayA=new Set();
+   T.MALLAS.forEach(r=>{const id=sv(r['ID Malla']);if(!id)return;let j;try{j=JSON.parse(sv(r.t)||'{}')}catch(e){return}
+    if(id.indexOf('GRUPO:')==0){asg[id.slice(6)]=sv(j.malla);return}
+    vistos.add(id);const k=S.mallas.findIndex(x=>x.id==id);
+    if(j.del){if(k>=0){S.mallas.splice(k,1);cambio++}return}
+    const nm=sv(r.Nombre),sd=sv(r.Sede),n=Number(j.n)||0,t=j.t||{};
+    if(k<0){const m={id,name:nm,sede:sd,t};if(n)m.n=n;S.mallas.push(m);cambio++}
+    else{const m=S.mallas[k];if(JSON.stringify(m.t)!=JSON.stringify(t)||m.name!==nm||m.sede!==sd||(Number(m.n)||0)!==n){m.t=t;m.name=nm;m.sede=sd;if(n)m.n=n;else delete m.n;cambio++}}});
+   S.gs.forEach(g=>{const gid=String(g.id).trim();if(gid in asg){hayA.add(gid);const v=asg[gid];if((g.malla||'')!==v){g.malla=v;cambio++}}
+    if(g.malla&&!S.mallas.some(m=>m.id==g.malla)){g.malla='';cambio++}});
+   /* lo que solo existe en este equipo (mallas anteriores a MALLAS) se sube una vez */
+   S.mallas.filter(m=>!vistos.has(m.id)&&(S.master||m.sede==AU)).forEach(m=>colaAdd({campo:'Malla editada',mid:m.id}));
+   const sg=S.gs.filter(g=>g.malla&&!hayA.has(String(g.id).trim())&&(S.master||g.sede==AU));
+   if(sg.length){const cur=S.cur;sg.forEach(g=>{S.cur=g.id;colaAdd({campo:'Malla del grupo'})});S.cur=cur}}
   if(podar){S.gs.slice().forEach(g=>{if(S.gs.length>1&&!gidsH.has(String(g.id).trim())){S.gs=S.gs.filter(x=>x!==g);cambio++}});if(!S.gs.some(g=>g.id==S.cur))S.cur=cg().id;if(AU&&AU!='MASTER')aplicaAU()}
   if(cambio){save();const ae=document.activeElement;if(!(ae&&/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)))R();stMsg('Notas de Evaluaciones actualizadas')}
  }catch(e){console.warn('Notas:',e)}
@@ -1599,7 +1722,7 @@ async function LGV(){if(LGW())return;const v=[0,1,2,3].map(i=>$('#pn'+i).value).
 function LGIN(sd){AU=sd;try{sessionStorage.setItem('cap_au',sd)}catch(e){}
  $('#lgn').style.display='none';$('#lgn').innerHTML='';
  S.master=sd=='MASTER';aplicaAU();tab='home';S.rd=null;S.sa=null;irHoy();save();R();scrollTo(0,0)}
-const pxAsk=(t,m,ok)=>pxOvl(`<h3 style="font-size:17px;margin:0 0 8px">${t}</h3><p style="margin:0;color:var(--mu)">${m}</p>`+pxActs(ok),(q,f,o)=>{q('#cn').onclick=()=>f(false);q('#ok').onclick=()=>f(true);o.onclick=e=>{if(e.target===o)f(false)};q('#ok').focus()});
+const pxAsk=(t,m,ok)=>pxOvl(`<h3 style="font-size:17px;margin:0 0 8px">${t}</h3><p style="margin:0;color:var(--mu)">${m}</p>`+pxActs(ok),(q,f,o)=>{q('#cn').onclick=()=>f(false);q('#ok').onclick=()=>f(true);q('#ok').focus()});
 async function SALIR(){if(!await pxAsk('¿Cerrar sesión?','Saldrás de la plataforma y tendrás que volver a elegir tu sede e ingresar tu clave.','Cerrar sesión'))return;try{sessionStorage.removeItem('cap_blq')}catch(e){}AU=null;try{if(TK())api({accion:'logout',token:TK()}).catch(()=>{});sessionStorage.removeItem('cap_au');sessionStorage.removeItem('cap_tk')}catch(e){}S.master=false;LGR()}
 
 
@@ -1615,6 +1738,8 @@ function anu(a,e,m,contra){if(e&&e.id)(a.anu=a.anu||[]).push({e,m,t:contra?'EN C
 function PP(a,mod,gid,o){const f=[],row=(e,m,t,est)=>f.push({'ID Registro':pid(e),'ID Grupo':gid,DNI:String(a.d),Asesor:a.n,'Módulo':m,Tipo:t,Motivo:e.mo||'',Puntos:e.n,Fecha:e.f||'',Hora:e.h||'','Estado del registro':est});
  if(mod){const d=md(a,mod);d.x.forEach(e=>row(e,mod,'A FAVOR','VIGENTE'));d.y.forEach(e=>row(e,mod,'EN CONTRA','VIGENTE'));(a.cj||[]).filter(e=>e.m==mod).forEach(e=>row(e,mod,'CANJE','VIGENTE'))}
  (a.anu||[]).forEach(z=>row(z.e,z.m,z.t,'ANULADO'));a.anu=[];if(f.length)o.push({op:'upsert',tabla:'PUNTOS',filas:f})}
+const mrow=m=>({'ID Malla':m.id,Sede:m.sede||cg().sede,Nombre:m.name||'',t:JSON.stringify({t:m.t||{},n:Number(m.n)||0}),Actualizado:new Date().toISOString(),Capacitador:cg().cap||''});
+const masg=x=>({'ID Malla':'GRUPO:'+x.id,Sede:x.sede,Nombre:'Malla de '+(x.name||x.id),t:JSON.stringify({malla:x.malla||''}),Actualizado:new Date().toISOString(),Capacitador:x.cap||''});
 function opsDe(ev){const g=cg(),gid=g.id,c=ev.campo||'',o=[],a=ev.dni?g.adv.find(x=>String(x.d)==String(ev.dni)):null;
  const up=(tabla,f)=>o.push({op:'upsert',tabla,filas:[f]});
  const nota=f=>up('NOTAS',Object.assign({'ID Grupo':gid,DNI:String(ev.dni),'Módulo':ev.modulo},f));
@@ -1634,8 +1759,11 @@ function opsDe(ev){const g=cg(),gid=g.id,c=ev.campo||'',o=[],a=ev.dni?g.adv.find
  else if(c=='Área destino')ase({'Área destino':ev.valor});
  else if(c=='Estado asesor')ase({Estado:ev.valor});
  else if(c=='Fecha de ingreso'||c=='Fecha de cese'||c=='Motivo de cese'||c=='Observaciones')ase({[c]:ev.valor});
- else if(c=='Puntualidad'){pun({Hora:ev.hora||'',Estado:(ev.valor=='sin marcar'?'':ev.valor)});if(a)PP(a,ev.modulo,gid,o)}
+ else if(c=='Puntualidad'){pun({Hora:ev.hora||'',Estado:(ev.valor=='sin marcar'?'':ev.valor)});if(a){const ms=new Set([ev.modulo].concat((a.anu||[]).map(z=>z.m)));ms.forEach(m=>{const M=MODS.find(x=>x[0]==m);if(!M||!M[2])return;const d=md(a,m),sm=l=>(l||[]).reduce((q,e)=>q+(+e.n||0),0);up('NOTAS',{'ID Grupo':gid,DNI:String(ev.dni),'Módulo':m,'Puntos a favor':sm(d.x),'Puntos en contra':sm(d.y),'Canjes':sm((a.cj||[]).filter(e=>e.m==m))})});PP(a,ev.modulo,gid,o)}}
  else if(c=='Motivo de falta')pun({Motivo:ev.valor});
+ else if(c=='Malla nueva'||c=='Malla editada'){const m=(S.mallas||[]).find(x=>x.id==ev.mid);if(m){const r=mrow(m);if(r.t.length>45000)stMsg('La malla «'+m.name+'» es muy grande para una celda de Google Sheets (máx. 45 000 caracteres).',true);up('MALLAS',r);if(c=='Malla nueva')up('MALLAS',masg(g))}}
+ else if(c=='Malla del grupo')up('MALLAS',masg(g));
+ else if(c=='Malla eliminada'&&ev.mid){up('MALLAS',{'ID Malla':ev.mid,Sede:ev.sede||g.sede,Nombre:ev.valor||'',t:'{"del":1}',Actualizado:new Date().toISOString(),Capacitador:g.cap||''});(ev.gids||[]).forEach(id=>{const x=S.gs.find(q=>q.id==id);if(x)up('MALLAS',masg(x))})}
  return o}
 function colaAdd(ev){if(!TK())return;let q=[];try{q=JSON.parse(localStorage.getItem('cap_q')||'[]')}catch(e){}
  try{const g=cg(),o=opsDe(ev);if(o.length){q.push({g:/^(Datos del grupo|Nuevo grupo)$/.test(ev.campo||'')?{'ID Grupo':g.id,Sede:g.sede,'Nombre del grupo':g.name,'Estado del grupo':'ACTIVO','Fecha de inicio':g.start||'','Fecha de fin':g.end||'',Capacitador:g.cap||''}:{'ID Grupo':g.id,Sede:g.sede},ops:o});localStorage.setItem('cap_q',JSON.stringify(q))}}catch(e){console.warn('cola',e)}
