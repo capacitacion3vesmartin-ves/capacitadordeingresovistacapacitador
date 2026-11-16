@@ -1561,6 +1561,8 @@ function nhPaint(X){
    if(it.k=='a')return `<div class="nhr"><div><b>${E(nhFe(r.z))}</b> <span class="nhs nha">AJUSTE</span><small>${r.t=='='?'Nota puesta':(r.t=='+'?'+':'−')+' '+E(r.p)+' punto'+(+r.p==1?'':'s')} · ${nhF(r.a)} → ${nhF(r.n)}${r.u?' · por '+E(r.u):''}</small><small class="nhm2">«${E(r.mo||'Sin motivo')}»</small></div><span class="nhn ${nhNc(nv(r.n))}">${nhF(r.n)}</span><span></span></div>`;
    const ok=r.nota!=null,u=first&&ok;if(ok)first=false;
    return `<div class="nhr"><div><b>${E(nhFe(r.at))}</b>${u?' <span class="nhs">ÚLTIMO EXAMEN</span>':''}<small>${E(r.examen||'(examen eliminado)')}${r.sec?' · '+Math.floor(r.sec/60)+' min '+r.sec%60+' s':''}${ok&&r.m?' · '+r.p+'/'+r.m+' correctas':''}</small></div><span class="nhn ${ok?nhNc(r.nota):''}">${ok?(+r.nota).toFixed(1):'Sin nota'}</span>${ok?`<button type="button" class="b bg" data-v="${E(r.id)}">Ver examen</button>`:'<span></span>'}</div>`}).join(''):'<p class="nhl">Todavía no hay exámenes ni ajustes para esta nota.</p>'}
+ /* conservar lo que el capacitador ya escribió si la ventana se repinta (p. ej. cuando termina de cargar el historial) */
+ let sv0=null;{const op=box.querySelector('#nhp'),om=box.querySelector('#nhmo'),ae=document.activeElement;if(X.edit&&(op||om))sv0={p:op?op.value:'',m:om?om.value:'',f:ae===op?'p':ae===om?'m':'',s:ae&&(ae===op||ae===om)&&ae.selectionStart!=null?ae.selectionStart:null,e:ae&&(ae===op||ae===om)&&ae.selectionEnd!=null?ae.selectionEnd:null}}
  box.innerHTML=h;
  box.querySelector('[data-lk]').onclick=()=>{const d2=md(a,M[0]),l=d2.lk||[],k=l.indexOf(col);if(k>=0)l.splice(k,1);else l.push(col);d2.lk=l;if(!l.length)delete d2.lk;save();const b=document.getElementById('nb'+X.i+'_'+col);if(b)b.outerHTML=ncell(X.i,col,nhGet(d2,col));try{upd(X.i)}catch(e){}nhPaint(X)};
  box.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>NHX(b.dataset.v));
@@ -1575,7 +1577,10 @@ function nhPaint(X){
   const chk=()=>{const c=calc2(),okm=mo.value.trim().length>=4;
    pv.innerHTML=c.e?(p.value.trim()?`<span class="nhbad">${E(c.e)}</span>`:''):`${prev==null?'Sin nota':nhF(prev)} → <b class="${nhNc(c.n)}">${c.n.toFixed(1)}</b>`;
    sv.disabled=!(c.n!=null&&okm)};
-  p.oninput=chk;mo.oninput=chk;chk();
+  p.oninput=chk;mo.oninput=chk;
+  if(sv0){p.value=sv0.p;mo.value=sv0.m}
+  chk();
+  if(sv0&&sv0.f){const t=sv0.f=='p'?p:mo;t.focus();try{if(sv0.s!=null)t.setSelectionRange(sv0.s,sv0.e)}catch(e){}}
   box.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{X.mode=b.dataset.m;nhPaint(X);const q=box.querySelector('#nhp');if(q)q.focus()});
   box.querySelector('[data-c]').onclick=()=>{X.edit=false;X.mode=null;nhPaint(X)};
   sv.onclick=()=>{const c=calc2();if(c.n==null||mo.value.trim().length<4)return;nhSave(X,prev,c.x,c.n,mo.value.trim())}}}
