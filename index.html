@@ -568,6 +568,15 @@ a.pbig{text-decoration:none;box-sizing:border-box}
 .ppc2b{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--mu);font-weight:600}
 .ppall{background:var(--c);color:#fff;border:0;border-radius:12px;padding:9px 16px;font-weight:800;font-size:14px;cursor:pointer}.ppall.dis{opacity:.5}
 </style>
+<style id="nf-css">
+.nfb{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 12px}
+.nfc{display:flex;flex-wrap:wrap;gap:6px}
+.nfc .chp b{margin-left:5px;opacity:.75;font-weight:800}
+.nfo{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--mu)}
+.nfo select{font-size:14px;padding:6px 10px;border-radius:10px;border:1px solid var(--bd);background:#fff;color:var(--tx)}
+.nfe td{text-align:center;padding:22px;color:var(--mu);font-weight:700}
+.nhdel{color:var(--r);border:1px solid var(--r);background:#fff}
+</style>
 </head><body>
 <div id="app"><aside id="sb"></aside><div id="mn"><div class="top"><span id="tl"></span><button class="back" id="sbt" onclick="TS()" title="Esconder o mostrar el menú">‹</button><button class="back" id="bk" onclick="go('home')">‹ Inicio</button><div style="display:none"><h2 id="pt"></h2><small id="ps"></small></div><div class="tbn"><b>Capacitación de ingreso</b><span class="tbs" id="tbs">Plataforma para capacitador</span></div><span id="bt">Vista de Capacitador</span><select id="ss" onchange="SS(this.value)" title="Sede"></select><select id="gs" onchange="S.cur=this.value;S.rd=null;S.sa=null;irHoy();save();R()"></select><button type="button" class="tba" id="tba" onclick="ACT()">Actualizar</button></div><main id="v"></main></div></div>
 <div id="blq"></div><div id="lgn"></div><div id="md"><div id="mb"></div></div>
@@ -1151,9 +1160,9 @@ async function RBD(a,g,j0){
  R()}
 function pxRiesgo(gid,dni){const g=S.gs.find(x=>x.id==gid),a=g&&g.adv.find(x=>String(x.d)==dni);if(!a)return;const rk=rkMods(a);return RBD(a,g,rk.length?rk[0]:mi)}
 function vNotas(){if(!MSEL_)return pickM();const g=cg(),M=MODS[mi],n=M[1];
- return chips(NTB())+ban().replace('</div>','<small class="lmc">Rojo &lt; '+cm(limR(mi))+' · Riesgo de baja &lt; '+cm(limB(mi))+'</small></div>')+asqBar()+'<div class="sc cp mod" style="--mc:'+mc(mi)+';--mt:'+mc(mi)+'40"><table><tr><th>Asesor<th>Estado'+Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<th>PC ${j+1}`).join('')+(M[2]?'<th>A favor<th>En contra':'')+'<th>Parcial'+(M[2]?(hcol(M[0],'Teórico')?'':'<th>Teórico')+(hcol(M[0],'Códigos')?'':'<th>Códigos')+'<th>Finales':'')+'<th>Total del módulo</tr>'+
- g.adv.map((a,i)=>[a,i]).filter(x=>SHC||x[0].e!='CESADO').sort((p,q)=>(p[0].e=='CESADO')-(q[0].e=='CESADO')).map(([a,i])=>{const d=md(a,M[0]);return `<tr class="${a.e=='CESADO'?'off':''}" data-ai="${i}"><td class="ta"><div class="row" style="padding:0">${who(a)}</div><td><div class="ew">${sel(ES,est(a,mi),`ST(${i},this.value)`,'s s'+ES.indexOf(est(a,mi))).replace('<select','<select id="es'+i+'"')}${ebtn(i,a)}</div>`+
- Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<td>${ncell(i,'PC'+(j+1),d.p[j])}`).join('')+(M[2]?`<td class="ex npc" id="x${i}" title="Toca para dar puntos a favor" onclick="NPP(${i},0)"><td class="co npc" id="y${i}" title="Toca para dar puntos en contra" onclick="NPP(${i},1)">`:'')+`<td id="p${i}">`+(M[2]?`${hcol(M[0],'Teórico')?'':`<td>${ncell(i,'Teórico',d.t)}`}${hcol(M[0],'Códigos')?'':`<td>${ncell(i,'Códigos',d.c)}`}<td id="f${i}">`:'')+`<td id="t${i}"></tr>`}).join('')+'</table></div>'+`<div class="card np"><b>Cómo usar esta tabla</b><p style="margin:6px 0 0;color:var(--mu)"><b>Ver una evaluación:</b> toca la nota del alumno. Se abre su ventana con la nota más reciente, el historial y, si la rindió en Evaluaciones, el botón «Ver examen».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Bloquear una evaluación a un alumno:</b> toca el casillero y pulsa «${LKI} Bloquear casillero». Ese casillero no entra en su promedio (útil si no rinde esa evaluación). Para volver a activarlo, toca el casillero con el candado (${LKI}) y pulsa «${ULI} Desbloquear casillero».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Dar puntos a favor o en contra:</b> toca el casillero de «A favor» o «En contra» del alumno. Se abre una ventana: eliges el motivo, a un costado ves la cantidad y pulsas «Otorgar».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Ocultar columnas o cesados:</b> usa «⚙ Límites y columnas», arriba a la derecha.</p></div>`}
+ return chips(NTB())+ban().replace('</div>','<small class="lmc">Rojo &lt; '+cm(limR(mi))+' · Riesgo de baja &lt; '+cm(limB(mi))+'</small></div>')+asqBar()+NFB()+'<div class="sc cp mod" style="--mc:'+mc(mi)+';--mt:'+mc(mi)+'40"><table><tr><th>Asesor<th>Estado'+Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<th>PC ${j+1}`).join('')+(M[2]?'<th>A favor<th>En contra':'')+'<th>Parcial'+(M[2]?(hcol(M[0],'Teórico')?'':'<th>Teórico')+(hcol(M[0],'Códigos')?'':'<th>Códigos')+'<th>Finales':'')+'<th>Total del módulo</tr>'+
+ NFL(g).map(([a,i])=>{const d=md(a,M[0]);return `<tr class="${a.e=='CESADO'?'off':''}" data-ai="${i}"><td class="ta"><div class="row" style="padding:0">${who(a)}</div><td><div class="ew">${sel(ES,est(a,mi),`ST(${i},this.value)`,'s s'+ES.indexOf(est(a,mi))).replace('<select','<select id="es'+i+'"')}${ebtn(i,a)}</div>`+
+ Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<td>${ncell(i,'PC'+(j+1),d.p[j])}`).join('')+(M[2]?`<td class="ex npc" id="x${i}" title="Toca para dar puntos a favor" onclick="NPP(${i},0)"><td class="co npc" id="y${i}" title="Toca para dar puntos en contra" onclick="NPP(${i},1)">`:'')+`<td id="p${i}">`+(M[2]?`${hcol(M[0],'Teórico')?'':`<td>${ncell(i,'Teórico',d.t)}`}${hcol(M[0],'Códigos')?'':`<td>${ncell(i,'Códigos',d.c)}`}<td id="f${i}">`:'')+`<td id="t${i}"></tr>`}).join('')+NFE(g)+'</table></div>'+`<div class="card np"><b>Cómo usar esta tabla</b><p style="margin:6px 0 0;color:var(--mu)"><b>Ver una evaluación:</b> toca la nota del alumno. Se abre su ventana con la nota más reciente, el historial y, si la rindió en Evaluaciones, el botón «Ver examen».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Bloquear una evaluación a un alumno:</b> toca el casillero y pulsa «${LKI} Bloquear casillero». Ese casillero no entra en su promedio (útil si no rinde esa evaluación). Para volver a activarlo, toca el casillero con el candado (${LKI}) y pulsa «${ULI} Desbloquear casillero».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Dar puntos a favor o en contra:</b> toca el casillero de «A favor» o «En contra» del alumno. Se abre una ventana: eliges el motivo, a un costado ves la cantidad y pulsas «Otorgar».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Eliminar una nota:</b> toca la nota, pulsa «Eliminar nota», escribe el motivo y confirma dos veces. El casillero queda vacío y deja de contar en el promedio.</p><p style="margin:6px 0 0;color:var(--mu)"><b>Filtrar y ordenar:</b> usa los botones sobre la tabla (activos, riesgo de baja, cesados, nota en rojo) y «Ordenar» por promedio o nombre.</p><p style="margin:6px 0 0;color:var(--mu)"><b>Ocultar columnas o cesados:</b> usa «⚙ Límites y columnas», arriba a la derecha.</p></div>`}
 function DD(i){const g=cg(),m=DT(i),c=fam(m),d=dd(g,i),dk=c=='#bfe6c0';
  $('#mb').innerHTML=`<div class="card" style="max-width:520px;margin:auto;padding:0;overflow:auto;max-height:90vh"><div style="background:${c};color:${dk?'#10201a':'#fff'};padding:14px 16px"><div style="font-size:12px;font-weight:700;opacity:.9">${NIV(i)} · ${dl(d)}</div><div style="font-size:20px;font-weight:800">Día ${i+1} · ${m}</div></div><div style="padding:14px 16px"><b style="color:var(--mu);font-size:12px">CONTENIDO DEL DÍA</b><div style="margin-top:8px">`+MD(i).map(x=>`<p style="margin:0 0 6px;padding:8px 10px;border-radius:8px;font-size:13px;background:${c}33;border-left:5px solid ${c}">${E(x)}</p>`).join('')+`</div><div class="rw" style="margin-top:12px"><button class="b bu" onclick="$('#md').style.display='none'">Cerrar</button><button class="b bg" onclick="S.rd='${ymd(d)}';$('#md').style.display='none';go('hoy')">Ver reporte del día</button></div></div></div>`;$('#md').style.display='flex'}
 function CRI(b){const g=cg();DI(b,'crx',('cronograma-'+g.sede+'-'+g.name).replace(/[^\w-]+/g,'_'))}
@@ -1539,11 +1548,12 @@ function nhPaint(X){
  const d=md(a,M[0]),act=nhGet(d,col),has=nv(act)!=null,L=X.L,aj=(a.aj||[]).filter(r=>r.m==M[0]&&r.c==col).sort((p,q)=>(q.z||0)-(p.z||0));
  const lx=L&&L.find(r=>r.nota!=null),la=aj[0];
  let sub;
- if(la&&(!lx||(la.z||0)>=lx.at))sub=`Ajustada el ${E(nhFe(la.z))}${la.mo?'<br>'+E(la.mo):''}`;
+ if(la&&(!lx||(la.z||0)>=lx.at))sub=`${la.n===''?'Eliminada':'Ajustada'} el ${E(nhFe(la.z))}${la.mo?'<br>'+E(la.mo.replace(/^ELIMINADA · /,'')):''}`;
  else if(lx)sub=`${E(nhFe(lx.at))}<br>${E(lx.examen)}`;
  else sub=L==null?'':has?'Sin examen asociado · nota escrita a mano':'Todavía no tiene nota';
  let h=`<div class="nhu"><div class="nhk"><small>NOTA MÁS RECIENTE</small><b class="${has?nhNc(nv(act)):''}">${has?E(act):'—'}</b></div><span class="nhs2">${sub}</span><button type="button" class="nhe" data-e title="Ajustar nota (queda registrado)" aria-label="Ajustar nota">${NHP}</button></div>`;
  {const lkd=(d.lk||[]).includes(col);h+=`<div style="margin-top:10px"><button type="button" class="b bu" data-lk>${lkd?ULI+' Desbloquear casillero':LKI+' Bloquear casillero'}</button> <small class="nhi">${lkd?'Este casillero no cuenta en el promedio de '+E(M[0])+'.':'Úsalo si este alumno no rinde esta evaluación: no entrará al promedio.'}</small></div>`}
+ if(has)h+=`<div style="margin-top:8px"><button type="button" class="b nhdel" data-del>Eliminar nota</button> <small class="nhi">Úsalo si esta nota no debió contar (por ejemplo, un examen de prueba).</small></div>`;
  if(X.edit){
   const m=X.mode||(has?'+':'=');X.mode=m;
   h+=`<div class="nhf"><div class="nhseg">${[['+','Sumar puntos'],['-','Restar puntos'],['=','Poner nota']].map(([k,t])=>`<button type="button" class="${m==k?'on':''}" data-m="${k}"${k!='='&&!has?' disabled':''}>${t}</button>`).join('')}</div>
@@ -1558,7 +1568,7 @@ function nhPaint(X){
  else{
   if(X.err)h+=`<p class="nhl">No se pudieron cargar los exámenes: ${E(X.err)}</p>`;
   h+=items.length?items.map(it=>{const r=it.r;
-   if(it.k=='a')return `<div class="nhr"><div><b>${E(nhFe(r.z))}</b> <span class="nhs nha">AJUSTE</span><small>${r.t=='='?'Nota puesta':(r.t=='+'?'+':'−')+' '+E(r.p)+' punto'+(+r.p==1?'':'s')} · ${nhF(r.a)} → ${nhF(r.n)}${r.u?' · por '+E(r.u):''}</small><small class="nhm2">«${E(r.mo||'Sin motivo')}»</small></div><span class="nhn ${nhNc(nv(r.n))}">${nhF(r.n)}</span><span></span></div>`;
+   if(it.k=='a')return `<div class="nhr"><div><b>${E(nhFe(r.z))}</b> <span class="nhs nha">${r.n===''?'ELIMINADA':'AJUSTE'}</span><small>${r.t=='='?(r.n===''?'Nota eliminada':'Nota puesta'):(r.t=='+'?'+':'−')+' '+E(r.p)+' punto'+(+r.p==1?'':'s')} · ${nhF(r.a)} → ${nhF(r.n)}${r.u?' · por '+E(r.u):''}</small><small class="nhm2">«${E((r.mo||'Sin motivo').replace(/^ELIMINADA · /,''))}»</small></div><span class="nhn ${nhNc(nv(r.n))}">${nhF(r.n)}</span><span></span></div>`;
    const ok=r.nota!=null,u=first&&ok;if(ok)first=false;
    return `<div class="nhr"><div><b>${E(nhFe(r.at))}</b>${u?' <span class="nhs">ÚLTIMO EXAMEN</span>':''}<small>${E(r.examen||'(examen eliminado)')}${r.sec?' · '+Math.floor(r.sec/60)+' min '+r.sec%60+' s':''}${ok&&r.m?' · '+r.p+'/'+r.m+' correctas':''}</small></div><span class="nhn ${ok?nhNc(r.nota):''}">${ok?(+r.nota).toFixed(1):'Sin nota'}</span>${ok?`<button type="button" class="b bg" data-v="${E(r.id)}">Ver examen</button>`:'<span></span>'}</div>`}).join(''):'<p class="nhl">Todavía no hay exámenes ni ajustes para esta nota.</p>'}
  /* conservar lo que el capacitador ya escribió si la ventana se repinta (p. ej. cuando termina de cargar el historial) */
@@ -1566,6 +1576,7 @@ function nhPaint(X){
  box.innerHTML=h;
  box.querySelector('[data-lk]').onclick=()=>{const d2=md(a,M[0]),l=d2.lk||[],k=l.indexOf(col);if(k>=0)l.splice(k,1);else l.push(col);d2.lk=l;if(!l.length)delete d2.lk;save();const b=document.getElementById('nb'+X.i+'_'+col);if(b)b.outerHTML=ncell(X.i,col,nhGet(d2,col));try{upd(X.i)}catch(e){}nhPaint(X)};
  box.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>NHX(b.dataset.v));
+ {const bd=box.querySelector('[data-del]');if(bd)bd.onclick=()=>NHD(X)}
  box.querySelector('[data-e]').onclick=()=>{X.edit=!X.edit;nhPaint(X);if(X.edit){const p=box.querySelector('#nhp');if(p)p.focus()}};
  if(X.edit){
   const p=box.querySelector('#nhp'),mo=box.querySelector('#nhmo'),pv=box.querySelector('#nhpv'),sv=box.querySelector('[data-s]'),prev=has?nv(act):null,mode=X.mode;
@@ -1599,6 +1610,44 @@ async function NHX(id){
   if(x&&x.img&&/^data:image\/|^https:/.test(x.img))b.innerHTML='<img alt="Examen rendido" src="'+x.img+'">';else b.innerHTML='<p class="nhl">'+E((x&&x.error)||'No hay imagen guardada para este intento.')+'</p>'}
  catch(e){const b=w.querySelector('#nhim');if(b)b.innerHTML='<p class="nhl">'+E(e.message||'No se pudo cargar la imagen (sin conexión).')+'</p>'}}
 
+/* ===== Notas: filtros y orden ===== */
+const NF={e:'todos',o:'def'};
+const NFR=a=>{const d=md(a,MODS[mi][0]),lk=d.lk||[],M=MODS[mi];const c=[];for(let k=0;k<M[1];k++)if(!lk.includes('PC'+(k+1)))c.push(d.p[k]);if(M[2]){if(!lk.includes('Teórico'))c.push(d.t);if(!lk.includes('Códigos'))c.push(d.c)}return c.some(v=>nv(v)!=null&&low(nv(v),mi))};
+function NFL(g){
+ let L=g.adv.map((a,i)=>[a,i]);const k=NF.e,o=NF.o;
+ L=L.filter(([a])=>{if(k=='cesados')return a.e=='CESADO';if(a.e=='CESADO')return k=='todos'&&SHC;
+  if(k=='activos')return est(a,mi)=='ACTIVO';if(k=='riesgo')return est(a,mi)=='RIESGO DE BAJA';if(k=='rojo')return NFR(a);return true});
+ const av=a=>{const t=calc(a,mi).to;return t==null||isNaN(t)?null:t};
+ L.sort((p,q)=>{const c=(p[0].e=='CESADO')-(q[0].e=='CESADO');if(c)return c;
+  if(o=='may'||o=='men'){const x=av(p[0]),y=av(q[0]);if(x==null&&y==null)return p[1]-q[1];if(x==null)return 1;if(y==null)return -1;return x==y?p[1]-q[1]:(o=='may'?y-x:x-y)}
+  if(o=='az')return p[0].n.localeCompare(q[0].n,'es');return p[1]-q[1]});
+ return L}
+function NFB(){const g=cg(),M=MODS[mi],cnt={todos:g.adv.length,activos:0,riesgo:0,cesados:0,rojo:0};
+ g.adv.forEach(a=>{const s=est(a,mi);if(s=='CESADO')cnt.cesados++;else{if(s=='ACTIVO')cnt.activos++;else cnt.riesgo++;if(NFR(a))cnt.rojo++}});
+ const ch=[['todos','Todos'],['activos','Activos'],['riesgo','En riesgo de baja'],['cesados','Cesados'],['rojo','Con nota en rojo']];
+ const op=[['def','Orden original'],['may','Promedio: mayor a menor'],['men','Promedio: menor a mayor'],['az','Nombre A–Z']];
+ return `<div class="nfb np"><div class="nfc">${ch.map(([k,t])=>`<button type="button" class="chp${NF.e==k?' on':''}" onclick="NFS('e','${k}')">${t}<b>${cnt[k]}</b></button>`).join('')}</div><label class="nfo">Ordenar<select onchange="NFS('o',this.value)">${op.map(([k,t])=>`<option value="${k}"${NF.o==k?' selected':''}>${t}</option>`).join('')}</select></label></div>`}
+function NFS(k,v){NF[k]=v;R()}
+function NFE(g){if(NFL(g).length)return '';const M=MODS[mi];let n=3;for(let j=0;j<M[1];j++)if(!hcol(M[0],'PC'+(j+1)))n++;if(M[2]){n+=2;if(!hcol(M[0],'Teórico'))n++;if(!hcol(M[0],'Códigos'))n++;n++}return `<tr class="nfe"><td colspan="${n}">Ningún asesor coincide con este filtro.</tr>`}
+
+/* ===== Notas: eliminar una nota (doble advertencia) ===== */
+async function NHD(X){
+ const {a,M,col,i,nm}=X,d=md(a,M[0]),prev=nv(nhGet(d,col));if(prev==null)return;
+ const ex=(X.L||[]).some(r=>r.nota!=null);
+ const mo=await pxOvl(`<h3 style="font-size:17px;margin:0 0 8px;color:var(--r)">⚠ ¿Eliminar esta nota?</h3><p style="margin:0 0 8px"><b>${E(a.n)}</b> · ${E(M[0])} · ${E(nm)} · nota actual <b>${nhF(prev)}</b></p><ul style="margin:0 0 10px;padding-left:20px"><li>El casillero queda vacío (—) y la nota <b>deja de contar</b> en el promedio de ${E(M[0])}, en el riesgo de baja y en los reportes.</li><li>Se recalcula el total del módulo y la nota final del alumno.</li><li>Queda registrada en el historial (fecha, nota anterior y motivo), pero <b>no se restaura sola</b>: habría que volver a ponerla con «Ajustar nota».</li>${ex?'<li>El examen rendido sigue en el historial como referencia; solo deja de contar.</li>':''}</ul><label class="nhlb">Motivo (obligatorio)<textarea id="ndm" rows="2" placeholder="Ej. Examen de prueba: no debía contar"></textarea></label>`+pxActs('Continuar'),(q,f,o)=>{o.style.zIndex=700;const ok=q('#ok'),m=q('#ndm');ok.disabled=true;ok.style.opacity='.45';m.oninput=()=>{const v=m.value.trim().length>=4;ok.disabled=!v;ok.style.opacity=v?'1':'.45'};q('#cn').onclick=()=>f(null);ok.onclick=()=>{if(!ok.disabled)f(m.value.trim())};m.focus()});
+ if(!mo)return;
+ const ok2=await pxOvl(`<h3 style="font-size:17px;margin:0 0 8px;color:var(--r)">Última confirmación</h3><p>Vas a borrar la nota <b>${nhF(prev)}</b> de <b>${E(a.n)}</b> (${E(M[0])} · ${E(nm)}).</p><p class="pxmu" style="margin:0 0 8px">Motivo: «${E(mo)}»</p><div class="pxf" style="grid-template-columns:1fr"><label>Escribe ELIMINAR para confirmar<input id="ndc" autocomplete="off"></label></div>`+pxActs('Eliminar nota'),(q,f,o)=>{o.style.zIndex=700;const ok=q('#ok'),t=q('#ndc');ok.disabled=true;ok.style.opacity='.45';t.oninput=()=>{const v=t.value.trim().toUpperCase()=='ELIMINAR';ok.disabled=!v;ok.style.opacity=v?'1':'.45'};q('#cn').onclick=()=>f(false);ok.onclick=()=>{if(!ok.disabled)f(true)};t.focus()});
+ if(!ok2)return;
+ const now=new Date();nhSet(d,col,'');
+ const reg={id:'',m:M[0],c:col,f:ymd(now),h:String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0'),t:'=',p:'',a:String(prev),n:'',mo:'ELIMINADA · '+mo,u:'',z:now.getTime()};
+ pid(reg);(a.aj=a.aj||[]).push(reg);
+ const b=document.getElementById('nb'+i+'_'+col);if(b)b.outerHTML=ncell(i,col,'');
+ try{upd(i)}catch(e){}
+ save({dni:a.d,modulo:M[0],campo:'Ajuste de nota',col,valor:'',reg});
+ X.edit=false;X.mode=null;nhPaint(X);stMsg('Nota eliminada')}
+/* si la hoja aún trae el valor que ya se eliminó, no lo vuelve a poner */
+const delTomb=(a,mod,col,val)=>{let b=null;(a.aj||[]).forEach(r=>{if(r.m==mod&&r.c==col&&(!b||(r.z||0)>=(b.z||0)))b=r});return !!b&&String(b.n==null?'':b.n).trim()===''&&nv(val)!=null&&nv(val)===nv(b.a)};
+
 /* ===== Notas que llegan desde Evaluaciones: la hoja NOTAS es la fuente; aquí se traen a la malla ===== */
 let SNB=false;
 async function traerNotas(){
@@ -1622,10 +1671,10 @@ async function traerNotas(){
     g.adv.forEach(a=>{if(!a.pw&&!a.hc&&(cl.has(nd(a.us||a.d))||cl.has(nd(a.d)))){a.hc=1;cambio++}})}
    (T.NOTAS||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(n=>{
     const a=g.adv.find(x=>nd(x.d)==nd(n.DNI)),M=MODS.find(m=>m[0]==n['Módulo']);if(!a||!M)return;const d=md(a,M[0]);
-    for(let k=0;k<M[1];k++){const v=sv(n['PC'+(k+1)]);if(v!==''&&v!==sv(d.p[k])){d.p[k]=v;cambio++}}
+    for(let k=0;k<M[1];k++){const v=sv(n['PC'+(k+1)]);if(v!==''&&v!==sv(d.p[k])&&!delTomb(a,M[0],'PC'+(k+1),v)){d.p[k]=v;cambio++}}
     const t=sv(n['Teórico']),c=sv(n['Códigos']);
-    if(t!==''&&t!==sv(d.t)){d.t=t;cambio++}
-    if(c!==''&&c!==sv(d.c)){d.c=c;cambio++}})
+    if(t!==''&&t!==sv(d.t)&&!delTomb(a,M[0],'Teórico',t)){d.t=t;cambio++}
+    if(c!==''&&c!==sv(d.c)&&!delTomb(a,M[0],'Códigos',c)){d.c=c;cambio++}})
    ;(T.PUNTOS||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(r=>{const a=g.adv.find(x=>nd(x.d)==nd(r.DNI)),id=String(r['ID Registro']||''),M=MODS.find(m=>m[0]==r['Módulo']);if(!a||!id||!M)return;const tp=String(r.Tipo||'').trim().toUpperCase(),vig=String(r['Estado del registro']||'VIGENTE').toUpperCase()!='ANULADO',d=md(a,M[0]),ex=l=>(l||[]).some(e=>e.id==id);
     if(!vig){[d.x,d.y,a.cj||[]].forEach(l=>{const k=l.findIndex(e=>e.id==id);if(k>=0){l.splice(k,1);cambio++}});return}
     if(ex(d.x)||ex(d.y)||ex(a.cj))return;const n=nv(r.Puntos);if(n==null)return;const hh=sv(r.Hora),e={id,n,mo:sv(r.Motivo),f:sv(r.Fecha).slice(0,10),h:/^\d{1,2}:\d{2}/.test(hh)?hh.slice(0,5):''};
@@ -1634,6 +1683,7 @@ async function traerNotas(){
    ;(T.AJUSTES_NOTAS||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(r=>{const a=g.adv.find(x=>nd(x.d)==nd(r.DNI)),id=String(r['ID Registro']||'');if(!a||!id)return;a.aj=a.aj||[];const e=a.aj.find(x=>x.id==id);
     if(e){if(!e.u&&sv(r.Capacitador))e.u=sv(r.Capacitador);return}
     const f=sv(r.Fecha).slice(0,10),hh=sv(r.Hora);a.aj.push({id,m:sv(r['Módulo']),c:sv(r.Campo),f,h:hh,t:{'SUMAR':'+','RESTAR':'-'}[sv(r.Tipo)]||'=',p:sv(r.Puntos),a:sv(r['Nota anterior']),n:sv(r['Nota nueva']),mo:sv(r.Motivo),u:sv(r.Capacitador),z:Date.parse(f+'T'+(hh||'00:00'))||0});cambio++})
+ ;g.adv.forEach(a=>{const vs=new Set();(a.aj||[]).forEach(r=>{const k=r.m+'|'+r.c;if(vs.has(k))return;vs.add(k);if(!MODS.some(m=>m[0]==r.m))return;const d=md(a,r.m),cur=nhGet(d,r.c);if(nv(cur)!=null&&delTomb(a,r.m,r.c,cur)){nhSet(d,r.c,'');cambio++}})})
  });
   if(T.MALLAS){S.mallas=S.mallas||[];const asg={},vistos=new Set(),hayA=new Set();
    T.MALLAS.forEach(r=>{const id=sv(r['ID Malla']);if(!id)return;let j;try{j=JSON.parse(sv(r.t)||'{}')}catch(e){return}
