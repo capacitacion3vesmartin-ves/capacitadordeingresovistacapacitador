@@ -575,7 +575,7 @@ a.pbig{text-decoration:none;box-sizing:border-box}
 .nfo{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--mu)}
 .nfo select{font-size:14px;padding:6px 10px;border-radius:10px;border:1px solid var(--bd);background:#fff;color:var(--tx)}
 .nfe td{text-align:center;padding:22px;color:var(--mu);font-weight:700}
-.nhdel{color:var(--r);border:1px solid var(--r);background:#fff}
+.nhdel{color:var(--r);border:1px solid var(--r);background:#fff}.mvo{display:flex;align-items:center;gap:10px;border:1.5px solid var(--bd);border-radius:12px;padding:9px 12px;margin:0 0 6px;cursor:pointer}.mvo:has(input:checked){border-color:var(--g);background:#f3fbf5}.mvo input{width:18px;height:18px;flex:none}.mvo .mvt{flex:1;display:flex;flex-direction:column;min-width:0;font-size:14px}.mvo .mvt small{color:var(--mu);font-size:12px}.mvo .nhn{font-size:18px;font-weight:800}
 </style>
 </head><body>
 <div id="app"><aside id="sb"></aside><div id="mn"><div class="top"><span id="tl"></span><button class="back" id="sbt" onclick="TS()" title="Esconder o mostrar el menú">‹</button><button class="back" id="bk" onclick="go('home')">‹ Inicio</button><div style="display:none"><h2 id="pt"></h2><small id="ps"></small></div><div class="tbn"><b>Capacitación de ingreso</b><span class="tbs" id="tbs">Plataforma para capacitador</span></div><span id="bt">Vista de Capacitador</span><select id="ss" onchange="SS(this.value)" title="Sede"></select><select id="gs" onchange="S.cur=this.value;S.rd=null;S.sa=null;irHoy();save();R()"></select><button type="button" class="tba" id="tba" onclick="ACT()">Actualizar</button></div><main id="v"></main></div></div>
@@ -1162,7 +1162,7 @@ function pxRiesgo(gid,dni){const g=S.gs.find(x=>x.id==gid),a=g&&g.adv.find(x=>St
 function vNotas(){if(!MSEL_)return pickM();const g=cg(),M=MODS[mi],n=M[1];
  return chips(NTB())+ban().replace('</div>','<small class="lmc">Rojo &lt; '+cm(limR(mi))+' · Riesgo de baja &lt; '+cm(limB(mi))+'</small></div>')+asqBar()+NFB()+'<div class="sc cp mod" style="--mc:'+mc(mi)+';--mt:'+mc(mi)+'40"><table><tr><th>Asesor<th>Estado'+Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<th>PC ${j+1}`).join('')+(M[2]?'<th>A favor<th>En contra':'')+'<th>Parcial'+(M[2]?(hcol(M[0],'Teórico')?'':'<th>Teórico')+(hcol(M[0],'Códigos')?'':'<th>Códigos')+'<th>Finales':'')+'<th>Total del módulo</tr>'+
  NFL(g).map(([a,i])=>{const d=md(a,M[0]);return `<tr class="${a.e=='CESADO'?'off':''}" data-ai="${i}"><td class="ta"><div class="row" style="padding:0">${who(a)}</div><td><div class="ew">${sel(ES,est(a,mi),`ST(${i},this.value)`,'s s'+ES.indexOf(est(a,mi))).replace('<select','<select id="es'+i+'"')}${ebtn(i,a)}</div>`+
- Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<td>${ncell(i,'PC'+(j+1),d.p[j])}`).join('')+(M[2]?`<td class="ex npc" id="x${i}" title="Toca para dar puntos a favor" onclick="NPP(${i},0)"><td class="co npc" id="y${i}" title="Toca para dar puntos en contra" onclick="NPP(${i},1)">`:'')+`<td id="p${i}">`+(M[2]?`${hcol(M[0],'Teórico')?'':`<td>${ncell(i,'Teórico',d.t)}`}${hcol(M[0],'Códigos')?'':`<td>${ncell(i,'Códigos',d.c)}`}<td id="f${i}">`:'')+`<td id="t${i}"></tr>`}).join('')+NFE(g)+'</table></div>'+`<div class="card np"><b>Cómo usar esta tabla</b><p style="margin:6px 0 0;color:var(--mu)"><b>Ver una evaluación:</b> toca la nota del alumno. Se abre su ventana con la nota más reciente, el historial y, si la rindió en Evaluaciones, el botón «Ver examen».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Bloquear una evaluación a un alumno:</b> toca el casillero y pulsa «${LKI} Bloquear casillero». Ese casillero no entra en su promedio (útil si no rinde esa evaluación). Para volver a activarlo, toca el casillero con el candado (${LKI}) y pulsa «${ULI} Desbloquear casillero».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Dar puntos a favor o en contra:</b> toca el casillero de «A favor» o «En contra» del alumno. Se abre una ventana: eliges el motivo, a un costado ves la cantidad y pulsas «Otorgar».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Eliminar una nota:</b> toca la nota, pulsa «Eliminar nota», escribe el motivo y confirma dos veces. El casillero queda vacío y deja de contar en el promedio.</p><p style="margin:6px 0 0;color:var(--mu)"><b>Filtrar y ordenar:</b> usa los botones sobre la tabla (activos, riesgo de baja, cesados, nota en rojo) y «Ordenar» por promedio o nombre.</p><p style="margin:6px 0 0;color:var(--mu)"><b>Ocultar columnas o cesados:</b> usa «⚙ Límites y columnas», arriba a la derecha.</p></div>`}
+ Array.from({length:n},(_,j)=>hcol(M[0],'PC'+(j+1))?'':`<td>${ncell(i,'PC'+(j+1),d.p[j])}`).join('')+(M[2]?`<td class="ex npc" id="x${i}" title="Toca para dar puntos a favor" onclick="NPP(${i},0)"><td class="co npc" id="y${i}" title="Toca para dar puntos en contra" onclick="NPP(${i},1)">`:'')+`<td id="p${i}">`+(M[2]?`${hcol(M[0],'Teórico')?'':`<td>${ncell(i,'Teórico',d.t)}`}${hcol(M[0],'Códigos')?'':`<td>${ncell(i,'Códigos',d.c)}`}<td id="f${i}">`:'')+`<td id="t${i}"></tr>`}).join('')+NFE(g)+'</table></div>'+`<div class="card np"><b>Cómo usar esta tabla</b><p style="margin:6px 0 0;color:var(--mu)"><b>Ver una evaluación:</b> toca la nota del alumno. Se abre su ventana con la nota más reciente, el historial y, si la rindió en Evaluaciones, el botón «Ver examen».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Bloquear una evaluación a un alumno:</b> toca el casillero y pulsa «${LKI} Bloquear casillero». Ese casillero no entra en su promedio (útil si no rinde esa evaluación). Para volver a activarlo, toca el casillero con el candado (${LKI}) y pulsa «${ULI} Desbloquear casillero».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Dar puntos a favor o en contra:</b> toca el casillero de «A favor» o «En contra» del alumno. Se abre una ventana: eliges el motivo, a un costado ves la cantidad y pulsas «Otorgar».</p><p style="margin:6px 0 0;color:var(--mu)"><b>Eliminar una nota:</b> toca la nota, pulsa «Eliminar nota», escribe el motivo y confirma dos veces. El casillero queda vacío y deja de contar en el promedio.</p><p style="margin:6px 0 0;color:var(--mu)"><b>Mover o duplicar un intento:</b> toca la nota y pulsa «⇄ Mover o duplicar». Si el casillero tiene varios intentos, eliges <b>cuál</b> pasar (solo ese). Los intentos van a otro casillero del mismo alumno; una nota escrita a mano también puede ir a otro alumno. «Mover» lo saca del casillero de origen; «Duplicar» lo deja en los dos.</p><p style="margin:6px 0 0;color:var(--mu)"><b>Filtrar y ordenar:</b> usa los botones sobre la tabla (activos, riesgo de baja, cesados, nota en rojo) y «Ordenar» por promedio o nombre.</p><p style="margin:6px 0 0;color:var(--mu)"><b>Ocultar columnas o cesados:</b> usa «⚙ Límites y columnas», arriba a la derecha.</p></div>`}
 function DD(i){const g=cg(),m=DT(i),c=fam(m),d=dd(g,i),dk=c=='#bfe6c0';
  $('#mb').innerHTML=`<div class="card" style="max-width:520px;margin:auto;padding:0;overflow:auto;max-height:90vh"><div style="background:${c};color:${dk?'#10201a':'#fff'};padding:14px 16px"><div style="font-size:12px;font-weight:700;opacity:.9">${NIV(i)} · ${dl(d)}</div><div style="font-size:20px;font-weight:800">Día ${i+1} · ${m}</div></div><div style="padding:14px 16px"><b style="color:var(--mu);font-size:12px">CONTENIDO DEL DÍA</b><div style="margin-top:8px">`+MD(i).map(x=>`<p style="margin:0 0 6px;padding:8px 10px;border-radius:8px;font-size:13px;background:${c}33;border-left:5px solid ${c}">${E(x)}</p>`).join('')+`</div><div class="rw" style="margin-top:12px"><button class="b bu" onclick="$('#md').style.display='none'">Cerrar</button><button class="b bg" onclick="S.rd='${ymd(d)}';$('#md').style.display='none';go('hoy')">Ver reporte del día</button></div></div></div>`;$('#md').style.display='flex'}
 function CRI(b){const g=cg();DI(b,'crx',('cronograma-'+g.sede+'-'+g.name).replace(/[^\w-]+/g,'_'))}
@@ -1553,6 +1553,7 @@ function nhPaint(X){
  else sub=L==null?'':has?'Sin examen asociado · nota escrita a mano':'Todavía no tiene nota';
  let h=`<div class="nhu"><div class="nhk"><small>NOTA MÁS RECIENTE</small><b class="${has?nhNc(nv(act)):''}">${has?E(act):'—'}</b></div><span class="nhs2">${sub}</span><button type="button" class="nhe" data-e title="Ajustar nota (queda registrado)" aria-label="Ajustar nota">${NHP}</button></div>`;
  {const lkd=(d.lk||[]).includes(col);h+=`<div style="margin-top:10px"><button type="button" class="b bu" data-lk>${lkd?ULI+' Desbloquear casillero':LKI+' Bloquear casillero'}</button> <small class="nhi">${lkd?'Este casillero no cuenta en el promedio de '+E(M[0])+'.':'Úsalo si este alumno no rinde esta evaluación: no entrará al promedio.'}</small></div>`}
+ if(has||(L&&L.some(r=>r.nota!=null&&!r.pend)))h+=`<div style="margin-top:8px"><button type="button" class="b bu" data-mv${L==null?' disabled':''}>⇄ Mover o duplicar</button> <small class="nhi">Pasa un intento (o la nota) a otro casillero.</small></div>`;
  if(has)h+=`<div style="margin-top:8px"><button type="button" class="b nhdel" data-del>Eliminar nota</button> <small class="nhi">Úsalo si esta nota no debió contar (por ejemplo, un examen de prueba).</small></div>`;
  if(X.edit){
   const m=X.mode||(has?'+':'=');X.mode=m;
@@ -1570,13 +1571,14 @@ function nhPaint(X){
   h+=items.length?items.map(it=>{const r=it.r;
    if(it.k=='a')return `<div class="nhr"><div><b>${E(nhFe(r.z))}</b> <span class="nhs nha">${r.n===''?'ELIMINADA':'AJUSTE'}</span><small>${r.t=='='?(r.n===''?'Nota eliminada':'Nota puesta'):(r.t=='+'?'+':'−')+' '+E(r.p)+' punto'+(+r.p==1?'':'s')} · ${nhF(r.a)} → ${nhF(r.n)}${r.u?' · por '+E(r.u):''}</small><small class="nhm2">«${E((r.mo||'Sin motivo').replace(/^ELIMINADA · /,''))}»</small></div><span class="nhn ${nhNc(nv(r.n))}">${nhF(r.n)}</span><span></span></div>`;
    const ok=r.nota!=null,u=first&&ok;if(ok)first=false;
-   return `<div class="nhr"><div><b>${E(nhFe(r.at))}</b>${u?' <span class="nhs">ÚLTIMO EXAMEN</span>':''}<small>${E(r.examen||'(examen eliminado)')}${r.sec?' · '+Math.floor(r.sec/60)+' min '+r.sec%60+' s':''}${ok&&r.m?' · '+r.p+'/'+r.m+' correctas':''}</small></div><span class="nhn ${ok?nhNc(r.nota):''}">${ok?(+r.nota).toFixed(1):'Sin nota'}</span>${ok?`<button type="button" class="b bg" data-v="${E(r.id)}">Ver examen</button>`:'<span></span>'}</div>`}).join(''):'<p class="nhl">Todavía no hay exámenes ni ajustes para esta nota.</p>'}
+   return `<div class="nhr"><div><b>${E(nhFe(r.at))}</b>${u?' <span class="nhs">ÚLTIMO EXAMEN</span>':''}<small>${E(r.examen||'(examen eliminado)')}${r.sec?' · '+Math.floor(r.sec/60)+' min '+r.sec%60+' s':''}${ok&&r.m?' · '+r.p+'/'+r.m+' correctas':''}${nhMvTag(r,M[0],col)}</small></div><span class="nhn ${ok?nhNc(r.nota):''}">${ok?(+r.nota).toFixed(1):'Sin nota'}</span>${ok?`<button type="button" class="b bg" data-v="${E(r.id)}">Ver examen</button>`:'<span></span>'}</div>`}).join(''):'<p class="nhl">Todavía no hay exámenes ni ajustes para esta nota.</p>'}
  /* conservar lo que el capacitador ya escribió si la ventana se repinta (p. ej. cuando termina de cargar el historial) */
  let sv0=null;{const op=box.querySelector('#nhp'),om=box.querySelector('#nhmo'),ae=document.activeElement;if(X.edit&&(op||om))sv0={p:op?op.value:'',m:om?om.value:'',f:ae===op?'p':ae===om?'m':'',s:ae&&(ae===op||ae===om)&&ae.selectionStart!=null?ae.selectionStart:null,e:ae&&(ae===op||ae===om)&&ae.selectionEnd!=null?ae.selectionEnd:null}}
  box.innerHTML=h;
  box.querySelector('[data-lk]').onclick=()=>{const d2=md(a,M[0]),l=d2.lk||[],k=l.indexOf(col);if(k>=0)l.splice(k,1);else l.push(col);d2.lk=l;if(!l.length)delete d2.lk;save();const b=document.getElementById('nb'+X.i+'_'+col);if(b)b.outerHTML=ncell(X.i,col,nhGet(d2,col));try{upd(X.i)}catch(e){}nhPaint(X)};
  box.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>NHX(b.dataset.v));
  {const bd=box.querySelector('[data-del]');if(bd)bd.onclick=()=>NHD(X)}
+ {const bm=box.querySelector('[data-mv]');if(bm)bm.onclick=()=>NHM(X)}
  box.querySelector('[data-e]').onclick=()=>{X.edit=!X.edit;nhPaint(X);if(X.edit){const p=box.querySelector('#nhp');if(p)p.focus()}};
  if(X.edit){
   const p=box.querySelector('#nhp'),mo=box.querySelector('#nhmo'),pv=box.querySelector('#nhpv'),sv=box.querySelector('[data-s]'),prev=has?nv(act):null,mode=X.mode;
@@ -1645,6 +1647,83 @@ async function NHD(X){
  try{upd(i)}catch(e){}
  save({dni:a.d,modulo:M[0],campo:'Ajuste de nota',col,valor:'',reg});
  X.edit=false;X.mode=null;nhPaint(X);stMsg('Nota eliminada')}
+/* ===== Notas: mover o duplicar un intento (o la nota) a otro casillero ===== */
+const nhCols=M=>{const c=[];for(let k=1;k<=M[1];k++)c.push('PC'+k);if(M[2]){c.push('Teórico');c.push('Códigos')}return c};
+const nhNm=c=>/^PC\d$/.test(c)?'PC '+c.slice(2):c;
+const nhMvTag=(r,mod,col)=>{if(!r.cs||!r.cs.length)return '';const w=x=>nhNm(x.c)+(x.m!=mod?' ('+x.m+')':'');let t='';
+ if(r.def&&!(r.def.m==mod&&r.def.c==col))t+=' · <b>viene de '+E(w(r.def))+'</b>';
+ const ot=r.cs.filter(x=>!(x.m==mod&&x.c==col));if(ot.length)t+=' · también cuenta en '+E(ot.map(w).join(', '));return t};
+async function NHM(X){
+ const {a,M,col,g}=X,d0=md(a,M[0]),val=nhGet(d0,col),cur=nv(val);
+ const L=(X.L||[]).filter(r=>r.nota!=null&&!r.pend).sort((p,q)=>(q.at||0)-(p.at||0));
+ const opts=L.map((r,k)=>({t:'i',r,v:String(r.nota),n:r.nota,cuenta:k==0&&cur!=null&&nv(r.nota)===cur,txt:`<b>${E(r.examen||'(examen eliminado)')}</b><small>${E(nhFe(r.at))}</small>`}));
+ if(cur!=null&&(!L.length||cur!==nv(L[0].nota)))opts.push({t:'m',v:String(val).trim(),n:val,txt:'<b>Nota actual del casillero</b><small>escrita a mano o ajustada</small>'});
+ if(!opts.length)return;
+ const sty='font-size:16px;padding:9px 11px;border-radius:10px';
+ const optM=MODS.map(m=>`<option value="${E(m[0])}"${m[0]==M[0]?' selected':''}>${E(m[0])}</option>`).join('');
+ const optA=g.adv.map((x,k)=>`<option value="${k}"${x===a?' selected':''}>${E(x.n)}${x.e=='CESADO'?' (cesado)':''}</option>`).join('');
+ const lst=opts.map((o,k)=>`<label class="mvo"><input type="radio" name="mvs" value="${k}"${opts.length==1?' checked':''}><span class="mvt">${o.txt}</span>${o.cuenta?'<span class="nhs">CUENTA AHORA</span>':''}<span class="nhn ${nhNc(nv(o.n))}">${nhF(o.n)}</span></label>`).join('');
+ const r=await pxOvl(`<h3 style="font-size:17px;margin:0 0 4px">Mover o duplicar</h3><p class="pxmu" style="margin:0 0 12px"><b>${E(a.n)}</b> · ${E(M[0])} · ${E(nhNm(col))}</p><p style="margin:0 0 6px;font-size:13px;font-weight:800;color:var(--mu)">${opts.length>1?'¿Cuál quieres pasar? (solo se mueve el que elijas)':'Se va a pasar:'}</p><div id="mvl">${lst}</div><div class="nhseg" id="mvk" style="margin-top:12px"><button type="button" class="on" data-k="mover">Mover</button><button type="button" data-k="dup">Duplicar</button></div><p class="pxmu" id="mvh" style="margin:8px 0 12px"></p><div class="pxf" style="grid-template-columns:1fr"><label>Módulo destino<select id="mvmo" style="${sty}">${optM}</select></label><label>Alumno destino<select id="mval" style="${sty}">${optA}</select></label><label>Casillero destino<select id="mvc" style="${sty}"></select></label></div><div id="mvi" style="margin:10px 0 0;font-size:13px;font-weight:700"></div><label id="mvrw" style="display:none;gap:8px;align-items:center;margin:8px 0 0;font-size:13px;font-weight:700;color:#b45309"><input type="checkbox" id="mvrc"> Entiendo que se reemplaza la nota que ya tiene</label><label class="nhlb" style="margin-top:12px">Motivo (opcional)<textarea id="mvmt" rows="2" placeholder="Ej. El examen estaba asignado al casillero equivocado"></textarea></label>`+pxActs('Mover'),(q,f,o)=>{
+  o.style.zIndex=700;
+  let kind='mover';
+  const mo=q('#mvmo'),al=q('#mval'),cs=q('#mvc'),inf=q('#mvi'),ok=q('#ok'),rw=q('#mvrw'),rc=q('#mvrc'),hh=q('#mvh');
+  const sel=()=>{const x=q('input[name=mvs]:checked');return x?opts[+x.value]:null};
+  const dest=()=>({Md:MODS.find(m=>m[0]==mo.value),da:g.adv[+al.value]});
+  const fillC=()=>{const {Md,da}=dest(),dd=md(da,Md[0]),s0=sel();
+   cs.innerHTML=nhCols(Md).filter(c=>!hcol(Md[0],c)).map(c=>{const self=da===a&&Md[0]==M[0]&&c==col,lk=(dd.lk||[]).includes(c),ya=!!(s0&&s0.t=='i'&&(s0.r.cs||[]).some(x=>x.m==Md[0]&&x.c==c)),v=nv(nhGet(dd,c));
+    return `<option value="${c}"${self||lk||ya?' disabled':''}>${nhNm(c)} · ${self?'casillero actual':lk?'bloqueado':ya?'ya tiene este intento':v==null?'vacío':'tiene nota '+nhF(v)}</option>`}).join('');
+   const op=[...cs.options],pick=op.find(x=>!x.disabled&&/vacío/.test(x.textContent))||op.find(x=>!x.disabled);
+   if(pick)cs.value=pick.value;else cs.selectedIndex=-1};
+  const chk=()=>{const s0=sel(),{Md,da}=dest(),c=cs.value,dv=c?nv(nhGet(md(da,Md[0]),c)):null,occ=!!s0&&dv!=null&&dv!==nv(s0.v);
+   rw.style.display=occ?'flex':'none';if(!occ)rc.checked=false;
+   inf.innerHTML=!s0?'<span style="color:#b45309">Elige primero cuál quieres pasar.</span>':!c?'<span class="nhbad">No hay un casillero disponible en este alumno/módulo.</span>':occ?`<span style="color:#b45309">Ese casillero ya tiene ${nhF(dv)}: se reemplaza por ${nhF(s0.v)} (la nota anterior queda en el historial).</span>`:dv!=null?'<span style="color:var(--gd)">Ese casillero ya tiene la misma nota ✓</span>':'<span style="color:var(--gd)">Casillero vacío ✓</span>';
+   hh.textContent=kind=='mover'?`Sale de ${nhNm(col)} y pasa al casillero que elijas.`:`Se queda en ${nhNm(col)} y también cuenta en el casillero que elijas.`;
+   ok.textContent=kind=='mover'?'Mover':'Duplicar';
+   ok.disabled=!s0||!c||(occ&&!rc.checked);ok.style.opacity=ok.disabled?'.45':'1'};
+  const sync=()=>{const s0=sel();if(s0&&s0.t=='i'){al.value=String(g.adv.indexOf(a));al.disabled=true}else al.disabled=false;fillC();rc.checked=false;chk()};
+  q('#mvl').addEventListener('change',sync);
+  q('#mvk').querySelectorAll('button').forEach(b=>b.onclick=()=>{kind=b.dataset.k;q('#mvk').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));chk()});
+  mo.onchange=()=>{fillC();rc.checked=false;chk()};al.onchange=()=>{fillC();rc.checked=false;chk()};cs.onchange=()=>{rc.checked=false;chk()};rc.onchange=chk;
+  sync();
+  q('#cn').onclick=()=>f(null);
+  ok.onclick=()=>{if(ok.disabled)return;const {Md,da}=dest();f({o:sel(),kind,Md,da,c:cs.value,mt:q('#mvmt').value.trim()})}});
+ if(!r)return;
+ const {o:it,kind,Md,da,c,mt}=r,dd=md(da,Md[0]),dprev=nv(nhGet(dd,c)),now=new Date(),sval=it.v;
+ if(da===a&&Md[0]==M[0]&&c==col)return;
+ /* 1) si es un INTENTO, primero se avisa al servidor (así se ve igual en todos los dispositivos). Si falla, no se cambia nada. */
+ if(it.t=='i'){
+  const here={m:M[0],c:col},dst={m:Md[0],c};
+  let ncs=(it.r.cs&&it.r.cs.length?it.r.cs:[here]).map(x=>({m:x.m,c:x.c}));
+  if(kind=='mover')ncs=ncs.filter(x=>!(x.m==here.m&&x.c==here.c));
+  if(!ncs.some(x=>x.m==dst.m&&x.c==dst.c))ncs.push(dst);
+  try{await api({accion:'intentoCasilleros',token:TK(),gid:String(g.id).trim(),dni:String(a.d),id:it.r.id,cs:ncs})}
+  catch(e){const m=e.message||'sin conexión';stMsg(/desconocida/i.test(m)?'Falta actualizar el Apps Script (versión nueva) para mover intentos. No se cambió nada.':'No se pudo mover el intento: '+m+'. No se cambió nada.',true);return}
+  it.r.cs=ncs;if(kind=='mover')X.L=(X.L||[]).filter(x=>x!==it.r)}
+ const lb=(x,mod,cc)=>nhNm(cc)+' · '+x.n+' · '+mod;
+ const mkr=(mod,cc,ant,nuevo,mo)=>{const q={id:'',m:mod,c:cc,f:ymd(now),h:String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0'),t:'=',p:'',a:ant==null?'':String(ant),n:nuevo,mo,u:'',z:now.getTime()};pid(q);return q};
+ const ex=it.t=='i'?' · intento «'+(it.r.examen||'examen')+'»':'';
+ /* 2) casillero destino: queda con la nota del intento (primero el destino, así la nota nunca se pierde) */
+ if(dprev!==nv(sval)){
+  nhSet(dd,c,sval);
+  const r1_=mkr(Md[0],c,dprev,sval,(kind=='mover'?'MOVIDA':'DUPLICADA')+' desde '+lb(a,M[0],col)+ex+(mt?' · '+mt:''));
+  (da.aj=da.aj||[]).push(r1_);
+  save({dni:da.d,modulo:Md[0],campo:'Ajuste de nota',col:c,valor:sval,reg:r1_})}
+ /* 3) casillero de origen (solo al mover): si la nota que contaba era la de este intento, pasa a contar el intento anterior (o queda vacío) */
+ if(kind=='mover'){
+  let nuevo;
+  if(it.t=='m')nuevo='';
+  else if(cur!=null&&nv(sval)===cur){const rest=(X.L||[]).filter(x=>x.nota!=null&&!x.pend).sort((p,q)=>(q.at||0)-(p.at||0));nuevo=rest.length?String(rest[0].nota):''}
+  if(nuevo!==undefined){
+   nhSet(d0,col,nuevo);
+   const r2_=mkr(M[0],col,pv0(val),nuevo,nuevo===''?'ELIMINADA · Movida a '+lb(da,Md[0],c)+ex+(mt?' · '+mt:''):'Se movió a '+lb(da,Md[0],c)+ex+'; ahora cuenta el intento anterior'+(mt?' · '+mt:''));
+   (a.aj=a.aj||[]).push(r2_);
+   save({dni:a.d,modulo:M[0],campo:'Ajuste de nota',col,valor:nuevo,reg:r2_})}}
+ const rf=(x,mod,cc)=>{if(mod!=M[0])return;const k=g.adv.indexOf(x),b=document.getElementById('nb'+k+'_'+cc);if(b)b.outerHTML=ncell(k,cc,nhGet(md(x,mod),cc));try{upd(k)}catch(e){}};
+ rf(da,Md[0],c);rf(a,M[0],col);
+ X.edit=false;X.mode=null;if(X.w.isConnected)nhPaint(X);
+ stMsg((kind=='mover'?'Movido a ':'Duplicado en ')+nhNm(c)+(da!==a?' de '+da.n:'')+(Md[0]!=M[0]?' ('+Md[0]+')':''))}
+const pv0=v=>{const x=nv(v);return x==null?null:String(x)};
+
 /* si la hoja aún trae el valor que ya se eliminó, no lo vuelve a poner */
 const delTomb=(a,mod,col,val)=>{let b=null;(a.aj||[]).forEach(r=>{if(r.m==mod&&r.c==col&&(!b||(r.z||0)>=(b.z||0)))b=r});return !!b&&String(b.n==null?'':b.n).trim()===''&&nv(val)!=null&&nv(val)===nv(b.a)};
 
