@@ -562,6 +562,22 @@ a.pbig{text-decoration:none;box-sizing:border-box}
 .asl.pen0{background:#fff;border:2px dashed #cbd5e1;color:#94a3b8}
 .asd .gc{display:flex;flex-direction:column;gap:2px;margin-top:2px;font-size:10px;font-weight:800;align-items:center}
 .asd .gc span{display:flex;align-items:center;gap:4px}.asd .gc i{width:8px;height:8px;border-radius:50%}
+.spg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.spc{background:#fff;border:1px solid var(--bd);border-top:5px solid var(--c);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.sph{display:flex;gap:10px;align-items:center}.sph img,.sph .spi{width:58px;height:68px;border-radius:10px;object-fit:cover;flex:none;display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;background:#e5e7eb}
+.spw{flex:1;min-width:0}.spw b{display:block;font-size:13px;line-height:1.2}.spw small{display:block;color:var(--mu);font-size:11px;margin-top:2px}
+.spk{display:inline-block;margin-top:3px;background:#fee2e2;color:#be123c;border-radius:8px;padding:1px 7px;font-size:10px;font-weight:800}
+.spn{text-align:center;background:var(--c);color:#fff;border-radius:12px;padding:6px 10px;flex:none}.spn b{display:block;font-size:22px;line-height:1.1}.spn small{font-size:8px;letter-spacing:.08em;font-weight:800;color:#fff}.spn.lo{background:#e11d48}
+.spgt{font-size:9px;font-weight:800;color:var(--mu);letter-spacing:.06em;margin-bottom:4px}.spgt span{font-weight:600;letter-spacing:0}
+.spm{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}.spm div{border-top:3px solid var(--m);background:#f4f8f5;border-radius:6px;padding:3px 2px;text-align:center;min-width:0}
+.spm small{display:block;font-size:8px;font-weight:800;color:var(--m);white-space:nowrap}.spm b{font-size:13px}.spm .lo b{color:#e11d48}
+.spgt+svg{width:100%;height:auto;display:block}
+.spd2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.spp{border-radius:10px;padding:6px;border:1px solid var(--bd);min-width:0}.spp.f{background:#f0fbf3}.spp.r{background:#fff5f6}
+.spph{display:flex;justify-content:space-between;align-items:center;font-size:9px;font-weight:800;margin-bottom:4px}.spp.f .spph{color:#0a8f2a}.spp.r .spph{color:#e11d48}.spph span{font-size:13px}
+.spb{display:flex;gap:6px;align-items:center}.spdn{flex:none;width:50px}.spdn svg{width:50px;height:50px;display:block}
+.spgl{flex:1;min-width:0;font-size:9px}.spgl div{display:flex;align-items:center;gap:3px;padding:1px 0}.spgl i{width:7px;height:7px;border-radius:50%;flex:none}.spgl span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.spgl small{color:var(--mu)}
+.spe{font-size:10px;color:var(--mu);text-align:center;padding:12px 0}
+.spo b{display:block;font-size:9px;letter-spacing:.06em;color:var(--mu);margin-bottom:3px}.spo textarea{width:100%;min-height:62px;font-size:12px;box-sizing:border-box}
 </style><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><style>
 #mb .npp{max-width:760px;position:relative}.npp .nph{padding-right:44px}
 .npx{position:absolute;top:10px;right:10px;width:34px;height:34px;border:0;border-radius:9px;background:#e11d48;color:#fff;font-size:18px;font-weight:800;line-height:1;cursor:pointer;z-index:3}.npx:hover{background:#be123c}
@@ -589,7 +605,7 @@ const ic=k=>`<svg class="i" viewBox="0 0 24 24"><path d="${IC[k]}"/></svg>`;
 const LOGO_SVG='<svg class="lg" viewBox="0 0 100 100"><polygon fill="#f58a07" points="4,8 38,8 50,52 62,8 96,8 84,94 60,94 50,70 40,94 16,94"/><polygon fill="#0a9a2a" points="28,5 72,5 50,50"/></svg>';
 const LOGO='<img class="lg" alt="Martín" src="https://martin.com.pe/img/martin-logo-1719089410.jpg" onerror="if(this.parentNode)this.outerHTML=LOGO_SVG">';
 const mc=j=>j==4?'#4c9f50':fam(MODS[j][0]);
-const NAV=[['home','Inicio','','#0a8f2a'],['am','Puntualidad','Puntual, aceptable o tardanza','#f58a07'],['pf','Puntos a favor y en contra','Sumar o restar puntos al módulo','#0a8f2a'],['pc','En contra','Restar puntos al módulo','#e11d48'],['notas','Notas','Prácticas y exámenes','#7c3aed'],['crono','Cronograma','Calendario de la capacitación y mallas','#0d9488'],['hoy','Reporte diario','Resumen del día para descargar','#2563eb'],['asr','Reportes','Diario, por asesor, resumen y general','#0891b2'],['res','Resumen general','Notas finales y área','#db2777'],['gen','Reporte general','Todas las sedes · grupo actual','#1e3a8a'],['sug','Sugerencias','Quién va a Ventas y a Optimización','#f58a07'],['gr','Personal','Registro de personal y grupos','#1e3a8a']];
+const NAV=[['home','Inicio','','#0a8f2a'],['am','Puntualidad','Puntual, aceptable o tardanza','#f58a07'],['pf','Puntos a favor y en contra','Sumar o restar puntos al módulo','#0a8f2a'],['pc','En contra','Restar puntos al módulo','#e11d48'],['notas','Notas','Prácticas y exámenes','#7c3aed'],['crono','Cronograma','Calendario de la capacitación y mallas','#0d9488'],['hoy','Reporte diario','Resumen del día para descargar','#2563eb'],['asr','Reportes','Diario, por asesor, resumen, supervisor y general','#0891b2'],['res','Resumen general','Notas finales y área','#db2777'],['gen','Reporte general','Todas las sedes · grupo actual','#1e3a8a'],['sug','Sugerencias','Quién va a Ventas y a Optimización','#f58a07'],['gr','Personal','Registro de personal y grupos','#1e3a8a']];
 const NAVV=()=>NAV.filter(x=>(x[0]!='gen'||S.master)&&x[0]!='am'&&x[0]!='pc'&&x[0]!='res'&&x[0]!='hoy'&&x[0]!='gen');
 const MODS=[['MADERAS',4,1],['FERRETERÍA',4,1],['SINTÉTICOS',4,1],['PROYECTOS / OPT.',4,1],['DOCUMENTACIÓN',3,0],['FACTURACIÓN',3,0]];
 let ERK=false,SHC=true;const ES=['ACTIVO','RIESGO DE BAJA','CESADO'],AR=['','VENTAS','OPTIMIZACIÓN','CARTERAS'],SEDES=['Villa el Salvador','Puente Piedra','Piura','Arequipa'],LIM=14;
@@ -630,6 +646,11 @@ const fin=a=>avg(MODS.map((_,j)=>calc(a,j).to));
 /* Estado POR MÓDULO: todos nacen ACTIVO; nota < LIM = riesgo automático; si el capacitador lo cambia a mano (d.man) se respeta. CESADO es global. */
 const est=(a,j)=>{if(a.e=='CESADO')return 'CESADO';const d=md(a,MODS[j][0]);return d.man?(d.e||'ACTIVO'):(lowB(calc(a,j).to,j)?'RIESGO DE BAJA':'ACTIVO')};
 const rkMods=a=>a.e=='CESADO'?[]:MODS.map((_,j)=>j).filter(j=>est(a,j)=='RIESGO DE BAJA');
+/* Reporte general: riesgo de baja = promedio de la NOTA FINAL (todos los módulos evaluados) menor al límite general. */
+const rkG=a=>{if(a.e=='CESADO')return false;const f=fin(a);return f!=null&&lowB(f)};
+const epillG=a=>a.e=='CESADO'?'<span class="s s2">CESADO</span>':rkG(a)?'<span class="s s1">RIESGO DE BAJA</span>':'<span class="s s0">ACTIVO</span>';
+/* Orden de tablas: activos, riesgo de baja y al final los cesados (se conserva el orden original dentro de cada grupo) */
+const ordT=(l,f,rk)=>l.map((x,i)=>[x,i]).sort((p,q)=>{const w=a=>{const o=f(a);return o.e=='CESADO'?2:rk(o)?1:0};return w(p[0])-w(q[0])||p[1]-q[1]}).map(x=>x[0]);
 const epill=a=>{if(a.e=='CESADO')return '<span class="s s2">CESADO</span>';const n=rkMods(a).length;return n?'<span class="s s1">RIESGO · '+n+'</span>':'<span class="s s0">ACTIVO</span>'};
 function migrar(){S.mallas=S.mallas||[];S.mallas.forEach(m=>{if(!m.t){m.t={};DAYS.forEach((_,i)=>{m.t[i]=[(m.tit&&m.tit[i])||DAYS[i]]})}});S.gs.forEach(g=>{if(!g.sede)g.sede=SEDES[0];g.adv.forEach(a=>{if(a.e=='RIESGO DE BAJA'){const J=MODS.map((_,j)=>j);let ms=J.filter(j=>lowB(calc(a,j).to,j));if(!ms.length){const w=J.filter(j=>calc(a,j).to!=null);ms=[w.length?w[w.length-1]:0]}const mt=[a.mo,a.m2].filter(x=>x).join(' + ');ms.forEach(j=>{const d=md(a,MODS[j][0]);d.e='RIESGO DE BAJA';if(!lowB(calc(a,j).to,j))d.man=1;if(mt&&!d.rc)d.rc=mt});a.e='ACTIVO'}delete a.mo;delete a.m2})});S.sede=cg().sede}
 const sel=(o,v,on,c)=>`<select class="${c||''}" onchange="${on}">`+o.map(x=>`<option ${x==v?'selected':''}>${x}</option>`).join('')+'</select>';
@@ -677,7 +698,8 @@ function EAG(i){const g=cg(),a=g.adv[i];if(!a)return;const n=$('#ean').value.tri
  if(tg.id!=g.id){MV(a,g,tg);(g.del=g.del||[]).push(nd(a.d));g.adv.splice(i,1);tg.adv.push(a);save({dni:a.d,campo:'Cambio de grupo',valor:tg.name,sede:tg.sede})}else save();
  $('#md').style.display='none';R()}
 function PDFel(id,tt){const el=$('#'+id);if(!el)return;tt=tt||('Ficha '+((sa()||{}).n||''));const w=window.open('','_blank');if(!w){alert('Permite las ventanas emergentes para descargar el PDF.');return}
- w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>'+E(tt)+'</title><style>'+document.querySelector('style').textContent+'</style><style>@page{size:A4;margin:8mm}body{margin:0;padding:8px;background:#fff!important;display:block!important}#'+id+'{width:100%!important;min-width:0!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}.sc{max-height:none!important;overflow:visible!important}</style></head><body>'+el.outerHTML+'</body></html>');w.document.close();setTimeout(()=>{w.focus();w.print()},800)}
+ const cl=el.cloneNode(true),tas=el.querySelectorAll('textarea');cl.querySelectorAll('textarea').forEach((ct,k)=>{const d=document.createElement('div');d.style.cssText='border:1px solid #d6e6da;border-radius:8px;padding:8px;white-space:pre-wrap;min-height:40px;font-size:12px;background:#fff';d.textContent=(tas[k]&&tas[k].value)||'–';ct.replaceWith(d)});
+ w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>'+E(tt)+'</title><style>'+document.querySelector('style').textContent+'</style><style>@page{size:A4;margin:8mm}body{margin:0;padding:8px;background:#fff!important;display:block!important}#'+id+'{width:100%!important;min-width:0!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}.sc{max-height:none!important;overflow:visible!important}.spc{break-inside:avoid;page-break-inside:avoid}</style></head><body>'+cl.outerHTML+'</body></html>');w.document.close();setTimeout(()=>{w.focus();w.print()},800)}
 function NA(){const g=cg(),L=S.gs.filter(x=>S.master||x.sede==g.sede).sort((p,q)=>q.start>p.start?1:-1);
  $('#mb').innerHTML=`<div class="card" style="max-width:480px;margin:auto"><b style="font-size:16px">Agregar alumno</b><div class="rw" style="flex-direction:column;align-items:stretch;margin:10px 0"><label>Grupo y sede<select id="nag">${L.map(x=>`<option value="${x.id}" ${x.id==g.id?'selected':''}>${E(x.sede)} · ${E(x.name)}</option>`).join('')}</select></label><label>DNI <small>(este dato no podrá editarse más adelante, verifícalo bien)</small><input id="nad" inputmode="numeric" oninput="const u=$('#nau');if(!u.dataset.m)u.value=this.value.trim()"></label><label>Nombres y apellidos<input id="nan"></label><label>Enlace de la foto<div style="display:flex;gap:6px"><input id="naf"  placeholder="https://..." style="flex:1;min-width:0"><button type="button" class="b bo" onclick="window.open('https://www.image2url.com/es/dashboard','_blank','noopener')">Subir imagen</button></div><small style="font-weight:600">Sube la foto en esa página, copia el enlace y pégalo aquí.</small></label><label>Usuario <small>(se llena solo con el DNI)</small><input id="nau" oninput="this.dataset.m=1"></label><label>Contraseña <small>(obligatoria)</small><input id="nap"></label></div><div class="rw"><button class="b bg" onclick="NAG()">Agregar alumno</button><button class="b bu" onclick="$('#md').style.display='none'">Cancelar</button></div></div>`;$('#md').style.display='flex'}
 function NAG(){const g=S.gs.find(x=>x.id==$('#nag').value)||cg(),d=$('#nad').value.trim(),n=$('#nan').value.trim().toUpperCase(),f=$('#naf').value.trim(),us=$('#nau').value.trim()||d,pw=$('#nap').value.trim(),ex={grupo:g.name,sede:g.sede};
@@ -808,7 +830,7 @@ function repHTML(){const g=cg(),dt=S.rd||nowD(),r=S.rep[g.id+dt]||{},i=tIdx(dt),
  li=(a,t)=>'<div class="rsi"><b>'+E(a.n)+'</b>'+(t?'<small>'+E(t)+'</small>':'')+'</div>',
  lu=(l,f)=>l.length?l.map(f).join(''):'<div class="rsi"><small>Ninguno</small></div>',
  hd='<th>Asesor<th>Estado'+Array.from({length:M[1]},(_,k)=>`<th>PC ${k+1}`).join('')+(M[2]?'<th>A favor<th>En contra':'')+'<th>Parcial'+(M[2]?'<th>Teórico<th>Códigos<th>Finales':'')+'<th>Total',
- rows=g.adv.map(a=>{const d=md(a,M[0]),c=calc(a,j),e=est(a,j),pl=e=='CESADO'?'<span class="pill" style="background:#e5e7eb;color:#4b5563">CESADO</span>':'<span class="pill '+(e=='ACTIVO'?'pl':'pr')+'">'+(e=='ACTIVO'?'ACTIVO':'RIESGO')+'</span>';return `<tr class="${a.e=='CESADO'?'off':''}"><td class="l"><span class="rn">${av(a)}${E(a.n)}</span><td>${pl}`+Array.from({length:M[1]},(_,k)=>`<td>${pv(d.p[k],j)}`).join('')+(M[2]?`<td class="ex">${cm(c.ex)}<td class="co">${cm(c.co)}`:'')+`<td class="pa">${F(c.pa)}`+(M[2]?`<td>${E(d.t)||'–'}<td>${E(d.c)||'–'}<td class="fi">${F(c.fi)}`:'')+`<td class="to ${C(c.to,j)}">${F(c.to)}</tr>`}).join(''),
+ rows=ordT(g.adv,a=>a,a=>est(a,j)=='RIESGO DE BAJA').map(a=>{const d=md(a,M[0]),c=calc(a,j),e=est(a,j),pl=e=='CESADO'?'<span class="pill" style="background:#e5e7eb;color:#4b5563">CESADO</span>':'<span class="pill '+(e=='ACTIVO'?'pl':'pr')+'">'+(e=='ACTIVO'?'ACTIVO':'RIESGO')+'</span>';return `<tr class="${a.e=='CESADO'?'off':''}"><td class="l"><span class="rn">${av(a)}${E(a.n)}</span><td>${pl}`+Array.from({length:M[1]},(_,k)=>`<td>${pv(d.p[k],j)}`).join('')+(M[2]?`<td class="ex">${cm(c.ex)}<td class="co">${cm(c.co)}`:'')+`<td class="pa">${F(c.pa)}`+(M[2]?`<td>${E(d.t)||'–'}<td>${E(d.c)||'–'}<td class="fi">${F(c.fi)}`:'')+`<td class="to ${C(c.to,j)}">${F(c.to)}</tr>`}).join(''),
  fd=new Date(dt+'T12:00:00'),fs0=isNaN(fd)?dt:fd.toLocaleDateString('es-PE',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),fs=fs0.charAt(0).toUpperCase()+fs0.slice(1),
  fc=i>=0?fam(DT(i)):'#8a9a90',
  tema=i>=0?`<div class="rtm" style="--c:${fc}"><div class="rtt"><small>TEMA DEL DÍA</small><b>${E(DT(i))}</b></div><ul>${MD(i).map(t=>'<li>'+E(t)+'</li>').join('')}</ul></div>`:`<div class="rtm" style="--c:${fc}"><div class="rtt"><small>TEMA DEL DÍA</small><b>Fuera del cronograma</b></div></div>`;
@@ -1198,11 +1220,11 @@ function resPuntos(g){const J=MODS.map((M,j)=>j).filter(j=>MODS[j][2]),
   tbl=rows.length?`<div class="sc pft"><table class="pftb"><tr><th>Motivo<th>Registros${J.map(j=>'<th>'+E(MAB[j])).join('')}<th>Total</tr>${rows.map(([k,o])=>`<tr><td class="l">${E(k)}<td>${o.c}${J.map(j=>'<td>'+f(o.j[j]||0)).join('')}<td><span class="pp ${cl}">${o.t==0?'0':f(o.t)}</span></tr>`).join('')}</table></div>`:pfEmpty('Sin registros todavía');
   return pfSec(fav?'r-fav':'r-con',fav,tot,it,tbl,pfLine(g,fav,fav?'#0a8f2a':'#e11d48'))};
  return '<div class="rt2" style="font-weight:800;margin:6px 0 8px">PUNTOS OTORGADOS POR MOTIVO · TODO EL GRUPO</div>'+sec(true)+sec(false)}
-function vRes(g0,ro,id){id=id||'resx';const g=g0||cg(),L=g.adv.map(a=>({a,f:fin(a)})),nA=g.adv.filter(a=>a.e!='CESADO').length,pg=avG(g),fn=('resumen-'+g.sede+'-'+g.name).replace(/[^\w-]+/g,'_');
+function vRes(g0,ro,id){id=id||'resx';const g=g0||cg(),L=ordT(g.adv,a=>a,rkG).map(a=>({a,f:fin(a)})),nA=g.adv.filter(a=>a.e!='CESADO').length,pg=avG(g),fn=('resumen-'+g.sede+'-'+g.name).replace(/[^\w-]+/g,'_');
  return `<div class="rw np" style="margin-bottom:10px"><button class="b bg" onclick="PDFel('${id}','Resumen general ${E(g.sede)} ${E(g.name)}')">Descargar PDF</button><button class="b bu" onclick="DI(this,'${id}','${fn}')">Descargar imagen</button></div>
  <div id="${id}" class="rsm"><div class="rhd"><div><div class="tt">RESUMEN GENERAL</div><h2>${E(g.name)}</h2><small>${E(g.sede)} · Inicio ${g.start} · Fecha tentativa de fin ${g.end||ymd(dd(g,DNg(g)-1))}</small>${g.cap?'<small>Capacitador(a): <b>'+E(g.cap)+'</b></small>':''}</div><div class="rhs"><div><b>${g.adv.length}</b>Ingresaron</div><div><b>${nA}</b>Quedan</div></div></div>
  <div class="pgb"><div><span style="all:unset">Avance de la capacitación</span><b>${pg.p}% · día ${Math.min(pg.k,pg.n)} de ${pg.n}</b></div><span><i style="width:${pg.p}%"></i></span></div>
- <div class="sc cp"><table><tr><th>Asesor<th>Estado`+MODS.map(m=>`<th>${m[0]}`).join('')+'<th>Nota final</tr>'+L.map((x,i)=>`<tr class="${x.a.e=='CESADO'?'off':''}"><td class="ta"><div class="row" style="padding:0">${who(x.a)}</div><td>${epill(x.a)}`+MODS.map((_,j)=>{const t=calc(x.a,j).to;return `<td class="cc ${C(t,j)}">${F(t)}${est(x.a,j)=='RIESGO DE BAJA'?'<span class="rkd"></span>':''}`}).join('')+`<td class="cc to ${C(x.f)}">${F(x.f)}${low(x.f)&&x.a.e!='CESADO'&&!rkMods(x.a).length?' ⚠':''}</tr>`).join('')+'</table></div><div style="height:12px"></div>'+histRC(g)+resPuntos(g)+'</div>'}
+ <div class="sc cp"><table><tr><th>Asesor<th>Estado`+MODS.map(m=>`<th>${m[0]}`).join('')+'<th>Nota final</tr>'+L.map((x,i)=>`<tr class="${x.a.e=='CESADO'?'off':''}"><td class="ta"><div class="row" style="padding:0">${who(x.a)}</div><td>${epillG(x.a)}`+MODS.map((_,j)=>{const t=calc(x.a,j).to;return `<td class="cc ${C(t,j)}">${F(t)}`}).join('')+`<td class="cc to ${C(x.f)}">${F(x.f)}</tr>`).join('')+'</table></div><div style="height:12px"></div>'+histRC(g)+resPuntos(g)+'</div>'}
 function gNotes(g){return '<div class="sc cp"><table><tr><th>Asesor<th>Estado'+MODS.map(m=>'<th>'+m[0]).join('')+'<th>Nota final</tr>'+g.adv.map(a=>{const f=fin(a);return `<tr class="${a.e=='CESADO'?'off':''}"><td class="ta"><div class="row">${who(a)}</div><td>${epill(a)}`+MODS.map((_,j)=>{const t=calc(a,j).to;return `<td class="cc ${C(t,j)}">${F(t)}${est(a,j)=='RIESGO DE BAJA'?'<span class="rkd"></span>':''}`}).join('')+`<td class="cc to ${C(f)}">${F(f)}</tr>`}).join('')+'</table></div>'}
 function gMod(g,j){const M=MODS[j];return '<div class="sc cp"><table><tr><th>Asesor'+Array.from({length:M[1]},(_,k)=>`<th>PC ${k+1}`).join('')+(M[2]?'<th>A favor<th>En contra':'')+'<th>Parcial'+(M[2]?'<th>Teórico<th>Códigos<th>Finales':'')+'<th>Total</tr>'+g.adv.map(a=>{const d=md(a,M[0]),c=calc(a,j);return `<tr class="${a.e=='CESADO'?'off':''}"><td class="ta"><div class="row">${who(a)}</div>`+Array.from({length:M[1]},(_,k)=>`<td>${pv(d.p[k],j)}`).join('')+(M[2]?`<td class="ex">${cm(c.ex)}<td class="co">${cm(c.co)}`:'')+`<td class="pa">${F(c.pa)}`+(M[2]?`<td>${E(d.t)||'–'}<td>${E(d.c)||'–'}<td class="fi">${F(c.fi)}`:'')+`<td class="to">${F(c.to)}</tr>`}).join('')+'</table></div>'}
 function gList(){const cur=cg().id,L=S.gs.filter(g=>S.master||g.sede==S.sede).sort((a,b)=>b.start>a.start?1:-1);
@@ -1440,8 +1462,8 @@ function asLetter(v,sz){return v?`<span class="asl" style="background:${ASC[v][1
 function asDate(dt){const d=new Date(dt+'T12:00:00');return {w:DOW[d.getDay()],d:String(d.getDate()).padStart(2,'0')+' '+MESC[d.getMonth()]}}
 let asrVista='diario';
 function AV(v){asrVista=v;ASQ='';if(v=='general')GENR();else R();scrollTo(0,0)}
-const asrSw=()=>`<div class="seg np" style="--c:#0891b2;margin-bottom:14px">`+[['diario','Reporte diario'],['asesor','Reporte por asesor'],['resumen','Resumen general']].concat(S.master?[['general','Reporte general']]:[]).map(x=>`<button type="button" class="b ${asrVista==x[0]?'on':''}" onclick="AV('${x[0]}')">${x[1]}</button>`).join('')+`</div>`;
-function vAs(){if(asrVista=='general'&&!S.master)asrVista='diario';return asrSw()+(asrVista=='resumen'?vRes():asrVista=='diario'?vHoy():asrVista=='general'?vGen():vAsFicha())}
+const asrSw=()=>`<div class="seg np" style="--c:#0891b2;margin-bottom:14px;flex-wrap:wrap">`+[['diario','Reporte diario'],['asesor','Reporte por asesor'],['resumen','Resumen general'],['supervisor','Reporte para supervisor']].concat(S.master?[['general','Reporte general']]:[]).map(x=>`<button type="button" class="b ${asrVista==x[0]?'on':''}" onclick="AV('${x[0]}')">${x[1]}</button>`).join('')+`</div>`;
+function vAs(){if(asrVista=='general'&&!S.master)asrVista='diario';return asrSw()+(asrVista=='resumen'?vRes():asrVista=='supervisor'?vSup():asrVista=='diario'?vHoy():asrVista=='general'?vGen():vAsFicha())}
 function vAsFicha(){const g=cg(),a=sa();if(!a)return '<div class="card">Aún no hay asesores en este grupo.</div>';
  const f=fin(a),rk=g.adv.filter(x=>x.e!='CESADO'&&fin(x)!=null).sort((x,y)=>fin(y)-fin(x)),pos=rk.indexOf(a)+1,ti=tIdx(nowD()),
  mp=MODS.map((M,j)=>{const d=md(a,M[0]),c=calc(a,j),tot=M[1]+(M[2]?2:0),done=Array.from({length:M[1]},(_,k)=>nv(d.p[k])!=null).filter(x=>x).length+(M[2]?(nv(d.t)!=null?1:0)+(nv(d.c)!=null?1:0):0);return{M,j,d,c,tot,done}}),
@@ -1465,7 +1487,7 @@ function vAsFicha(){const g=cg(),a=sa();if(!a)return '<div class="card">Aún no 
  mp.map(x=>`<tr class="${off}"><td class="ta"><b style="color:${mc(x.j)}">${x.M[0]}</b>${est(a,x.j)=='RIESGO DE BAJA'?' <span class="pill pr" style="font-size:10px;padding:1px 6px">RIESGO</span>':''}${Array.from({length:4},(_,k)=>pcCell(x.d,x.M[1],k,x.j)).join('')}<td class="ex">${x.M[2]?cm(x.c.ex):'–'}<td class="co">${x.M[2]?cm(x.c.co):'–'}<td class="pa">${F(x.c.pa)}<td>${x.M[2]?E(x.d.t)||'–':'–'}<td>${x.M[2]?E(x.d.c)||'–':'–'}<td class="fi">${x.M[2]?F(x.c.fi):'–'}<td class="to ${C(x.c.to,x.j)}">${F(x.c.to)}</tr>`).join('')+`<tr class="${off}"><td class="ta"><b>Nota final</b><td colspan="10"><td class="to ${C(f)}">${F(f)}</tr></table></div>${asNotasLine(mp,off)}</div>
  ${asPuntos(a,pts,off,g)}
  ${asAsist(g,pr,ti)}
- <div class="card"><b>Observaciones del capacitador(a)</b><textarea style="margin-top:8px" placeholder="Anota aquí lo que quieras recordar de este asesor" oninput="sa().ob=this.value;save()" onchange="save({dni:sa().d,campo:'Observaciones',valor:sa().ob})">${E(a.ob||'')}</textarea></div>
+ <div class="card"><b>Observaciones del capacitador(a)</b><textarea style="margin-top:8px" placeholder="Anota aquí lo que quieras recordar de este asesor" oninput="sa().ob=this.value;save()" onchange="save({dni:sa().d,campo:'Comentario capacitador',valor:sa().ob})">${E(a.ob||'')}</textarea></div>
  </div></div>`}
 
 
@@ -1490,6 +1512,7 @@ function asAsist(g,pr,ti){const hoy=ymd(new Date()),m={};pr.forEach(x=>{m[x.dt]=
 const fn=a=>a.al||String(a.n||'').trim().split(/\s+/)[0]||'';
 function SG(i,v){const a=cg().adv[i];a.sg=a.sg==v?'':v;save({dni:a.d,campo:'Sugerencia de área',valor:a.sg||'ninguno'});R()}
 function SGN(i,v){const a=cg().adv[i];a.al=v.trim();save();SGU()}
+function SGNC(i){const a=cg().adv[i];if(a)save({dni:a.d,campo:'Nombre en foto',valor:a.al||''})}
 function SGU(){const e=$('#sgx');if(e)e.outerHTML=sgHTML()}
 function PH2(i,inp){const f=inp.files&&inp.files[0],a=cg().adv[i];if(!f||!a)return;const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const W=240,H=280,cv=document.createElement('canvas');cv.width=W;cv.height=H;const cx=cv.getContext('2d'),r=Math.max(W/im.width,H/im.height),w=im.width*r,h=im.height*r;cx.drawImage(im,(W-w)/2,(H-h)/2,w,h);a.ph=cv.toDataURL('image/jpeg',.82);save();R();pxSubirFoto(a,a.ph)};im.src=fr.result};fr.readAsDataURL(f)}
 function sgHTML(){const g=cg(),blk=(k,t,c)=>{const l=g.adv.filter(a=>a.e!='CESADO'&&a.sg==k);
@@ -1497,7 +1520,42 @@ function sgHTML(){const g=cg(),blk=(k,t,c)=>{const l=g.adv.filter(a=>a.e!='CESAD
  return `<div id="sgx" class="card" style="background:#fff">${g.adv.some(a=>a.e!='CESADO'&&(a.sg=='V'||a.sg=='O'))?'<div class="sgrow">'+blk('V','VENTAS','#1fb01f')+blk('O','OPTIMIZACIÓN','#f58a07')+'</div>':'<small>Elige a los asesores abajo para ver la vista previa.</small>'}</div>`}
 function vSug(){const g=cg(),act=g.adv.map((a,i)=>[a,i]).filter(x=>x[0].e!='CESADO'),CV='#1fb01f',CO='#f58a07';
  return `<div class="rw" style="margin-bottom:12px"><button class="b bg" onclick="DI(this,'sgx','sugerencias-'+nowD())">Descargar imagen</button><small style="color:var(--mu)">Marca a quién sugieres para cada área; la vista previa se arma sola. La foto se sube con el botón de cada asesor (también sirve en su ficha).</small></div>${sgHTML()}
- <div class="card">`+act.map(([a,i])=>`<div class="row">${who(a)}<input style="width:130px" placeholder="Nombre en foto" value="${E(fn(a))}" oninput="SGN(${i},this.value)"><div class="seg"><button class="b ${a.sg=='V'?'on':''}" style="--c:${CV}" onclick="SG(${i},'V')">Ventas</button><button class="b ${a.sg=='O'?'on':''}" style="--c:${CO}" onclick="SG(${i},'O')">Optimización</button></div><button class="b bu" onclick="$('#pf${i}').click()">${a.ph?'Cambiar foto':'Subir foto'}</button><input type="file" id="pf${i}" accept="image/*" style="display:none" onchange="PH2(${i},this)"></div>`).join('')+'</div>'}
+ <div class="card">`+act.map(([a,i])=>`<div class="row">${who(a)}<input style="width:130px" placeholder="Nombre en foto" value="${E(fn(a))}" oninput="SGN(${i},this.value)" onchange="SGNC(${i})"><div class="seg"><button class="b ${a.sg=='V'?'on':''}" style="--c:${CV}" onclick="SG(${i},'V')">Ventas</button><button class="b ${a.sg=='O'?'on':''}" style="--c:${CO}" onclick="SG(${i},'O')">Optimización</button></div><button class="b bu" onclick="$('#pf${i}').click()">${a.ph?'Cambiar foto':'Subir foto'}</button><input type="file" id="pf${i}" accept="image/*" style="display:none" onchange="PH2(${i},this)"></div>`).join('')+'</div>'}
+
+/* ===== Reporte para supervisor: asesores sugeridos por área, en tarjetas pequeñas ===== */
+let SUPA='V';
+const SUPAR={V:['VENTAS','#1fb01f'],O:['OPTIMIZACIÓN','#f58a07']};
+function SUPS(k){SUPA=k;R()}
+function SUPO(i,v){const a=cg().adv[i];if(a){a.ob=v;save()}}
+function SUPOC(i){const a=cg().adv[i];if(a)save({dni:a.d,campo:'Comentario capacitador',valor:a.ob||''})}
+function supSpark(a){
+ const sl=MODS.map((M,j)=>{const d=md(a,M[0]),ev=[];for(let k=0;k<M[1];k++)ev.push(nv(d.p[k]));if(M[2]){ev.push(nv(d.t));ev.push(nv(d.c))}return{j,ev}}),
+ n=sl.reduce((q,x)=>q+x.ev.length,0),x0=6,x1=294,top=8,bot=60,
+ X=i=>x0+(i+.5)/n*(x1-x0),Y=v=>top+(1-Math.max(0,Math.min(20,v))/20)*(bot-top);
+ let i0=0,o='';
+ sl.forEach(({j,ev},s)=>{const c=mc(j),xa=x0+i0/n*(x1-x0),xb=x0+(i0+ev.length)/n*(x1-x0),lim=limR(j),
+  ok=ev.map((v,k)=>v==null?null:[X(i0+k),Y(v),v]).filter(z=>z),
+  line=ok.length>1?`<polyline points="${ok.map(z=>z[0].toFixed(1)+','+z[1].toFixed(1)).join(' ')}" fill="none" stroke="${c}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`:'',
+  dots=ev.map((v,k)=>v==null?`<circle cx="${X(i0+k).toFixed(1)}" cy="${bot}" r="1.6" fill="#d1d5db"/>`:`<circle cx="${X(i0+k).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="2.8" fill="${v<lim?'#e11d48':c}" stroke="#fff" stroke-width="1"/>`).join('');
+  o+=`<rect x="${xa.toFixed(1)}" y="2" width="${(xb-xa).toFixed(1)}" height="${bot-2+4}" fill="${c}" fill-opacity="${s%2?'.09':'.04'}"/><line x1="${xa.toFixed(1)}" x2="${xb.toFixed(1)}" y1="${Y(lim).toFixed(1)}" y2="${Y(lim).toFixed(1)}" stroke="#e11d48" stroke-opacity=".45" stroke-width="1" stroke-dasharray="3 2"/>${line}${dots}<text x="${((xa+xb)/2).toFixed(1)}" y="76" text-anchor="middle" font-size="8" font-weight="800" fill="${c}">${E(MAB[j])}</text>`;i0+=ev.length});
+ return `<svg viewBox="0 0 300 82" xmlns="http://www.w3.org/2000/svg" style="font-family:inherit">${o}<line x1="${x0}" x2="${x1}" y1="${bot+4}" y2="${bot+4}" stroke="#d6e6da" stroke-width="1"/></svg>`}
+function supPts(a,fav){const L=[];MODS.forEach(M=>{const d=a.m[M[0]];if(d)(fav?d.x:d.y).forEach(e=>L.push({mo:e.mo,n:e.n}))});
+ const tot=L.reduce((q,x)=>q+(+x.n||0),0),it=pfAgg(L);
+ return `<div class="spp ${fav?'f':'r'}"><div class="spph"><b>${fav?'A FAVOR':'EN CONTRA'}</b><span>${tot==0?'0':(fav?'+':'−')+cm(r1(Math.abs(tot)))}</span></div>`+(it.length?`<div class="spb"><div class="spdn">${donut2(it)}</div><div class="spgl">${it.slice(0,4).map((x,k)=>`<div><i style="background:${PFP[k%PFP.length]}"></i><span>${E(x[0])}</span><b>${cm(x[1])}</b></div>`).join('')}${it.length>4?`<small>+${it.length-4} más</small>`:''}</div></div>`:'<div class="spe">Sin registros</div>')+'</div>'}
+function vSup(){const g=cg(),act=g.adv.map((a,i)=>[a,i]).filter(x=>x[0].e!='CESADO'),ar=SUPAR[SUPA],
+ L=act.filter(x=>x[0].sg==SUPA).sort((p,q)=>(fin(q[0])==null?-1:fin(q[0]))-(fin(p[0])==null?-1:fin(p[0]))),
+ sin=act.filter(x=>x[0].sg!='V'&&x[0].sg!='O').length,pg=avG(g),pm=avg(L.map(x=>fin(x[0]))),
+ fn2=('supervisor-'+ar[0]+'-'+g.sede+'-'+g.name).replace(/[^\w-]+/g,'_'),
+ cnt=k=>act.filter(x=>x[0].sg==k).length,
+ card=([a,i])=>{const f=fin(a),rk=rkMods(a),ph=phOf(a);
+  return `<div class="spc" style="--c:${ar[1]}"><div class="sph">${ph?`<img referrerpolicy="no-referrer" src="${ph}">`:`<div class="spi" style="background:${AVC[(a.n.charCodeAt(0)+a.n.length)%6]}">${E(a.n.split(' ').slice(0,2).map(w=>w[0]).join(''))}</div>`}<div class="spw"><b>${E(a.n)}</b><small>DNI ${E(a.d)}</small>${rk.length?'<span class="spk">Riesgo de baja</span>':''}</div><div class="spn${low(f)?' lo':''}"><b>${F(f)}</b><small>NOTA FINAL</small></div></div>
+  <div><div class="spgt">PROMEDIO FINAL POR MÓDULO</div><div class="spm">${MODS.map((M,j)=>{const t=calc(a,j).to;return `<div class="${low(t,j)?'lo':''}" style="--m:${mc(j)}"><small>${E(MAB[j])}</small><b>${F(t)}</b></div>`}).join('')}</div></div>
+  <div><div class="spgt">AVANCE EN LAS CALIFICACIONES <span>· línea roja = nota mínima</span></div>${supSpark(a)}</div>
+  <div class="spd2">${supPts(a,true)}${supPts(a,false)}</div>
+  <div class="spo"><b>COMENTARIOS DEL CAPACITADOR(A)</b><textarea placeholder="Escribe aquí tu comentario sobre este asesor" oninput="SUPO(${i},this.value)" onchange="SUPOC(${i})">${E(a.ob||'')}</textarea></div></div>`};
+ return `<div class="rw np" style="margin-bottom:12px"><label>Área<div class="seg" style="margin-top:4px">${['V','O'].map(k=>`<button type="button" class="b ${SUPA==k?'on':''}" style="--c:${SUPAR[k][1]}" onclick="SUPS('${k}')">${SUPAR[k][0]} · ${cnt(k)}</button>`).join('')}</div></label><button class="b bo" onclick="PDFel('spx','Reporte supervisor ${ar[0]} ${E(g.sede)} ${E(g.name)}')">Descargar PDF</button><button class="b bg" onclick="DI(this,'spx','${fn2}')">Descargar imagen</button><small style="color:var(--mu)">Muestra a los asesores que marcaste en Sugerencias para esta área.${sin?` Faltan ${sin} sin área sugerida.`:''}</small></div>
+ <div style="overflow-x:auto;padding-bottom:10px"><div id="spx" class="rsm"><div class="rhd" style="background-color:${ar[1]}"><div><div class="tt">REPORTE PARA SUPERVISOR · ${ar[0]}</div><h2>${E(g.name)}</h2><small>${E(g.sede)} · Inicio ${g.start} · Día ${Math.min(pg.k,pg.n)} de ${pg.n}</small>${g.cap?'<small>Capacitador(a): <b>'+E(g.cap)+'</b></small>':''}<small>Datos al ${nowD()}</small></div><div class="rhs"><div><b>${L.length}</b>Asesores</div><div><b>${F(pm)}</b>Promedio</div></div></div>
+ ${L.length?'<div class="spg">'+L.map(card).join('')+'</div>':`<div class="card" style="text-align:center;color:var(--mu)">Aún no sugeriste asesores para ${ar[0]}. Márcalos en la pestaña Sugerencias.</div>`}</div></div>`}
 
 /* ===== Reporte general (Master): grupo actual de cada sede, leído de la hoja ===== */
 let GRP=null,GENB=false,GENE='';
@@ -1520,7 +1578,7 @@ function genBuild(T){const hoy=nowD(),L=t=>T[t]||[];
   L('PUNTUALIDAD').forEach(r=>{if(String(r['ID Grupo']).trim()==gid&&ids.has(nd(r.DNI))&&pu[r.Estado]!=null){const d=String(r.Fecha).slice(0,10);(asisR[d]=asisR[d]||{P:0,A:0,T:0,F:0})[r.Estado]++}});
   let di=-1,end=String(g['Fecha de fin']||'').slice(0,10);
   if(st){const gg={start:st};for(let k=0;k<DAYS.length;k++)if(ymd(dd(gg,k))==hoy){di=k;break}if(!end)end=ymd(dd(gg,DAYS.length-1))}
-  return{sd,g:{id:gid,name:g['Nombre del grupo']||gid,cap:g.Capacitador||'',st,end,di,nIng:adv.length,nAct:act.length,nCes:adv.length-act.length,riesgo:act.filter(a=>rkMods(a).length),
+  return{sd,g:{id:gid,name:g['Nombre del grupo']||gid,cap:g.Capacitador||'',st,end,di,nIng:adv.length,nAct:act.length,nCes:adv.length-act.length,riesgo:act.filter(rkG).sort((p,q)=>fin(p)-fin(q)),
    prom:avg(fs),fs,apr:fs.length?Math.round(fs.filter(v=>!low(v)).length/fs.length*100):null,mods:MODS.map((_,j)=>avg(act.map(a=>calc(a,j).to))),pu,pts:ptsR,asis:asisR}}})}
 
 /* ===== Notas: al pulsar una nota se abre la ventana con nota más reciente, historial, examen y registro de ajustes (igual que en Evaluaciones) ===== */
@@ -1745,6 +1803,10 @@ async function traerNotas(){
    (T.ASESORES||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(r=>{      /* personas que están en la hoja y faltan aquí */
     if(String(r.Estado||'').toUpperCase()!='ELIMINADO'&&!g.adv.some(x=>nd(x.d)==nd(r.DNI))&&!(g.del||[]).includes(nd(r.DNI))){const a=mk(String(r.DNI),String(r['Nombres y apellidos']||'').toUpperCase());a.e=r.Estado=='CESADO'?'CESADO':'ACTIVO';
      const ar=sv(r['Área destino']);if(ar)a.ar=ar;const ft=sv(r['Foto (URL)']);if(/^https?:\/\//i.test(ft))a.foto=ft;a.us=String(r.DNI);{const q=v=>{v=sv(v);return /^\d{4}-\d{2}-\d{2}/.test(v)?v.slice(0,10):''},fi=q(r['Fecha de ingreso']),fc=q(r['Fecha de cese']),mc=sv(r['Motivo de cese']),ob=sv(r['Observaciones']);if(fi)a.fi=fi;if(fc)a.fc=fc;if(mc)a.mc=mc;if(ob)a.cc=ob}g.adv.push(a);cambio++}});
+   (T.ASESORES||[]).filter(r=>String(r['ID Grupo']).trim()==gid).forEach(r=>{const a=g.adv.find(x=>nd(x.d)==nd(r.DNI));if(!a)return;
+    if('Sugerencia de área' in r){const v=sv(r['Sugerencia de área']).toUpperCase(),n=v=='V'||v=='O'?v:'';if((a.sg||'')!==n){a.sg=n;cambio++}}
+    if('Nombre en foto' in r){const v=sv(r['Nombre en foto']);if(v&&!a.al){a.al=v;cambio++}}
+    if('Comentario capacitador' in r){const v=String(r['Comentario capacitador']==null?'':r['Comentario capacitador']).trim();if(v&&!a.ob){a.ob=v;cambio++}}});
    if(podar){const ids=new Set((T.ASESORES||[]).filter(r=>String(r['ID Grupo']).trim()==gid&&String(r.Estado||'').toUpperCase()!='ELIMINADO').map(r=>nd(r.DNI))),n0=g.adv.length;g.adv=g.adv.filter(a=>ids.has(nd(a.d)));if(g.adv.length!=n0)cambio++};
    {const cl=new Set((T.CLAVES||[]).filter(r=>String(r.Sede||'').trim()==g.sede).map(r=>nd(r.Usuario)));
     g.adv.forEach(a=>{if(!a.pw&&!a.hc&&(cl.has(nd(a.us||a.d))||cl.has(nd(a.d)))){a.hc=1;cambio++}})}
@@ -1810,7 +1872,7 @@ function vGen(){
   if(!x.g)return `<tr><td class="ta" style="border-left:6px solid ${c}"><b>${E(x.sd)}</b><td class="ta" colspan="${NC-1}" style="color:var(--mu)">Sin grupo de capacitación nuevo actualmente</tr>`;
   const g=x.g,dia=g.di>=0?`Día ${g.di+1} de ${DAYS.length}<br><small>${E(DAYS[g.di])}</small>`:(g.st?(hoy<g.st?'Aún no inicia':'Finalizado'):'–'),pn=g.pu.P+g.pu.A+g.pu.T+g.pu.F;
   return `<tr><td class="ta" style="border-left:6px solid ${c}"><b>${E(x.sd)}</b><td class="ta">${E(g.name)}<br><small>${g.st?'Inicio '+g.st:''}</small><td class="ta">${E(g.cap)||'–'}<td>${dia}<td>${g.nIng}<td><b>${g.nAct}</b><td class="cc ${g.riesgo.length?'bad':''}">${g.riesgo.length}<td>${g.nCes}<td class="cc to ${C(g.prom)}">${F(g.prom)}<td>${g.apr==null?'–':g.apr+'%'}<td>${pn?`P ${g.pu.P} · A ${g.pu.A} · T ${g.pu.T} · F ${g.pu.F}`:'<small>sin marcar</small>'}`+g.mods.map((v,j)=>`<td class="cc ${C(v,j)}">${F(v)}`).join('')+'</tr>'}).join('');
- const rk=have.filter(x=>x.g.riesgo.length).map(x=>`<div class="card" style="border-left:6px solid ${cl(x.sd)};margin-bottom:10px"><b>${E(x.sd)} · ${E(x.g.name)}</b> <small>(${x.g.riesgo.length} en riesgo)</small>`+x.g.riesgo.map(a=>`<p style="margin:6px 0 0"><b>${E(a.n)}</b> <small>· ${rkMods(a).map(j=>MODS[j][0]).join(', ')}</small></p>`).join('')+'</div>').join('');
+ const rk=have.filter(x=>x.g.riesgo.length).map(x=>`<div class="card" style="border-left:6px solid ${cl(x.sd)};margin-bottom:10px"><b>${E(x.sd)} · ${E(x.g.name)}</b> <small>(${x.g.riesgo.length} en riesgo)</small>`+x.g.riesgo.map(a=>`<p style="margin:6px 0 0"><b>${E(a.n)}</b> <small>· Promedio final ${F(fin(a))}</small></p>`).join('')+'</div>').join('');
  return bar+`<div style="overflow-x:auto;padding-bottom:10px"><div id="genx"><div class="card hero hh"><div class="hb" style="background:#1e3a8a"></div><div><small>${new Date().toLocaleDateString('es-PE',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</small><h1>Reporte general de sedes</h1><small>Grupo actual de cada sede</small></div><div class="kk">${kp('Activos',tot.a,'var(--g)')}${kp('En riesgo',tot.r,'var(--r)')}${kp('Cesados',tot.c,'#4b5563')}${kp('Promedio general',F(pg),'var(--b)')}</div></div>
  <div class="sc cp"><table><tr><th>Sede<th>Grupo<th>Capacitador(a)<th>Día<th>Ingresos<th>Activos<th>Riesgo<th>Cesados<th>Promedio<th>Aprobados<th>Puntualidad hoy${MODS.map(m=>'<th>'+m[0]).join('')}</tr>${rows}</table></div>${gPA(have)}${rk?'<div class="rt2" style="font-weight:800;margin:6px 0">ASESORES EN RIESGO DE BAJA</div>'+rk:''}</div></div>`}
 const V={sug:vSug,home:vHome,am:vAm,pf:vPP,pc:vPP,hoy:vHoy,asr:vAs,notas:vNotas,crono:vCrono,res:vRes,gen:vGen,gr:vGr};
@@ -1891,6 +1953,9 @@ function opsDe(ev){const g=cg(),gid=g.id,c=ev.campo||'',o=[],a=ev.dni?g.adv.find
  else if(c=='Nombre')ase({'Nombres y apellidos':ev.valor});
  else if(c=='Foto')ase({'Foto (URL)':ev.valor});
  else if(c=='Área destino')ase({'Área destino':ev.valor});
+ else if(c=='Sugerencia de área')ase({'Sugerencia de área':ev.valor=='ninguno'?'':ev.valor});
+ else if(c=='Nombre en foto')ase({'Nombre en foto':String(ev.valor||'')});
+ else if(c=='Comentario capacitador')ase({'Comentario capacitador':String(ev.valor==null?'':ev.valor)});
  else if(c=='Estado asesor')ase({Estado:ev.valor});
  else if(c=='Fecha de ingreso'||c=='Fecha de cese'||c=='Motivo de cese'||c=='Observaciones')ase({[c]:ev.valor});
  else if(c=='Puntualidad'){pun({Hora:ev.hora||'',Estado:(ev.valor=='sin marcar'?'':ev.valor)});if(a){const ms=new Set([ev.modulo].concat((a.anu||[]).map(z=>z.m)));ms.forEach(m=>{const M=MODS.find(x=>x[0]==m);if(!M||!M[2])return;const d=md(a,m),sm=l=>(l||[]).reduce((q,e)=>q+(+e.n||0),0);up('NOTAS',{'ID Grupo':gid,DNI:String(ev.dni),'Módulo':m,'Puntos a favor':sm(d.x),'Puntos en contra':sm(d.y),'Canjes':sm((a.cj||[]).filter(e=>e.m==m))})});PP(a,ev.modulo,gid,o)}}
